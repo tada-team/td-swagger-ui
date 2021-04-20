@@ -135,13 +135,17 @@
       "IconData": {
         "type": "object",
         "properties": {
+          "blurhash": {
+            "type": "string",
+            "description": "Compact representation of a placeholder for an image (experimental)"
+          },
           "color": {
             "type": "string",
-            "description": "Stub icon background color"
+            "description": "Icon background color (only for stub icon)"
           },
           "letters": {
             "type": "string",
-            "description": "Letters from stub icon"
+            "description": "Letters (only for stub icon)"
           },
           "lg": {
             "description": "Large image",
@@ -153,10 +157,14 @@
           },
           "stub": {
             "type": "string",
-            "description": "Generated image with 1-2 letters"
+            "description": "Deprecated"
           }
         },
-        "description": "Icon data. Contains sm+lg (for uploaded image) OR stub+letters+color (for icon generated from display name)"
+        "required": [
+          "lg",
+          "sm"
+        ],
+        "description": "Icon data. For icon generated from display name contains Letters + Color fields"
       },
       "SingleIcon": {
         "type": "object",
