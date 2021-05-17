@@ -37,6 +37,121 @@
         }
       }
     },
+    "/api/v4/alltimezones": {
+      "get": {
+        "summary": "Timezones list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/TimezonesResp"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/countries": {
+      "get": {
+        "summary": "Countries list with phone codes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/emoji": {
+      "get": {
+        "summary": "Emoji list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/EmojiResp"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/join/{token}": {
+      "parameters": [
+        {
+          "name": "token",
+          "in": "path",
+          "required": true,
+          "description": "Invitation token",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Join to the team",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/Team"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v4/join/{token}/preview": {
       "parameters": [
         {
@@ -101,6 +216,58 @@
         }
       }
     },
+    "/api/v4/reactions": {
+      "get": {
+        "summary": "All available message reactions",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/releases": {
+      "get": {
+        "summary": "Links to releases",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/ReleasesResp"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v4/time": {
       "get": {
         "summary": "Server time",
@@ -128,10 +295,773 @@
           }
         }
       }
+    },
+    "features.json": {
+      "get": {
+        "summary": "Server information",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "result": {
+                      "$ref": "#/components/schemas/Features"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "ButtonColors": {
+        "type": "object",
+        "properties": {
+          "brand_active": {
+            "description": "Brand active color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_disable": {
+            "description": "Brand disable color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_static": {
+            "description": "Brand static color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "simple_active": {
+            "description": "Simple active color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "simple_disable": {
+            "description": "Simple disable color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "simple_static": {
+            "description": "Simple static color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "brand_active",
+          "brand_disable",
+          "brand_static",
+          "simple_active",
+          "simple_disable",
+          "simple_static"
+        ],
+        "description": "Button colors for app"
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "add_to_team_rights": {
+            "type": "boolean",
+            "description": "Can contact add users to this team"
+          },
+          "alt_send": {
+            "type": "boolean",
+            "description": "Use Ctrl/Cmd + Enter instead Enter"
+          },
+          "always_send_pushes": {
+            "type": "boolean",
+            "description": "Send push notifications even contact is online"
+          },
+          "asterisk_mention": {
+            "type": "boolean",
+            "description": "Use * as @ for mentions"
+          },
+          "auth_2fa_enabled": {
+            "type": "boolean",
+            "description": "Two-factor authentication is configured and confirmed"
+          },
+          "auth_2fa_status": {
+            "type": "string",
+            "description": "Two-factor authentication status"
+          },
+          "botname": {
+            "type": "string",
+            "description": "Bot name. Empty for users"
+          },
+          "can_add_to_group": {
+            "type": "boolean",
+            "description": "Can I add this contact to group chats"
+          },
+          "can_add_to_team": {
+            "type": "boolean",
+            "description": "Can I add new members to this team"
+          },
+          "can_call": {
+            "type": "boolean",
+            "description": "Can I call to this contact"
+          },
+          "can_create_group": {
+            "type": "boolean",
+            "description": "Can I create group chats in this team"
+          },
+          "can_create_task": {
+            "type": "boolean",
+            "description": "Can I call create task for this contact"
+          },
+          "can_delete": {
+            "type": "boolean",
+            "description": "Can I remove this contact from team"
+          },
+          "can_delete_any_message": {
+            "type": "boolean",
+            "description": "Deprecated: use CanDeleteAnyMessage in chat object"
+          },
+          "can_join_public_groups": {
+            "type": "boolean",
+            "description": "Can I view/join public group in this team"
+          },
+          "can_join_public_tasks": {
+            "type": "boolean",
+            "description": "Can I view/join public tasks in this team"
+          },
+          "can_manage_color_rules": {
+            "type": "boolean",
+            "description": "Can I manage color rules in this team"
+          },
+          "can_manage_integrations": {
+            "type": "boolean",
+            "description": "Can I manage integrations in this team"
+          },
+          "can_manage_sections": {
+            "type": "boolean",
+            "description": "Can I manage sections in this team"
+          },
+          "can_manage_tags": {
+            "type": "boolean",
+            "description": "Can I manage tags in this team"
+          },
+          "can_send_message": {
+            "type": "boolean",
+            "description": "Can I send message to this contact"
+          },
+          "cant_send_message_reason": {
+            "type": "string",
+            "description": "Why I can't send message to this chat (if can't)"
+          },
+          "changeable_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Changeable fields"
+          },
+          "contact_email": {
+            "type": "string",
+            "description": "Contact email in this team"
+          },
+          "contact_mshort_view": {
+            "type": "boolean",
+            "description": "Short view in contact list in mobile app"
+          },
+          "contact_phone": {
+            "type": "string",
+            "description": "Contact phone in this team"
+          },
+          "contact_short_view": {
+            "type": "boolean",
+            "description": "Short view in contact list"
+          },
+          "contact_show_archived": {
+            "type": "boolean",
+            "description": "Show archived contacts in contact list"
+          },
+          "custom_fields": {
+            "description": "Extra contact fields",
+            "$ref": "#/components/schemas/ContactCustomFields"
+          },
+          "debug_show_activity": {
+            "type": "boolean",
+            "description": "Enable debug messages in UI"
+          },
+          "default_lang": {
+            "type": "string",
+            "description": "Default language code"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Full name in chats"
+          },
+          "dropall_enabled": {
+            "type": "boolean",
+            "description": "Enable remove all messages experimental features"
+          },
+          "family_name": {
+            "type": "string",
+            "description": "Family name"
+          },
+          "given_name": {
+            "type": "string",
+            "description": "Given name"
+          },
+          "group_mshort_view": {
+            "type": "boolean",
+            "description": "Short view in group list in mobile app"
+          },
+          "group_notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications for group chats"
+          },
+          "group_short_view": {
+            "type": "boolean",
+            "description": "Short view in group list"
+          },
+          "icons": {
+            "description": "Icons data",
+            "$ref": "#/components/schemas/IconData"
+          },
+          "is_archive": {
+            "type": "boolean",
+            "description": "Contact deleted"
+          },
+          "jid": {
+            "description": "Contact Id",
+            "$ref": "#/components/schemas/JID"
+          },
+          "last_activity": {
+            "type": "string",
+            "description": "Last activity in this team (iso datetime)"
+          },
+          "mood": {
+            "type": "string",
+            "description": "Mood in this team"
+          },
+          "munread_first": {
+            "type": "boolean",
+            "description": "Show unread chats first in feed in mobile app"
+          },
+          "patronymic": {
+            "type": "string",
+            "description": "Patronymic, if any"
+          },
+          "quiet_time_finish": {
+            "type": "string",
+            "description": "Quiet time finish"
+          },
+          "quiet_time_start": {
+            "type": "string",
+            "description": "Quiet time start"
+          },
+          "role": {
+            "type": "string",
+            "description": "Role in this team"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Section ids"
+          },
+          "short_name": {
+            "type": "string",
+            "description": "Short name in chats"
+          },
+          "status": {
+            "description": "Status in this team",
+            "$ref": "#/components/schemas/TeamStatus"
+          },
+          "task_mshort_view": {
+            "type": "boolean",
+            "description": "Short view in task list in mobile app"
+          },
+          "task_notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications for task chats"
+          },
+          "task_short_view": {
+            "type": "boolean",
+            "description": "Short view in task list"
+          },
+          "timezone": {
+            "type": "string",
+            "description": "Timezone, if any"
+          },
+          "unread_first": {
+            "type": "boolean",
+            "description": "Show unread chats first in feed"
+          }
+        },
+        "required": [
+          "contact_email",
+          "contact_phone",
+          "display_name",
+          "icons",
+          "jid",
+          "role",
+          "sections",
+          "short_name",
+          "status"
+        ],
+        "description": "Contact"
+      },
+      "ContactCustomFields": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "description": "Company"
+          },
+          "department": {
+            "type": "string",
+            "description": "Department"
+          },
+          "mobile_phone": {
+            "type": "string",
+            "description": "MobilePhone"
+          },
+          "source": {
+            "type": "string",
+            "description": "Import source"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title"
+          }
+        },
+        "description": "Extra contact fields"
+      },
+      "Features": {
+        "type": "object",
+        "properties": {
+          "afk_age": {
+            "type": "number",
+            "description": "Max inactivity seconds"
+          },
+          "allow_admin_mute": {
+            "type": "boolean",
+            "description": "Wiki pages in chats. Experimental"
+          },
+          "android_app": {
+            "type": "string",
+            "description": "Link to Google Play"
+          },
+          "app_schemes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Local applications urls"
+          },
+          "app_title": {
+            "type": "string",
+            "description": "Application title"
+          },
+          "auth_2fa": {
+            "type": "boolean",
+            "description": "Two-factor authentication (2FA) enabled"
+          },
+          "auth_by_password": {
+            "type": "boolean",
+            "description": "Password authentication enabled"
+          },
+          "auth_by_qr_code": {
+            "type": "boolean",
+            "description": "QR-code / link authentication enabled"
+          },
+          "auth_by_sms": {
+            "type": "boolean",
+            "description": "SMS authentication enabled"
+          },
+          "background": {
+            "type": "string",
+            "description": "Background image url, if any"
+          },
+          "build": {
+            "type": "string",
+            "description": "Build/revision of server side"
+          },
+          "calls": {
+            "type": "boolean",
+            "description": "Calls functions enabled"
+          },
+          "calls_record": {
+            "type": "boolean",
+            "description": "Calls record enabled"
+          },
+          "custom_server": {
+            "type": "boolean",
+            "description": "True for premise installation"
+          },
+          "default_wallpaper": {
+            "description": "Default wallpaper url for mobile apps, if any",
+            "$ref": "#/components/schemas/Wallpaper"
+          },
+          "desktop_version": {
+            "type": "string",
+            "description": "Desktop application version"
+          },
+          "firebase_api_key": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_app_id": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_auth_domain": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_database_url": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_project_id": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_sender_id": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "firebase_storage_bucket": {
+            "type": "string",
+            "description": "Firebase settings for web-push notifications"
+          },
+          "free_registration": {
+            "type": "boolean",
+            "description": "Free registration allowed"
+          },
+          "front_version": {
+            "type": "string",
+            "description": "Webclient version"
+          },
+          "host": {
+            "type": "string",
+            "description": "Current host"
+          },
+          "ice_servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ICEServer"
+            },
+            "description": "ICE servers for WebRTC"
+          },
+          "installation_title": {
+            "type": "string",
+            "description": "Installation title, used on login screen"
+          },
+          "installation_type": {
+            "type": "string",
+            "description": "Name of installation"
+          },
+          "ios_app": {
+            "type": "string",
+            "description": "Link to AppStore"
+          },
+          "is_testing": {
+            "type": "boolean",
+            "description": "Testing installation"
+          },
+          "landing_url": {
+            "type": "string",
+            "description": "Landing page address, if any"
+          },
+          "max_color_rule_description_length": {
+            "type": "number",
+            "description": "Maximum length for ColorRule description"
+          },
+          "max_group_title_length": {
+            "type": "number",
+            "description": "Maximum chars for group chat name"
+          },
+          "max_integration_comment_length": {
+            "type": "number",
+            "description": "Maximum length for Integration comment"
+          },
+          "max_linked_messages": {
+            "type": "number",
+            "description": "Maximum number of forwarded messages"
+          },
+          "max_message_length": {
+            "type": "number",
+            "description": "Maximum chars for text message"
+          },
+          "max_message_search_limit": {
+            "type": "number",
+            "description": "Maximum search result"
+          },
+          "max_message_uploads": {
+            "type": "number",
+            "description": "Maximum number of message uploads"
+          },
+          "max_mood_length": {
+            "type": "number",
+            "description": "Maximum chars for mood in team"
+          },
+          "max_participants_per_call": {
+            "type": "number",
+            "description": "Maximum number of participants per call"
+          },
+          "max_role_length": {
+            "type": "number",
+            "description": "Maximum chars for role in team"
+          },
+          "max_section_length": {
+            "type": "number",
+            "description": "Maximum length for project and contact's sections names"
+          },
+          "max_tag_length": {
+            "type": "number",
+            "description": "Maximum length for tags"
+          },
+          "max_task_title_length": {
+            "type": "number",
+            "description": "Maximum length for task title"
+          },
+          "max_teams": {
+            "type": "number",
+            "description": "Maximum teams for one account"
+          },
+          "max_upload_mb": {
+            "type": "number",
+            "description": "Maximum size of user's upload"
+          },
+          "max_url_length": {
+            "type": "number",
+            "description": "Maximum length for urls"
+          },
+          "max_username_part_length": {
+            "type": "number",
+            "description": "Maximum chars for: family_name, given_name, patronymic if any"
+          },
+          "message_uploads": {
+            "type": "boolean",
+            "description": "Multiple message uploads"
+          },
+          "metrika": {
+            "type": "string",
+            "description": "Yandex metrika counter id"
+          },
+          "min_app_version": {
+            "type": "string",
+            "description": "Minimal application version required for this server. Used for breaking changes"
+          },
+          "min_search_length": {
+            "type": "number",
+            "description": "Minimal chars number for starting global search"
+          },
+          "mobile_calls": {
+            "type": "boolean",
+            "description": "Calls functions enabled for mobile applications"
+          },
+          "oauth_services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OAuthService"
+            },
+            "description": "External services"
+          },
+          "only_one_device_per_call": {
+            "type": "boolean",
+            "description": "Disallow call from multiply devices. Experimental"
+          },
+          "readonly_groups": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "resend_timeout": {
+            "type": "number",
+            "description": "Resend message in n seconds if no confirmation from server given"
+          },
+          "safari_push_id": {
+            "type": "string",
+            "description": "Safari push id for web-push notifications"
+          },
+          "sentry_dsn_js": {
+            "type": "string",
+            "description": "Frontend sentry.io settings"
+          },
+          "server_drafts": {
+            "type": "boolean",
+            "description": "Message drafts saved on server"
+          },
+          "single_group_teams": {
+            "type": "boolean",
+            "description": "Cross team communication. Experimental"
+          },
+          "task_checklist": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "task_dashboard": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "task_messages": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "task_public": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "task_tags": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "terms": {
+            "description": "Team entity naming. Experimental",
+            "$ref": "#/components/schemas/Terms"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Default UI theme"
+          },
+          "userver": {
+            "type": "string",
+            "description": "Static files server address"
+          },
+          "wiki_pages": {
+            "type": "boolean",
+            "description": "Wiki pages in chats. Experimental"
+          }
+        },
+        "required": [
+          "afk_age",
+          "android_app",
+          "app_schemes",
+          "app_title",
+          "build",
+          "calls",
+          "calls_record",
+          "custom_server",
+          "desktop_version",
+          "firebase_api_key",
+          "firebase_app_id",
+          "firebase_auth_domain",
+          "firebase_database_url",
+          "firebase_project_id",
+          "firebase_sender_id",
+          "firebase_storage_bucket",
+          "free_registration",
+          "front_version",
+          "host",
+          "ice_servers",
+          "ios_app",
+          "installation_type",
+          "is_testing",
+          "max_color_rule_description_length",
+          "max_group_title_length",
+          "max_integration_comment_length",
+          "max_linked_messages",
+          "max_message_length",
+          "max_message_search_limit",
+          "max_message_uploads",
+          "max_mood_length",
+          "max_role_length",
+          "max_section_length",
+          "max_tag_length",
+          "max_task_title_length",
+          "max_teams",
+          "max_upload_mb",
+          "max_url_length",
+          "max_username_part_length",
+          "message_uploads",
+          "metrika",
+          "min_app_version",
+          "min_search_length",
+          "mobile_calls",
+          "readonly_groups",
+          "resend_timeout",
+          "safari_push_id",
+          "sentry_dsn_js",
+          "server_drafts",
+          "single_group_teams",
+          "task_checklist",
+          "task_dashboard",
+          "task_messages",
+          "task_public",
+          "task_tags",
+          "terms",
+          "theme",
+          "userver",
+          "wiki_pages"
+        ],
+        "description": "Server information. Readonly"
+      },
+      "FontColors": {
+        "type": "object",
+        "properties": {
+          "brand_button": {
+            "description": "Brand button color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "bubble_received": {
+            "description": "Bubble received color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "bubble_sent": {
+            "description": "Bubble sent color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "simple_button": {
+            "description": "Simple button color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "sub": {
+            "description": "Sub color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "text": {
+            "description": "Text color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "title": {
+            "description": "Title color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "brand_button",
+          "bubble_received",
+          "bubble_sent",
+          "simple_button",
+          "sub",
+          "text",
+          "title"
+        ],
+        "description": "Font colors for app"
+      },
+      "IconColors": {
+        "type": "object",
+        "properties": {
+          "brand": {
+            "description": "Brand color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "other": {
+            "description": "Other color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "title": {
+            "description": "Title color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "brand",
+          "other",
+          "title"
+        ],
+        "description": "Icon colors for app"
+      },
       "IconData": {
         "type": "object",
         "properties": {
@@ -166,6 +1096,78 @@
         ],
         "description": "Icon data. For icon generated from display name contains Letters + Color fields"
       },
+      "InputColors": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "description": "Active color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "disable": {
+            "description": "Disable color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "error": {
+            "description": "Error color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "static": {
+            "description": "Static color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "active",
+          "disable",
+          "error",
+          "static"
+        ],
+        "description": "Input colors for app"
+      },
+      "JID": {
+        "type": "string"
+      },
+      "MessageColors": {
+        "type": "object",
+        "properties": {
+          "allocated": {
+            "description": "Allocated color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "bubble_important": {
+            "description": "Bubble important color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "bubble_received": {
+            "description": "Bubble received color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "bubble_sent": {
+            "description": "Bubble sent color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "status_bubble": {
+            "description": "Status bubble color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "status_feed": {
+            "description": "Status feed color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "allocated",
+          "bubble_important",
+          "bubble_received",
+          "bubble_sent",
+          "status_bubble",
+          "status_feed"
+        ],
+        "description": "Message colors for app"
+      },
+      "RGBColor": {
+        "type": "string"
+      },
       "SingleIcon": {
         "type": "object",
         "properties": {
@@ -189,6 +1191,167 @@
         ],
         "description": "Small or large icon"
       },
+      "SwitcherColors": {
+        "type": "object",
+        "properties": {
+          "off": {
+            "description": "Off color",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "on": {
+            "description": "On color",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "off",
+          "on"
+        ],
+        "description": "Switcher colors for app"
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "bad_profile": {
+            "type": "boolean",
+            "description": "My profile in this team isn't full"
+          },
+          "changeable_statuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamStatus"
+            },
+            "description": "What status I can set to other team members"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            },
+            "description": "Team contacts. Used only for team creation"
+          },
+          "default_task_deadline": {
+            "type": "string",
+            "description": "Default task deadline"
+          },
+          "display_family_name_first": {
+            "type": "boolean",
+            "description": "Family name should be first in display name"
+          },
+          "gentime": {
+            "type": "number",
+            "description": "Object version"
+          },
+          "hide_archived_users": {
+            "type": "boolean",
+            "description": "Don't show archived users by default"
+          },
+          "icons": {
+            "description": "Team icons",
+            "$ref": "#/components/schemas/IconData"
+          },
+          "is_archive": {
+            "type": "boolean",
+            "description": "Team deleted"
+          },
+          "last_active": {
+            "type": "boolean",
+            "description": "User last activity was in this team"
+          },
+          "max_message_update_age": {
+            "type": "number",
+            "description": "Max message update/deletion age, in seconds"
+          },
+          "me": {
+            "description": "My profile in this team",
+            "$ref": "#/components/schemas/Contact"
+          },
+          "name": {
+            "type": "string",
+            "description": "Team name"
+          },
+          "need_confirmation": {
+            "type": "boolean",
+            "description": "Need confirmation after invite to this team"
+          },
+          "single_group": {
+            "description": "For single group teams, jid of chat",
+            "$ref": "#/components/schemas/JID"
+          },
+          "task_importance_max": {
+            "type": "number",
+            "description": "Maximum value of task importance. Default is 5"
+          },
+          "task_importance_min": {
+            "type": "number",
+            "description": "Minimal value of task importance. Default is 1"
+          },
+          "task_importance_rev": {
+            "type": "boolean",
+            "description": "Bigger number = bigger importance. Default: lower number = bigger importance"
+          },
+          "theme": {
+            "description": "Color theme, if any",
+            "$ref": "#/components/schemas/Theme"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Team id"
+          },
+          "unread": {
+            "description": "Unread message counters",
+            "$ref": "#/components/schemas/TeamUnread"
+          },
+          "uploads_size": {
+            "type": "number",
+            "description": "Total uploads size, bytes"
+          },
+          "uploads_size_limit": {
+            "type": "number",
+            "description": "Maximum uploads size, bytes, if any"
+          },
+          "use_patronymic": {
+            "type": "boolean",
+            "description": "Patronymic in usernames for this team"
+          },
+          "use_task_complexity": {
+            "type": "boolean",
+            "description": "Use complexity field in task"
+          },
+          "use_task_importance": {
+            "type": "boolean",
+            "description": "Use importance field in task"
+          },
+          "use_task_spent_time": {
+            "type": "boolean",
+            "description": "Use spent time field in task"
+          },
+          "use_task_urgency": {
+            "type": "boolean",
+            "description": "Use urgency field in task"
+          },
+          "user_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Username fields ordering"
+          }
+        },
+        "required": [
+          "gentime",
+          "icons",
+          "last_active",
+          "max_message_update_age",
+          "me",
+          "name",
+          "need_confirmation",
+          "uid",
+          "unread",
+          "user_fields"
+        ],
+        "description": "Team"
+      },
       "TeamShort": {
         "type": "object",
         "properties": {
@@ -211,6 +1374,432 @@
           "uid"
         ],
         "description": "Short team representation. For invites, push notifications, etc. Readonly"
+      },
+      "TeamStatus": {
+        "type": "string"
+      },
+      "TeamUnread": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Unread"
+        }
+      },
+      "Terms": {
+        "type": "object",
+        "properties": {
+          "EnInTeam": {
+            "type": "string",
+            "description": "\"in team\""
+          },
+          "EnTeam": {
+            "type": "string",
+            "description": "\"team\""
+          },
+          "EnTeamAccess": {
+            "type": "string",
+            "description": "\"access to team\""
+          },
+          "EnTeamAdmin": {
+            "type": "string",
+            "description": "\"team admin\""
+          },
+          "EnTeamAdmins": {
+            "type": "string",
+            "description": "\"team admins\""
+          },
+          "EnTeamGuest": {
+            "type": "string",
+            "description": "\"team guest\""
+          },
+          "EnTeamMember": {
+            "type": "string",
+            "description": "\"team member\""
+          },
+          "EnTeamMembers": {
+            "type": "string",
+            "description": "\"team members\""
+          },
+          "EnTeamOwner": {
+            "type": "string",
+            "description": "\"team owner\","
+          },
+          "EnTeamSettings": {
+            "type": "string",
+            "description": "\"team settings\""
+          },
+          "EnTeams": {
+            "type": "string",
+            "description": "\"teams\""
+          },
+          "EnToTeam": {
+            "type": "string",
+            "description": "\"to team\""
+          },
+          "RuInTeam": {
+            "type": "string",
+            "description": "\"в команде\""
+          },
+          "RuTeam": {
+            "type": "string",
+            "description": "\"команда\""
+          },
+          "RuTeamAccess": {
+            "type": "string",
+            "description": "\"доступ к команде\""
+          },
+          "RuTeamAdmin": {
+            "type": "string",
+            "description": "\"администратор команды\""
+          },
+          "RuTeamAdmins": {
+            "type": "string",
+            "description": "\"администраторы команды\""
+          },
+          "RuTeamD": {
+            "type": "string",
+            "description": "\"команде\""
+          },
+          "RuTeamGuest": {
+            "type": "string",
+            "description": "\"гость команды\""
+          },
+          "RuTeamMember": {
+            "type": "string",
+            "description": "\"участник команды\""
+          },
+          "RuTeamMembers": {
+            "type": "string",
+            "description": "\"участники команды\""
+          },
+          "RuTeamOwner": {
+            "type": "string",
+            "description": "\"владелец команды\""
+          },
+          "RuTeamP": {
+            "type": "string",
+            "description": "\"команде\""
+          },
+          "RuTeamR": {
+            "type": "string",
+            "description": "\"команды\""
+          },
+          "RuTeamSettings": {
+            "type": "string",
+            "description": "\"настройки команды\""
+          },
+          "RuTeamT": {
+            "type": "string",
+            "description": "\"командой\""
+          },
+          "RuTeamV": {
+            "type": "string",
+            "description": "\"команду\""
+          },
+          "RuTeams": {
+            "type": "string",
+            "description": "\"команды\""
+          },
+          "RuTeamsD": {
+            "type": "string",
+            "description": "\"командам\""
+          },
+          "RuTeamsP": {
+            "type": "string",
+            "description": "\"командах\""
+          },
+          "RuTeamsR": {
+            "type": "string",
+            "description": "\"команд\""
+          },
+          "RuTeamsT": {
+            "type": "string",
+            "description": "\"командами\""
+          },
+          "RuTeamsV": {
+            "type": "string",
+            "description": "\"команды\""
+          },
+          "RuToTeam": {
+            "type": "string",
+            "description": "\"в команду\""
+          }
+        },
+        "required": [
+          "EnInTeam",
+          "EnTeam",
+          "EnTeamAccess",
+          "EnTeamAdmin",
+          "EnTeamAdmins",
+          "EnTeamGuest",
+          "EnTeamMember",
+          "EnTeamMembers",
+          "EnTeamOwner",
+          "EnTeamSettings",
+          "EnTeams",
+          "EnToTeam",
+          "RuInTeam",
+          "RuTeam",
+          "RuTeamAccess",
+          "RuTeamAdmin",
+          "RuTeamAdmins",
+          "RuTeamD",
+          "RuTeamGuest",
+          "RuTeamMember",
+          "RuTeamMembers",
+          "RuTeamOwner",
+          "RuTeamP",
+          "RuTeamR",
+          "RuTeamSettings",
+          "RuTeamT",
+          "RuTeamV",
+          "RuTeams",
+          "RuTeamsD",
+          "RuTeamsP",
+          "RuTeamsR",
+          "RuTeamsT",
+          "RuTeamsV",
+          "RuToTeam"
+        ],
+        "description": "Experimental translation fields for \"team\" entity renaming. Readonly"
+      },
+      "Theme": {
+        "type": "object",
+        "properties": {
+          "AccentColor": {
+            "description": "AccentColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "AccentHoverColor": {
+            "description": "AccentHoverColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "AppAccentColor": {
+            "description": "Deprecated",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "AppPrimaryColor": {
+            "description": "Deprecated",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "BgColor": {
+            "description": "BgColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "BgHoverColor": {
+            "description": "BgHoverColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "MainAccent": {
+            "description": "MainAccent for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "MainAccentHover": {
+            "description": "MainAccentHover for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "MainLightAccent": {
+            "description": "MainLightAccent for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "MainLink": {
+            "description": "MainLink for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "MutedTextColor": {
+            "description": "MutedTextColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "TextColor": {
+            "description": "TextColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "TextOnAccentHoverColor": {
+            "description": "TextOnAccentHoverColor for web",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "attention": {
+            "description": "Attention color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "attention_light": {
+            "description": "Attention light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "back": {
+            "description": "Back light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "back_dark": {
+            "description": "Back dark color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "back_light": {
+            "description": "Back light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "background": {
+            "description": "Background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand": {
+            "description": "Brand color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_dark": {
+            "description": "BrandDark color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_light": {
+            "description": "Brand light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "button": {
+            "description": "Button colors for app",
+            "$ref": "#/components/schemas/ButtonColors"
+          },
+          "chat_input_background": {
+            "description": "Chat input background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "error": {
+            "description": "Error color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "error_light": {
+            "description": "Error light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "font": {
+            "description": "Font colors for app",
+            "$ref": "#/components/schemas/FontColors"
+          },
+          "ic": {
+            "description": "Icon colors for app",
+            "$ref": "#/components/schemas/IconColors"
+          },
+          "input": {
+            "description": "Input colors for app",
+            "$ref": "#/components/schemas/InputColors"
+          },
+          "message": {
+            "description": "Message colors for app",
+            "$ref": "#/components/schemas/MessageColors"
+          },
+          "modal_background": {
+            "description": "Modal background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "substrate_background": {
+            "description": "Substrate background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "success": {
+            "description": "Success color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "success_light": {
+            "description": "Success light color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "switcher": {
+            "description": "Switcher colors for app",
+            "$ref": "#/components/schemas/SwitcherColors"
+          },
+          "tab_background": {
+            "description": "Tab background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "title_background": {
+            "description": "Title background color for app",
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "AccentColor",
+          "AccentHoverColor",
+          "AppAccentColor",
+          "AppPrimaryColor",
+          "attention",
+          "attention_light",
+          "back",
+          "back_dark",
+          "back_light",
+          "background",
+          "BgColor",
+          "BgHoverColor",
+          "brand",
+          "brand_dark",
+          "brand_light",
+          "button",
+          "chat_input_background",
+          "error",
+          "error_light",
+          "font",
+          "ic",
+          "input",
+          "MainAccent",
+          "MainAccentHover",
+          "MainLightAccent",
+          "MainLink",
+          "message",
+          "modal_background",
+          "MutedTextColor",
+          "substrate_background",
+          "success",
+          "success_light",
+          "switcher",
+          "tab_background",
+          "TextColor",
+          "TextOnAccentHoverColor",
+          "title_background"
+        ],
+        "description": "Color theme"
+      },
+      "Unread": {
+        "type": "object",
+        "properties": {
+          "chats": {
+            "type": "number",
+            "description": "Total chats with unread messages"
+          },
+          "messages": {
+            "type": "number",
+            "description": "Total unread messages"
+          },
+          "notice_messages": {
+            "type": "number",
+            "description": "Total unread messages with mentions"
+          }
+        },
+        "required": [
+          "chats",
+          "messages",
+          "notice_messages"
+        ],
+        "description": "Unread message counters"
+      },
+      "Wallpaper": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Localized description"
+          },
+          "url": {
+            "type": "string",
+            "description": "Url to jpg or png"
+          }
+        },
+        "required": [
+          "key",
+          "name",
+          "url"
+        ],
+        "description": "Chat wallpaper"
       }
     }
   }
