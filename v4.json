@@ -354,12 +354,12 @@
           }
         },
         "required": [
+          "brand_static",
           "brand_active",
           "brand_disable",
-          "brand_static",
+          "simple_static",
           "simple_active",
-          "simple_disable",
-          "simple_static"
+          "simple_disable"
         ],
         "description": "Button colors for app"
       },
@@ -598,15 +598,15 @@
           }
         },
         "required": [
+          "jid",
+          "display_name",
+          "short_name",
           "contact_email",
           "contact_phone",
-          "display_name",
           "icons",
-          "jid",
           "role",
-          "sections",
-          "short_name",
-          "status"
+          "status",
+          "sections"
         ],
         "description": "Contact"
       },
@@ -934,65 +934,65 @@
           }
         },
         "required": [
-          "afk_age",
-          "android_app",
-          "app_schemes",
-          "app_title",
-          "build",
-          "calls",
-          "calls_record",
-          "custom_server",
-          "desktop_version",
-          "firebase_api_key",
-          "firebase_app_id",
-          "firebase_auth_domain",
-          "firebase_database_url",
-          "firebase_project_id",
-          "firebase_sender_id",
-          "firebase_storage_bucket",
-          "free_registration",
-          "front_version",
           "host",
-          "ice_servers",
+          "build",
+          "desktop_version",
+          "front_version",
+          "app_title",
+          "app_schemes",
+          "userver",
           "ios_app",
-          "installation_type",
-          "is_testing",
-          "max_color_rule_description_length",
-          "max_group_title_length",
-          "max_integration_comment_length",
+          "android_app",
+          "theme",
+          "min_app_version",
+          "free_registration",
+          "max_upload_mb",
           "max_linked_messages",
-          "max_message_length",
-          "max_message_search_limit",
           "max_message_uploads",
-          "max_mood_length",
+          "max_username_part_length",
+          "max_group_title_length",
           "max_role_length",
+          "max_mood_length",
+          "max_message_length",
           "max_section_length",
           "max_tag_length",
           "max_task_title_length",
-          "max_teams",
-          "max_upload_mb",
+          "max_color_rule_description_length",
           "max_url_length",
-          "max_username_part_length",
-          "message_uploads",
+          "max_integration_comment_length",
+          "max_teams",
+          "max_message_search_limit",
+          "afk_age",
+          "ice_servers",
+          "custom_server",
+          "installation_type",
+          "is_testing",
           "metrika",
-          "min_app_version",
           "min_search_length",
-          "mobile_calls",
-          "readonly_groups",
           "resend_timeout",
-          "safari_push_id",
           "sentry_dsn_js",
           "server_drafts",
+          "firebase_app_id",
+          "firebase_sender_id",
+          "firebase_api_key",
+          "firebase_auth_domain",
+          "firebase_database_url",
+          "firebase_project_id",
+          "firebase_storage_bucket",
+          "calls",
+          "mobile_calls",
+          "calls_record",
+          "safari_push_id",
+          "message_uploads",
+          "terms",
           "single_group_teams",
+          "wiki_pages",
           "task_checklist",
+          "readonly_groups",
           "task_dashboard",
           "task_messages",
           "task_public",
-          "task_tags",
-          "terms",
-          "theme",
-          "userver",
-          "wiki_pages"
+          "task_tags"
         ],
         "description": "Server information. Readonly"
       },
@@ -1029,13 +1029,13 @@
           }
         },
         "required": [
-          "brand_button",
-          "bubble_received",
-          "bubble_sent",
-          "simple_button",
-          "sub",
           "text",
-          "title"
+          "title",
+          "sub",
+          "brand_button",
+          "simple_button",
+          "bubble_sent",
+          "bubble_received"
         ],
         "description": "Font colors for app"
       },
@@ -1056,9 +1056,9 @@
           }
         },
         "required": [
+          "title",
           "brand",
-          "other",
-          "title"
+          "other"
         ],
         "description": "Icon colors for app"
       },
@@ -1091,8 +1091,8 @@
           }
         },
         "required": [
-          "lg",
-          "sm"
+          "sm",
+          "lg"
         ],
         "description": "Icon data. For icon generated from display name contains Letters + Color fields"
       },
@@ -1117,10 +1117,10 @@
           }
         },
         "required": [
+          "static",
           "active",
           "disable",
-          "error",
-          "static"
+          "error"
         ],
         "description": "Input colors for app"
       },
@@ -1156,12 +1156,12 @@
           }
         },
         "required": [
-          "allocated",
-          "bubble_important",
-          "bubble_received",
           "bubble_sent",
+          "bubble_received",
+          "bubble_important",
+          "status_feed",
           "status_bubble",
-          "status_feed"
+          "allocated"
         ],
         "description": "Message colors for app"
       },
@@ -1185,9 +1185,9 @@
           }
         },
         "required": [
-          "height",
           "url",
-          "width"
+          "width",
+          "height"
         ],
         "description": "Small or large icon"
       },
@@ -1204,8 +1204,8 @@
           }
         },
         "required": [
-          "off",
-          "on"
+          "on",
+          "off"
         ],
         "description": "Switcher colors for app"
       },
@@ -1339,16 +1339,16 @@
           }
         },
         "required": [
+          "uid",
           "gentime",
+          "name",
+          "max_message_update_age",
           "icons",
           "last_active",
-          "max_message_update_age",
-          "me",
-          "name",
           "need_confirmation",
-          "uid",
+          "user_fields",
           "unread",
-          "user_fields"
+          "me"
         ],
         "description": "Team"
       },
@@ -1369,9 +1369,9 @@
           }
         },
         "required": [
-          "icons",
+          "uid",
           "name",
-          "uid"
+          "icons"
         ],
         "description": "Short team representation. For invites, push notifications, etc. Readonly"
       },
@@ -1535,6 +1535,7 @@
           "EnTeamMembers",
           "EnTeamOwner",
           "EnTeamSettings",
+          "RuTeamSettings",
           "EnTeams",
           "EnToTeam",
           "RuInTeam",
@@ -1549,15 +1550,14 @@
           "RuTeamOwner",
           "RuTeamP",
           "RuTeamR",
-          "RuTeamSettings",
-          "RuTeamT",
-          "RuTeamV",
           "RuTeams",
           "RuTeamsD",
           "RuTeamsP",
           "RuTeamsR",
           "RuTeamsT",
           "RuTeamsV",
+          "RuTeamT",
+          "RuTeamV",
           "RuToTeam"
         ],
         "description": "Experimental translation fields for \"team\" entity renaming. Readonly"
@@ -1715,43 +1715,43 @@
           }
         },
         "required": [
-          "AccentColor",
-          "AccentHoverColor",
-          "AppAccentColor",
-          "AppPrimaryColor",
-          "attention",
-          "attention_light",
-          "back",
-          "back_dark",
-          "back_light",
-          "background",
           "BgColor",
           "BgHoverColor",
-          "brand",
-          "brand_dark",
-          "brand_light",
-          "button",
-          "chat_input_background",
-          "error",
-          "error_light",
-          "font",
-          "ic",
-          "input",
+          "TextColor",
+          "MutedTextColor",
+          "AccentColor",
+          "AccentHoverColor",
+          "TextOnAccentHoverColor",
           "MainAccent",
           "MainAccentHover",
           "MainLightAccent",
           "MainLink",
-          "message",
-          "modal_background",
-          "MutedTextColor",
-          "substrate_background",
+          "brand",
+          "brand_dark",
+          "brand_light",
+          "back",
+          "back_light",
+          "back_dark",
           "success",
           "success_light",
-          "switcher",
+          "error",
+          "error_light",
+          "background",
           "tab_background",
-          "TextColor",
-          "TextOnAccentHoverColor",
-          "title_background"
+          "chat_input_background",
+          "substrate_background",
+          "modal_background",
+          "title_background",
+          "attention",
+          "attention_light",
+          "font",
+          "message",
+          "switcher",
+          "button",
+          "input",
+          "ic",
+          "AppAccentColor",
+          "AppPrimaryColor"
         ],
         "description": "Color theme"
       },
@@ -1772,9 +1772,9 @@
           }
         },
         "required": [
-          "chats",
           "messages",
-          "notice_messages"
+          "notice_messages",
+          "chats"
         ],
         "description": "Unread message counters"
       },
