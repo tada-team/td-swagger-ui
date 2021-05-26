@@ -896,6 +896,10 @@
             "type": "boolean",
             "description": "Cross team communication. Experimental"
           },
+          "support_email": {
+            "type": "string",
+            "description": "Support email"
+          },
           "task_checklist": {
             "type": "boolean",
             "description": "Deprecated"
@@ -987,6 +991,7 @@
           "terms",
           "single_group_teams",
           "wiki_pages",
+          "support_email",
           "task_checklist",
           "readonly_groups",
           "task_dashboard",
