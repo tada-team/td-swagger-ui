@@ -651,6 +651,10 @@
             "type": "string",
             "description": "Link to Google Play"
           },
+          "app_login_background": {
+            "type": "string",
+            "description": "AppBackground image url, if any"
+          },
           "app_schemes": {
             "type": "array",
             "items": {
@@ -677,10 +681,6 @@
           "auth_by_sms": {
             "type": "boolean",
             "description": "SMS authentication enabled"
-          },
-          "background": {
-            "type": "string",
-            "description": "Background image url, if any"
           },
           "build": {
             "type": "string",
@@ -931,6 +931,10 @@
           "userver": {
             "type": "string",
             "description": "Static files server address"
+          },
+          "web_login_background": {
+            "type": "string",
+            "description": "WebBackground image url, if any"
           },
           "wiki_pages": {
             "type": "boolean",
