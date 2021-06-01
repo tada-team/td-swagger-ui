@@ -12,6 +12,7 @@
   "paths": {
     "/api/v4/teams": {
       "get": {
+        "description": "Get the list of teams on the server.",
         "responses": {
           "200": {
             "description": "",
@@ -49,6 +50,7 @@
         }
       ],
       "get": {
+        "description": "Get team info.",
         "responses": {
           "200": {
             "description": "",
@@ -71,6 +73,7 @@
         }
       },
       "put": {
+        "description": "Update team settings.\nMust have admin rights.",
         "responses": {
           "200": {
             "description": "",
@@ -102,6 +105,7 @@
         }
       },
       "delete": {
+        "description": "Delete the team.\nMust have admin rights.",
         "responses": {
           "200": {
             "description": "",
@@ -136,6 +140,7 @@
         }
       ],
       "get": {
+        "description": "Get the list of chats in the team.",
         "responses": {
           "200": {
             "description": "",
@@ -181,6 +186,7 @@
         }
       ],
       "get": {
+        "description": "Get the chat information.",
         "responses": {
           "200": {
             "description": "",
@@ -203,6 +209,7 @@
         }
       },
       "put": {
+        "description": "Change chat settings.",
         "responses": {
           "200": {
             "description": "",
@@ -254,6 +261,7 @@
         }
       ],
       "post": {
+        "description": "Send text message to chat.",
         "responses": {
           "200": {
             "description": "",
@@ -311,6 +319,7 @@
         }
       ],
       "post": {
+        "description": "Edit message.",
         "responses": {
           "200": {
             "description": "",
@@ -342,6 +351,7 @@
         }
       },
       "delete": {
+        "description": "Delete message.",
         "responses": {
           "200": {
             "description": "",
@@ -376,6 +386,7 @@
         }
       ],
       "get": {
+        "description": "Get the list of contacts of the team.",
         "responses": {
           "200": {
             "description": "",
@@ -421,6 +432,7 @@
         }
       ],
       "get": {
+        "description": "Get contact details.",
         "responses": {
           "200": {
             "description": "",
@@ -442,7 +454,8 @@
           }
         }
       },
-      "put": {
+      "post": {
+        "description": "Update contact details.",
         "responses": {
           "200": {
             "description": "",
@@ -474,6 +487,7 @@
         }
       },
       "delete": {
+        "description": "Remove contact from the team.\nMust have admin rights.",
         "responses": {
           "200": {
             "description": "",
@@ -508,6 +522,7 @@
         }
       ],
       "get": {
+        "description": "Get all groups in the team.",
         "responses": {
           "200": {
             "description": "",
@@ -533,6 +548,7 @@
         }
       },
       "delete": {
+        "description": "Delete the group.",
         "responses": {
           "200": {
             "description": "",
@@ -573,6 +589,7 @@
         }
       ],
       "get": {
+        "description": "Get the list of group members.",
         "responses": {
           "200": {
             "description": "",
@@ -626,6 +643,7 @@
         }
       ],
       "delete": {
+        "description": "Remove member from the group.",
         "responses": {
           "200": {
             "description": "",
