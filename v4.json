@@ -813,10 +813,28 @@
             "type": "boolean",
             "description": "Call record enabled"
           },
+          "buzz": {
+            "type": "boolean",
+            "description": "Call buzzing"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation date, iso datetime"
+          },
           "finish": {
             "type": "string",
             "format": "date-time",
             "description": "Call finish"
+          },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Version"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Chat or contact id"
           },
           "onliners": {
             "$ref": "#/components/schemas/CallOnliner",
@@ -825,15 +843,27 @@
           "start": {
             "type": "string",
             "format": "date-time",
-            "description": "Call start"
+            "description": "Call start. For direct calls can be empty when buzzing"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Deprecated: use gentime or created"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Call id"
           }
         },
         "required": [
-          "start",
-          "finish",
-          "audiorecord"
+          "jid",
+          "uid",
+          "created",
+          "audiorecord",
+          "gentime",
+          "timestamp"
         ],
-        "description": "Audio call information"
+        "description": "Call information"
       },
       "CallOnliner": {
         "type": "object",
@@ -4072,7 +4102,7 @@
             "description": "DOCUMENTATION MISSING"
           },
           "params": {
-            "$ref": "#/components/schemas/serverCallStateParams",
+            "$ref": "#/components/schemas/CallEvent",
             "description": "DOCUMENTATION MISSING"
           }
         },
@@ -4080,7 +4110,7 @@
           "params",
           "event"
         ],
-        "description": "Call participant number or parameters changed"
+        "description": "Call information"
       },
       "ServerCallTalking": {
         "type": "object",
@@ -6283,12 +6313,11 @@
           },
           "members": {
             "$ref": "#/components/schemas/JID",
-            "description": "List of call participants"
+            "description": "List of call participants. Empty value means all participants in call"
           }
         },
         "required": [
-          "jid",
-          "members"
+          "jid"
         ],
         "description": "Call buzzing"
       },
@@ -6305,8 +6334,7 @@
           }
         },
         "required": [
-          "jid",
-          "reason"
+          "jid"
         ],
         "description": "MISSING CLASS DOCUMENTATION"
       },
@@ -6364,8 +6392,7 @@
           }
         },
         "required": [
-          "jid",
-          "reason"
+          "jid"
         ],
         "description": "MISSING CLASS DOCUMENTATION"
       },
@@ -6409,9 +6436,7 @@
         },
         "required": [
           "jid",
-          "candidate",
-          "sdp_mid",
-          "sdp_mline_index"
+          "candidate"
         ],
         "description": "MISSING CLASS DOCUMENTATION"
       },
@@ -6524,7 +6549,6 @@
         },
         "required": [
           "jid",
-          "candidates",
           "jsep",
           "uid"
         ],
@@ -6698,55 +6722,6 @@
           "jid",
           "uid",
           "team"
-        ],
-        "description": "MISSING CLASS DOCUMENTATION"
-      },
-      "serverCallStateParams": {
-        "type": "object",
-        "properties": {
-          "audiorecord": {
-            "type": "boolean",
-            "description": "Call record enabled"
-          },
-          "buzz": {
-            "type": "boolean",
-            "description": "Call buzzing"
-          },
-          "finish": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Call finish, if any"
-          },
-          "jid": {
-            "$ref": "#/components/schemas/JID",
-            "description": "Chat or contact id"
-          },
-          "onliners": {
-            "$ref": "#/components/schemas/CallOnliner",
-            "description": "Call participants"
-          },
-          "start": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Call start, if any"
-          },
-          "timestamp": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Event start. FIXME: why not gentime?"
-          },
-          "uid": {
-            "type": "string",
-            "description": "Call id"
-          }
-        },
-        "required": [
-          "jid",
-          "uid",
-          "start",
-          "finish",
-          "audiorecord",
-          "timestamp"
         ],
         "description": "MISSING CLASS DOCUMENTATION"
       },
