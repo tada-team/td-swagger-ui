@@ -2562,11 +2562,15 @@
           },
           "calls": {
             "type": "boolean",
-            "description": "Calls functions enabled"
+            "description": "Deprecated"
           },
           "calls_record": {
             "type": "boolean",
             "description": "Calls record enabled"
+          },
+          "calls_version": {
+            "type": "integer",
+            "description": "Calls version. 0 = disabled, 1 = audio only, 2 = audio+video"
           },
           "custom_server": {
             "type": "boolean",
@@ -2720,9 +2724,17 @@
             "type": "string",
             "description": "Yandex metrika counter id"
           },
+          "min_android_version": {
+            "type": "string",
+            "description": "Minimal android application version required for this server. Used for breaking changes"
+          },
           "min_app_version": {
             "type": "string",
-            "description": "Minimal application version required for this server. Used for breaking changes"
+            "description": "Deprecated"
+          },
+          "min_ios_version": {
+            "type": "string",
+            "description": "Minimal iOS application version required for this server. Used for breaking changes"
           },
           "min_search_length": {
             "type": "integer",
@@ -2820,7 +2832,8 @@
           "ios_app",
           "android_app",
           "theme",
-          "min_app_version",
+          "min_ios_version",
+          "min_android_version",
           "free_registration",
           "max_upload_mb",
           "max_linked_messages",
@@ -2855,7 +2868,7 @@
           "firebase_database_url",
           "firebase_project_id",
           "firebase_storage_bucket",
-          "calls",
+          "calls_version",
           "mobile_calls",
           "calls_record",
           "safari_push_id",
@@ -2869,7 +2882,9 @@
           "task_dashboard",
           "task_messages",
           "task_public",
-          "task_tags"
+          "task_tags",
+          "calls",
+          "min_app_version"
         ],
         "description": "Server information. Readonly"
       },
