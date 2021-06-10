@@ -1628,7 +1628,8 @@
         "description": "Minimal chat representation"
       },
       "ChatType": {
-        "type": "string"
+        "type": "string",
+        "description": "Chat type"
       },
       "ClientActivity": {
         "type": "object",
@@ -2993,7 +2994,8 @@
         "description": "Group chat membership status"
       },
       "GroupStatus": {
-        "type": "string"
+        "type": "string",
+        "description": "Status in team"
       },
       "ICEServer": {
         "type": "object",
@@ -3010,7 +3012,8 @@
       },
       "ISODateTimeString": {
         "type": "string",
-        "format": "date-time"
+        "format": "date-time",
+        "description": "Date and time in RFC3339 format. Example: ``2019-09-18T00:00:07.435409Z``"
       },
       "IconColors": {
         "type": "object",
@@ -3329,7 +3332,8 @@
         "description": "Markup entity. Experimental"
       },
       "MarkupType": {
-        "type": "string"
+        "type": "string",
+        "description": "Markup type"
       },
       "Mediasubtype": {
         "type": "string"
@@ -4034,7 +4038,8 @@
         "type": "integer"
       },
       "RGBColor": {
-        "type": "string"
+        "type": "string",
+        "description": "Color in ``#rrggbb`` format where ``rr``, ``gg``, ``bb`` are hexadecimal numbers from 00 to ff of red, green and blue channels correspondingly. (yellow would be ``#ffff00``)"
       },
       "Reaction": {
         "type": "object",
@@ -5720,7 +5725,8 @@
         "description": "Short team representation. For invites, push notifications, etc. Readonly"
       },
       "TeamStatus": {
-        "type": "string"
+        "type": "string",
+        "description": "Team status"
       },
       "TeamUnread": {
         "type": "object",
@@ -6102,7 +6108,8 @@
       "UiSettings": {
         "type": "object",
         "additionalProperties": {
-          "type": "object"
+          "type": "object",
+          "description": "Any user data"
         }
       },
       "Unread": {
