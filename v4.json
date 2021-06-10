@@ -1180,7 +1180,10 @@
             "description": "Chat or contact id"
           },
           "onliners": {
-            "$ref": "#/components/schemas/CallOnliner",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallOnliner"
+            },
             "description": "Call participants"
           },
           "start": {
@@ -1212,7 +1215,10 @@
         "type": "object",
         "properties": {
           "devices": {
-            "$ref": "#/components/schemas/CallDevice",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallDevice"
+            },
             "description": "Member devices, strictly one for now"
           },
           "display_name": {
@@ -1399,7 +1405,10 @@
             "description": "Task importance, if available in team"
           },
           "items": {
-            "$ref": "#/components/schemas/TaskItem",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskItem"
+            },
             "description": "Checklist items. Task only"
           },
           "jid": {
@@ -1431,11 +1440,17 @@
             "description": "Links in description"
           },
           "markup": {
-            "$ref": "#/components/schemas/MarkupEntity",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarkupEntity"
+            },
             "description": "Markup entities for description field. Experimental"
           },
           "members": {
-            "$ref": "#/components/schemas/GroupMembership",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupMembership"
+            },
             "description": "Group chat members"
           },
           "notifications_enabled": {
@@ -1471,7 +1486,10 @@
             "description": "Mentions (@) counter"
           },
           "observers": {
-            "$ref": "#/components/schemas/JID",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            },
             "description": "Task followers id's. TODO: rename to \"followers\""
           },
           "owner": {
@@ -1479,7 +1497,10 @@
             "description": "Task creator"
           },
           "parents": {
-            "$ref": "#/components/schemas/Subtask",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subtask"
+            },
             "description": "Parent tasks"
           },
           "pinned": {
@@ -1515,7 +1536,10 @@
             "description": "My status in group chat"
           },
           "tabs": {
-            "$ref": "#/components/schemas/TaskTabKey",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskTabKey"
+            },
             "description": "Tab names"
           },
           "tags": {
@@ -1534,7 +1558,10 @@
             "description": "Task title. Generated from number and description"
           },
           "uploads": {
-            "$ref": "#/components/schemas/Upload",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Upload"
+            },
             "description": "Upload uids for request, upload objects for response"
           },
           "urgency": {
@@ -1592,7 +1619,10 @@
         "type": "object",
         "properties": {
           "messages": {
-            "$ref": "#/components/schemas/Message"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
           }
         },
         "required": [
@@ -2645,7 +2675,10 @@
             "description": "Current host"
           },
           "ice_servers": {
-            "$ref": "#/components/schemas/ICEServer",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ICEServer"
+            },
             "description": "ICE servers for WebRTC"
           },
           "installation_title": {
@@ -2765,7 +2798,10 @@
             "description": "Calls functions enabled for mobile applications"
           },
           "oauth_services": {
-            "$ref": "#/components/schemas/OAuthService",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OAuthService"
+            },
             "description": "External services"
           },
           "only_one_device_per_call": {
@@ -3228,11 +3264,17 @@
         "type": "object",
         "properties": {
           "integrations": {
-            "$ref": "#/components/schemas/Integration",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Integration"
+            },
             "description": "Currently existing integrations"
           },
           "kinds": {
-            "$ref": "#/components/schemas/IntegrationKind",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationKind"
+            },
             "description": "Types of integrations available for setup"
           }
         },
@@ -3288,7 +3330,10 @@
         "type": "object",
         "properties": {
           "childs": {
-            "$ref": "#/components/schemas/MarkupEntity",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarkupEntity"
+            },
             "description": "List of internal markup entities"
           },
           "cl": {
@@ -3410,7 +3455,10 @@
             "description": "This message is first in this chat. True or null"
           },
           "linked_messages": {
-            "$ref": "#/components/schemas/Message",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            },
             "description": "Forwarded messages. Can be null. Also contains double of ReplyTo for backward compatibility"
           },
           "links": {
@@ -3418,7 +3466,10 @@
             "description": "External/internals links"
           },
           "markup": {
-            "$ref": "#/components/schemas/MarkupEntity",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarkupEntity"
+            },
             "description": "Markup entities. Experimental"
           },
           "message_id": {
@@ -3450,7 +3501,10 @@
             "description": "Simple plaintext message representation"
           },
           "reactions": {
-            "$ref": "#/components/schemas/MessageReaction",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessageReaction"
+            },
             "description": "Message reactions struct. Can be null"
           },
           "received": {
@@ -3470,7 +3524,10 @@
             "description": "Recipient id (group, task or contact)"
           },
           "uploads": {
-            "$ref": "#/components/schemas/Upload",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Upload"
+            },
             "description": "Message uploads"
           }
         },
@@ -3668,7 +3725,10 @@
             "description": "Text replacement"
           },
           "uploads": {
-            "$ref": "#/components/schemas/Upload",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Upload"
+            },
             "description": "Optional upload info"
           },
           "url": {
@@ -3777,7 +3837,10 @@
             "description": "Number of reactions"
           },
           "details": {
-            "$ref": "#/components/schemas/MessageReactionDetail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessageReactionDetail"
+            },
             "description": "Details"
           },
           "name": {
@@ -3887,7 +3950,10 @@
         "type": "object",
         "properties": {
           "contacts": {
-            "$ref": "#/components/schemas/Contact"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
           },
           "count": {
             "type": "integer"
@@ -3896,7 +3962,10 @@
             "type": "integer"
           },
           "objects": {
-            "$ref": "#/components/schemas/Chat"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Chat"
+            }
           },
           "offset": {
             "type": "integer"
@@ -3919,7 +3988,10 @@
             "type": "integer"
           },
           "objects": {
-            "$ref": "#/components/schemas/Contact"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
           },
           "offset": {
             "type": "integer"
@@ -3942,7 +4014,10 @@
             "type": "integer"
           },
           "objects": {
-            "$ref": "#/components/schemas/Message"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
           },
           "offset": {
             "type": "integer"
@@ -3965,7 +4040,10 @@
             "type": "integer"
           },
           "objects": {
-            "$ref": "#/components/schemas/UploadShortMessage"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UploadShortMessage"
+            }
           },
           "offset": {
             "type": "integer"
@@ -5111,7 +5189,10 @@
             "type": "string"
           },
           "stickers": {
-            "$ref": "#/components/schemas/Sticker"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Sticker"
+            }
           },
           "title": {
             "type": "string"
@@ -5242,7 +5323,10 @@
             "description": "Linked messages"
           },
           "observers": {
-            "$ref": "#/components/schemas/JID",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            },
             "description": "User who follow the task"
           },
           "public": {
@@ -5415,7 +5499,10 @@
             "type": "string"
           },
           "items": {
-            "$ref": "#/components/schemas/TaskItems"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskItems"
+            }
           },
           "public": {
             "type": "boolean"
@@ -5496,7 +5583,10 @@
         "type": "object",
         "properties": {
           "filters": {
-            "$ref": "#/components/schemas/TaskFilter",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskFilter"
+            },
             "description": "Filters inside tab"
           },
           "hide_empty": {
@@ -5516,7 +5606,10 @@
             "description": "Show unread badge"
           },
           "sort": {
-            "$ref": "#/components/schemas/TaskSort",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskSort"
+            },
             "description": "Sort available in tab"
           },
           "title": {
@@ -5524,7 +5617,10 @@
             "description": "Tab title"
           },
           "unread_tasks": {
-            "$ref": "#/components/schemas/TaskCounters",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskCounters"
+            },
             "description": "Unread tasks with jid and counters"
           }
         },
@@ -5551,11 +5647,17 @@
             "description": "My profile in this team isn't full"
           },
           "changeable_statuses": {
-            "$ref": "#/components/schemas/TeamStatus",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamStatus"
+            },
             "description": "What status I can set to other team members"
           },
           "contacts": {
-            "$ref": "#/components/schemas/Contact",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            },
             "description": "Team contacts. Used only for team creation"
           },
           "default_task_deadline": {
@@ -6390,7 +6492,10 @@
             "description": "Default language code"
           },
           "devices": {
-            "$ref": "#/components/schemas/PushDevice",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PushDevice"
+            },
             "description": "Registered push devices"
           },
           "email": {
@@ -6430,7 +6535,10 @@
             "description": "Start silently time (no pushes, no sounds)"
           },
           "teams": {
-            "$ref": "#/components/schemas/Team",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            },
             "description": "Available teams"
           },
           "timezone": {
@@ -6558,7 +6666,10 @@
             "description": "Chat or contact id"
           },
           "members": {
-            "$ref": "#/components/schemas/JID",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            },
             "description": "List of call participants. Empty value means all participants in call"
           }
         },
@@ -6760,7 +6871,10 @@
         "type": "object",
         "properties": {
           "candidates": {
-            "$ref": "#/components/schemas/serverCallAnswerCandidate",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serverCallAnswerCandidate"
+            },
             "description": "List of ICE candidates (when trickle = false)"
           },
           "jid": {
@@ -6772,7 +6886,10 @@
             "description": "SDP data"
           },
           "onliners": {
-            "$ref": "#/components/schemas/CallOnliner",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallOnliner"
+            },
             "description": "Current call participants"
           },
           "uid": {
@@ -7027,7 +7144,10 @@
             "description": "Total number of unreads"
           },
           "chats": {
-            "$ref": "#/components/schemas/DeletedChat",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedChat"
+            },
             "description": "List of deleted chats"
           },
           "team_unread": {
@@ -7072,7 +7192,10 @@
             "description": "Total number of unreads"
           },
           "chats": {
-            "$ref": "#/components/schemas/ChatCounters",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCounters"
+            },
             "description": "Chat counters"
           },
           "team_unread": {
@@ -7094,7 +7217,10 @@
             "description": "Total number of unreads"
           },
           "chats": {
-            "$ref": "#/components/schemas/Chat",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Chat"
+            },
             "description": "Chat counters"
           },
           "team_unread": {
@@ -7124,7 +7250,10 @@
         "type": "object",
         "properties": {
           "contacts": {
-            "$ref": "#/components/schemas/Contact",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            },
             "description": "Contact info"
           }
         },
@@ -7160,7 +7289,10 @@
         "type": "object",
         "properties": {
           "messages": {
-            "$ref": "#/components/schemas/ReceivedMessage",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReceivedMessage"
+            },
             "description": "received message data"
           }
         },
@@ -7176,7 +7308,10 @@
             "description": "Total number of unreads, if changed"
           },
           "chat_counters": {
-            "$ref": "#/components/schemas/ChatCounters",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCounters"
+            },
             "description": "Chat counters"
           },
           "delayed": {
@@ -7184,7 +7319,10 @@
             "description": "true = silently message update, false = new message"
           },
           "messages": {
-            "$ref": "#/components/schemas/Message",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            },
             "description": "Messages data"
           },
           "team_unread": {
@@ -7204,11 +7342,17 @@
         "type": "object",
         "properties": {
           "calls": {
-            "$ref": "#/components/schemas/OnlineCall",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnlineCall"
+            },
             "description": "Active calls"
           },
           "contacts": {
-            "$ref": "#/components/schemas/OnlineContact",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnlineContact"
+            },
             "description": "Online team members"
           }
         },
@@ -7268,7 +7412,10 @@
         "type": "object",
         "properties": {
           "reminds": {
-            "$ref": "#/components/schemas/DeletedRemind",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedRemind"
+            },
             "description": "Remind information"
           }
         },
@@ -7280,7 +7427,10 @@
         "type": "object",
         "properties": {
           "reminds": {
-            "$ref": "#/components/schemas/Remind",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Remind"
+            },
             "description": "Remind information"
           }
         },
@@ -7292,7 +7442,10 @@
         "type": "object",
         "properties": {
           "reminds": {
-            "$ref": "#/components/schemas/Remind",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Remind"
+            },
             "description": "Remind information"
           }
         },
@@ -7313,7 +7466,10 @@
             "description": "Deprecated"
           },
           "sections": {
-            "$ref": "#/components/schemas/DeletedSection",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedSection"
+            },
             "description": "Section/project info"
           }
         },
@@ -7336,7 +7492,10 @@
             "description": "deprecated"
           },
           "sections": {
-            "$ref": "#/components/schemas/Section",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Section"
+            },
             "description": "Section/project info"
           }
         },
@@ -7350,7 +7509,10 @@
         "type": "object",
         "properties": {
           "tags": {
-            "$ref": "#/components/schemas/DeletedTag",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedTag"
+            },
             "description": "Tags info"
           }
         },
@@ -7362,7 +7524,10 @@
         "type": "object",
         "properties": {
           "tags": {
-            "$ref": "#/components/schemas/Tag",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            },
             "description": "Tags info"
           }
         },
@@ -7378,7 +7543,10 @@
             "description": "Total number of unreads"
           },
           "teams": {
-            "$ref": "#/components/schemas/TeamCounter",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamCounter"
+            },
             "description": "Counters"
           }
         },
@@ -7391,7 +7559,10 @@
         "type": "object",
         "properties": {
           "teams": {
-            "$ref": "#/components/schemas/DeletedTeam",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedTeam"
+            },
             "description": "Teams info"
           }
         },
@@ -7403,7 +7574,10 @@
         "type": "object",
         "properties": {
           "teams": {
-            "$ref": "#/components/schemas/Team"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            }
           }
         },
         "required": [
@@ -7427,7 +7601,10 @@
         "type": "object",
         "properties": {
           "uploads": {
-            "$ref": "#/components/schemas/Upload",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Upload"
+            },
             "description": "Uploads data"
           }
         },
