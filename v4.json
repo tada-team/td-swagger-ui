@@ -1794,6 +1794,25 @@
         ],
         "description": "Reject the call"
       },
+      "ClientCallSdp": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/clientCallSdpParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Call parameters"
+      },
       "ClientCallSound": {
         "type": "object",
         "properties": {
@@ -4399,6 +4418,25 @@
         ],
         "description": "Call restarted"
       },
+      "ServerCallSdp": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverCallSdpParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Call parameters"
+      },
       "ServerCallSound": {
         "type": "object",
         "properties": {
@@ -6749,6 +6787,28 @@
           "jid"
         ]
       },
+      "clientCallSdpParams": {
+        "type": "object",
+        "properties": {
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Chat or contact id"
+          },
+          "jsep": {
+            "$ref": "#/components/schemas/JSEP",
+            "description": "SDP data"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Call id"
+          }
+        },
+        "required": [
+          "jid",
+          "uid",
+          "jsep"
+        ]
+      },
       "clientCallSoundParams": {
         "type": "object",
         "properties": {
@@ -7081,6 +7141,28 @@
           "jid",
           "uid",
           "team"
+        ]
+      },
+      "serverCallSdpParams": {
+        "type": "object",
+        "properties": {
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Chat or contact id"
+          },
+          "jsep": {
+            "$ref": "#/components/schemas/JSEP",
+            "description": "SDP data"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Call id"
+          }
+        },
+        "required": [
+          "jid",
+          "uid",
+          "jsep"
         ]
       },
       "serverCallTalkingParams": {
