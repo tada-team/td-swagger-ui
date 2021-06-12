@@ -6625,36 +6625,6 @@
         ],
         "description": "Chat wallpaper"
       },
-      "WikiPage": {
-        "type": "object",
-        "properties": {
-          "editor": {
-            "$ref": "#/components/schemas/JID",
-            "description": "Last editor contact id"
-          },
-          "gentime": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Object version"
-          },
-          "text": {
-            "type": "string",
-            "description": "Page text"
-          },
-          "updated": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Update time"
-          }
-        },
-        "required": [
-          "gentime",
-          "updated",
-          "editor",
-          "text"
-        ],
-        "description": "Wiki page. Experimental"
-      },
       "clientActivityParams": {
         "type": "object",
         "properties": {
