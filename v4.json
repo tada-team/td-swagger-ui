@@ -4566,7 +4566,7 @@
           "params",
           "event"
         ],
-        "description": "Changed draft message in chan"
+        "description": "Changed draft message in chat"
       },
       "ServerChatLastread": {
         "type": "object",
@@ -7223,7 +7223,12 @@
           "draft_num": {
             "type": "integer",
             "format": "int64",
-            "description": "Draft version. TODO: use gentime instead"
+            "description": "Deprecated"
+          },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Draft version"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
@@ -7232,6 +7237,7 @@
         },
         "required": [
           "jid",
+          "gentime",
           "draft",
           "draft_num"
         ]
