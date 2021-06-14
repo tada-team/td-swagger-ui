@@ -1378,10 +1378,15 @@
             "type": "string",
             "description": "Last message draft, if any"
           },
+          "draft_gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any"
+          },
           "draft_num": {
             "type": "integer",
             "format": "int64",
-            "description": "Last message draft version , if any"
+            "description": "Deprecated"
           },
           "feed": {
             "type": "boolean",
@@ -5336,7 +5341,8 @@
           },
           "deadline": {
             "type": "string",
-            "description": "Deadline time"
+            "format": "date-time",
+            "description": "Deadline time, if any"
           },
           "description": {
             "type": "string",
@@ -5373,6 +5379,7 @@
           },
           "remind_at": {
             "type": "string",
+            "format": "date-time",
             "description": "Fire a reminder at this time"
           },
           "section": {
@@ -7220,15 +7227,15 @@
             "type": "string",
             "description": "Draft text"
           },
+          "draft_gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Draft version"
+          },
           "draft_num": {
             "type": "integer",
             "format": "int64",
             "description": "Deprecated"
-          },
-          "gentime": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Draft version"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
@@ -7237,8 +7244,8 @@
         },
         "required": [
           "jid",
-          "gentime",
           "draft",
+          "draft_gentime",
           "draft_num"
         ]
       },
