@@ -3342,7 +3342,7 @@
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/SDPType"
+            "type": "string"
           }
         },
         "required": [
@@ -4214,9 +4214,6 @@
           "fire_at"
         ],
         "description": "Remind"
-      },
-      "SDPType": {
-        "type": "string"
       },
       "Section": {
         "type": "object",
