@@ -1816,7 +1816,7 @@
           "params",
           "event"
         ],
-        "description": "Call parameters"
+        "description": "For exchange Session Description with server when client's Local Session Description is changed"
       },
       "ClientCallSound": {
         "type": "object",
@@ -3342,7 +3342,7 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/SDPType"
           }
         },
         "required": [
@@ -4215,6 +4215,9 @@
         ],
         "description": "Remind"
       },
+      "SDPType": {
+        "type": "string"
+      },
       "Section": {
         "type": "object",
         "properties": {
@@ -4440,7 +4443,7 @@
           "params",
           "event"
         ],
-        "description": "Call parameters"
+        "description": "For exchange Session Description with client when server's Local Session Description is changed"
       },
       "ServerCallSound": {
         "type": "object",
