@@ -1685,25 +1685,6 @@
         ],
         "description": "Change AFK (away from keyboard) status"
       },
-      "ClientCallAnswer": {
-        "type": "object",
-        "properties": {
-          "confirm_id": {
-            "type": "string"
-          },
-          "event": {
-            "type": "string"
-          },
-          "params": {
-            "$ref": "#/components/schemas/clientCallAnswerParams"
-          }
-        },
-        "required": [
-          "params",
-          "event"
-        ],
-        "description": "Signal server about answer"
-      },
       "ClientCallBuzzCancel": {
         "type": "object",
         "properties": {
@@ -4269,7 +4250,7 @@
           "params",
           "event"
         ],
-        "description": "Call parameters"
+        "description": "Call parameters (deprecated: use `ServerCallSdp`)"
       },
       "ServerCallBuzz": {
         "type": "object",
@@ -4365,25 +4346,6 @@
           "event"
         ],
         "description": "All participants in call muted"
-      },
-      "ServerCallOffer": {
-        "type": "object",
-        "properties": {
-          "confirm_id": {
-            "type": "string"
-          },
-          "event": {
-            "type": "string"
-          },
-          "params": {
-            "$ref": "#/components/schemas/serverCallOfferParams"
-          }
-        },
-        "required": [
-          "params",
-          "event"
-        ],
-        "description": "Signal client about offer"
       },
       "ServerCallReject": {
         "type": "object",
@@ -6644,23 +6606,6 @@
           "afk"
         ]
       },
-      "clientCallAnswerParams": {
-        "type": "object",
-        "properties": {
-          "jid": {
-            "$ref": "#/components/schemas/JID",
-            "description": "Chat or contact id"
-          },
-          "sdp": {
-            "type": "string",
-            "description": "SDP (session description protocol) data"
-          }
-        },
-        "required": [
-          "jid",
-          "sdp"
-        ]
-      },
       "clientCallBuzzCancelParams": {
         "type": "object",
         "properties": {
@@ -7057,23 +7002,6 @@
         "required": [
           "jid",
           "muted"
-        ]
-      },
-      "serverCallOfferParams": {
-        "type": "object",
-        "properties": {
-          "jid": {
-            "$ref": "#/components/schemas/JID",
-            "description": "Chat or contact id"
-          },
-          "sdp": {
-            "type": "string",
-            "description": "SDP (session description protocol) data"
-          }
-        },
-        "required": [
-          "jid",
-          "sdp"
         ]
       },
       "serverCallRejectParams": {
