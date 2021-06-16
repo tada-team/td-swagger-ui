@@ -1403,6 +1403,7 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
+            "nullable": true,
             "description": "Icons info"
           },
           "importance": {
@@ -1579,8 +1580,7 @@
           "chat_type",
           "gentime",
           "created",
-          "display_name",
-          "icons"
+          "display_name"
         ],
         "description": "Chat (direct, group, task) representation"
       },
@@ -1602,7 +1602,8 @@
             "format": "date-time"
           },
           "last_read_message_id": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "num_unread": {
             "type": "integer"
@@ -1616,8 +1617,7 @@
           "chat_type",
           "gentime",
           "num_unread",
-          "num_unread_notices",
-          "last_read_message_id"
+          "num_unread_notices"
         ]
       },
       "ChatMessages": {
@@ -1647,6 +1647,7 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
+            "nullable": true,
             "description": "Icon data"
           },
           "jid": {
@@ -1657,8 +1658,7 @@
         "required": [
           "jid",
           "chat_type",
-          "display_name",
-          "icons"
+          "display_name"
         ],
         "description": "Minimal chat representation"
       },
@@ -2228,6 +2228,7 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
+            "nullable": true,
             "description": "Icons data"
           },
           "is_archive": {
@@ -2309,7 +2310,6 @@
           "short_name",
           "contact_email",
           "contact_phone",
-          "icons",
           "role",
           "status",
           "sections"
@@ -2384,6 +2384,7 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
+            "nullable": true,
             "description": "Icons data"
           },
           "jid": {
@@ -2398,8 +2399,7 @@
         "required": [
           "jid",
           "display_name",
-          "short_name",
-          "icons"
+          "short_name"
         ],
         "description": "Short contact representation"
       },
@@ -3144,9 +3144,6 @@
       "Integration": {
         "type": "object",
         "properties": {
-          "-": {
-            "type": "string"
-          },
           "comment": {
             "type": "string",
             "description": "Comment, if any"
@@ -3186,8 +3183,7 @@
           "enabled",
           "form",
           "group",
-          "kind",
-          "-"
+          "kind"
         ],
         "description": "Integration for concrete chat"
       },
@@ -4982,11 +4978,11 @@
             "type": "string"
           },
           "params": {
-            "$ref": "#/components/schemas/UiSettings"
+            "$ref": "#/components/schemas/UiSettings",
+            "nullable": true
           }
         },
         "required": [
-          "params",
           "event"
         ],
         "description": "Part of UI settings changed"
@@ -5500,7 +5496,8 @@
             "$ref": "#/components/schemas/JID"
           },
           "deadline": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "description": {
             "type": "string"
@@ -5526,7 +5523,6 @@
         },
         "required": [
           "assignee",
-          "deadline",
           "description",
           "section",
           "public",
@@ -5738,6 +5734,7 @@
           },
           "unread": {
             "$ref": "#/components/schemas/TeamUnread",
+            "nullable": true,
             "description": "Unread message counters"
           },
           "uploads_size": {
@@ -5787,7 +5784,6 @@
           "last_active",
           "need_confirmation",
           "user_fields",
-          "unread",
           "me"
         ],
         "description": "Team"
@@ -6114,6 +6110,7 @@
           },
           "button": {
             "$ref": "#/components/schemas/ButtonColors",
+            "nullable": true,
             "description": "Button colors for app"
           },
           "chat_input_background": {
@@ -6130,18 +6127,22 @@
           },
           "font": {
             "$ref": "#/components/schemas/FontColors",
+            "nullable": true,
             "description": "Font colors for app"
           },
           "ic": {
             "$ref": "#/components/schemas/IconColors",
+            "nullable": true,
             "description": "Icon colors for app"
           },
           "input": {
             "$ref": "#/components/schemas/InputColors",
+            "nullable": true,
             "description": "Input colors for app"
           },
           "message": {
             "$ref": "#/components/schemas/MessageColors",
+            "nullable": true,
             "description": "Message colors for app"
           },
           "modal_background": {
@@ -6162,6 +6163,7 @@
           },
           "switcher": {
             "$ref": "#/components/schemas/SwitcherColors",
+            "nullable": true,
             "description": "Switcher colors for app"
           },
           "tab_background": {
@@ -6203,12 +6205,6 @@
           "title_background",
           "attention",
           "attention_light",
-          "font",
-          "message",
-          "switcher",
-          "button",
-          "input",
-          "ic",
           "AppAccentColor",
           "AppPrimaryColor"
         ],
@@ -6406,10 +6402,12 @@
           },
           "quiet_time_finish": {
             "type": "string",
+            "nullable": true,
             "description": "Finish silently time (no pushes, no sounds)"
           },
           "quiet_time_start": {
             "type": "string",
+            "nullable": true,
             "description": "Start silently time (no pushes, no sounds)"
           },
           "timezone": {
@@ -6427,9 +6425,7 @@
           "always_send_pushes",
           "unread_first",
           "munread_first",
-          "timezone",
-          "quiet_time_start",
-          "quiet_time_finish"
+          "timezone"
         ],
         "description": "Account data"
       },
@@ -6535,10 +6531,12 @@
           },
           "quiet_time_finish": {
             "type": "string",
+            "nullable": true,
             "description": "Finish silently time (no pushes, no sounds)"
           },
           "quiet_time_start": {
             "type": "string",
+            "nullable": true,
             "description": "Start silently time (no pushes, no sounds)"
           },
           "teams": {
@@ -6565,9 +6563,7 @@
           "always_send_pushes",
           "unread_first",
           "munread_first",
-          "timezone",
-          "quiet_time_start",
-          "quiet_time_finish"
+          "timezone"
         ],
         "description": "Accouint data with extra information"
       },
@@ -6906,6 +6902,7 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
+            "nullable": true,
             "description": "Chat icons"
           },
           "jid": {
@@ -6927,7 +6924,6 @@
         },
         "required": [
           "jid",
-          "icons",
           "display_name",
           "teaminfo",
           "chat",
@@ -7139,12 +7135,12 @@
           },
           "team_unread": {
             "$ref": "#/components/schemas/TeamUnread",
+            "nullable": true,
             "description": "Current team counters"
           }
         },
         "required": [
           "chats",
-          "team_unread",
           "badge"
         ]
       },
@@ -7193,12 +7189,12 @@
           },
           "team_unread": {
             "$ref": "#/components/schemas/TeamUnread",
+            "nullable": true,
             "description": "Current team counters"
           }
         },
         "required": [
           "chats",
-          "team_unread",
           "badge"
         ]
       },
@@ -7218,12 +7214,12 @@
           },
           "team_unread": {
             "$ref": "#/components/schemas/TeamUnread",
+            "nullable": true,
             "description": "Current team counters"
           }
         },
         "required": [
           "chats",
-          "team_unread",
           "badge"
         ]
       },
@@ -7298,6 +7294,7 @@
         "properties": {
           "badge": {
             "type": "integer",
+            "nullable": true,
             "description": "Total number of unreads, if changed"
           },
           "chat_counters": {
@@ -7320,15 +7317,14 @@
           },
           "team_unread": {
             "$ref": "#/components/schemas/TeamUnread",
+            "nullable": true,
             "description": "Current team counters"
           }
         },
         "required": [
           "messages",
           "delayed",
-          "chat_counters",
-          "team_unread",
-          "badge"
+          "chat_counters"
         ]
       },
       "serverOnlineParams": {
