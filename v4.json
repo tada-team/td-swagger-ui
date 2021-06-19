@@ -2790,6 +2790,14 @@
             "type": "string",
             "description": "Deprecated"
           },
+          "min_corp_android_version": {
+            "type": "string",
+            "description": "Minimal android corp application version required for this server. Used for breaking changes"
+          },
+          "min_corp_ios_version": {
+            "type": "string",
+            "description": "Minimal iOS corp application version required for this server. Used for breaking changes"
+          },
           "min_ios_version": {
             "type": "string",
             "description": "Minimal iOS application version required for this server. Used for breaking changes"
@@ -2895,6 +2903,8 @@
           "theme",
           "min_ios_version",
           "min_android_version",
+          "min_corp_ios_version",
+          "min_corp_android_version",
           "free_registration",
           "max_upload_mb",
           "max_linked_messages",
