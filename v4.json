@@ -3459,7 +3459,7 @@
           },
           "is_last": {
             "type": "boolean",
-            "description": "This message is first in this chat. True or null"
+            "description": "This message is last in this chat. True or null"
           },
           "linked_messages": {
             "type": "array",
