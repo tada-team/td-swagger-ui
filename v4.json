@@ -3313,7 +3313,8 @@
           "token",
           "created",
           "qr"
-        ]
+        ],
+        "description": "Invitation to team"
       },
       "JID": {
         "type": "string"
