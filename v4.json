@@ -1062,7 +1062,8 @@
         "required": [
           "day",
           "user_id"
-        ]
+        ],
+        "description": "Active daily users statistics"
       },
       "ActiveUserDailyStatList": {},
       "AnyEvent": {
@@ -1077,7 +1078,8 @@
         },
         "required": [
           "event"
-        ]
+        ],
+        "description": "Generic event representation"
       },
       "BaseEvent": {
         "type": "object",
@@ -1091,7 +1093,8 @@
         },
         "required": [
           "event"
-        ]
+        ],
+        "description": "Base of all events"
       },
       "ButtonColors": {
         "type": "object",
@@ -1618,7 +1621,8 @@
           "gentime",
           "num_unread",
           "num_unread_notices"
-        ]
+        ],
+        "description": "Unread messages counter"
       },
       "ChatMessages": {
         "type": "object",
@@ -1632,7 +1636,8 @@
         },
         "required": [
           "messages"
-        ]
+        ],
+        "description": "Chat messages"
       },
       "ChatShort": {
         "type": "object",
@@ -1985,7 +1990,8 @@
         "required": [
           "to",
           "content"
-        ]
+        ],
+        "description": "Params of the client.message.updated event"
       },
       "ClientPing": {
         "type": "object",
@@ -2369,7 +2375,8 @@
           "family_name",
           "role",
           "section"
-        ]
+        ],
+        "description": "Contact preview"
       },
       "ContactShort": {
         "type": "object",
@@ -2541,7 +2548,8 @@
         "required": [
           "type",
           "url"
-        ]
+        ],
+        "description": "Distribution information"
       },
       "Emoji": {
         "type": "object",
@@ -3016,7 +3024,8 @@
           "uid",
           "created",
           "subject"
-        ]
+        ],
+        "description": "Group Access Request"
       },
       "GroupMembership": {
         "type": "object",
@@ -3323,16 +3332,19 @@
         "type": "object",
         "properties": {
           "sdp": {
-            "type": "string"
+            "type": "string",
+            "description": "Session Description Protocol information"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "description": "See https://rtcweb-wg.github.io/jsep/#rfc.section.4.1.8"
           }
         },
         "required": [
           "sdp",
           "type"
-        ]
+        ],
+        "description": "JavaScript Session Establishment Protocol"
       },
       "MarkupEntity": {
         "type": "object",
@@ -3984,7 +3996,8 @@
           "count",
           "limit",
           "offset"
-        ]
+        ],
+        "description": "Paginated chats"
       },
       "PaginatedContacts": {
         "type": "object",
@@ -4010,7 +4023,8 @@
           "count",
           "limit",
           "offset"
-        ]
+        ],
+        "description": "Paginated contacts"
       },
       "PaginatedMessages": {
         "type": "object",
@@ -4036,7 +4050,8 @@
           "count",
           "limit",
           "offset"
-        ]
+        ],
+        "description": "Paginated messages"
       },
       "PaginatedUploadShortMessages": {
         "type": "object",
@@ -4062,7 +4077,8 @@
           "count",
           "limit",
           "offset"
-        ]
+        ],
+        "description": "Paginated UploadShortMessage"
       },
       "PdfVersion": {
         "type": "object",
@@ -4450,7 +4466,8 @@
         "required": [
           "jid",
           "muted"
-        ]
+        ],
+        "description": "Params of the server.call.sound event"
       },
       "ServerCallState": {
         "type": "object",
@@ -5191,7 +5208,8 @@
           "icon128",
           "icon200",
           "message_content"
-        ]
+        ],
+        "description": "Single sticker"
       },
       "Stickerpack": {
         "type": "object",
@@ -5223,7 +5241,8 @@
           "name",
           "title",
           "stickers"
-        ]
+        ],
+        "description": "Collection of stickers"
       },
       "Subtask": {
         "type": "object",
@@ -5500,7 +5519,8 @@
         "required": [
           "name",
           "checked"
-        ]
+        ],
+        "description": "Task item"
       },
       "TaskPreview": {
         "type": "object",
@@ -5544,7 +5564,8 @@
           "public",
           "tags",
           "items"
-        ]
+        ],
+        "description": "Task Preview"
       },
       "TaskSort": {
         "type": "object",
@@ -6493,7 +6514,8 @@
           "created",
           "uid",
           "kind"
-        ]
+        ],
+        "description": "User authentication"
       },
       "UserWithMe": {
         "type": "object",
@@ -6620,7 +6642,8 @@
         },
         "required": [
           "afk"
-        ]
+        ],
+        "description": "Params of the client.activity event"
       },
       "clientCallBuzzCancelParams": {
         "type": "object",
@@ -6632,7 +6655,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.call.buzzcancel event"
       },
       "clientCallBuzzParams": {
         "type": "object",
@@ -6668,7 +6692,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.call.leave event"
       },
       "clientCallMuteAllParams": {
         "type": "object",
@@ -6680,7 +6705,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.call.muteall event"
       },
       "clientCallOfferParams": {
         "type": "object",
@@ -6707,7 +6733,8 @@
           "muted",
           "trickle",
           "sdp"
-        ]
+        ],
+        "description": "Params of the client.call.offer event"
       },
       "clientCallRejectParams": {
         "type": "object",
@@ -6723,7 +6750,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.call.reject event"
       },
       "clientCallSdpParams": {
         "type": "object",
@@ -6745,7 +6773,8 @@
           "jid",
           "uid",
           "jsep"
-        ]
+        ],
+        "description": "Params of the client.call.sdp event"
       },
       "clientCallSoundParams": {
         "type": "object",
@@ -6762,7 +6791,8 @@
         "required": [
           "jid",
           "muted"
-        ]
+        ],
+        "description": "Params of the client.call.sound event"
       },
       "clientCallTrickleParams": {
         "type": "object",
@@ -6787,7 +6817,8 @@
         "required": [
           "jid",
           "candidate"
-        ]
+        ],
+        "description": "Params of client.call.trickle event"
       },
       "clientChatComposingParams": {
         "type": "object",
@@ -6811,7 +6842,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.chat.composing event"
       },
       "clientChatLastreadParams": {
         "type": "object",
@@ -6827,7 +6859,8 @@
         },
         "required": [
           "jid"
-        ]
+        ],
+        "description": "Params of the client.chat.lastread event"
       },
       "clientConfirmParams": {
         "type": "object",
@@ -6839,7 +6872,8 @@
         },
         "required": [
           "confirm_id"
-        ]
+        ],
+        "description": "Params of the client.confirm event"
       },
       "clientMessageDeletedParams": {
         "type": "object",
@@ -6848,7 +6882,8 @@
             "type": "string",
             "description": "Message id"
           }
-        }
+        },
+        "description": "Params of the client.message.deleted event"
       },
       "serverCallAnswerCandidate": {
         "type": "object",
@@ -6863,7 +6898,8 @@
         "required": [
           "candidate",
           "sdpMLineIndex"
-        ]
+        ],
+        "description": "ICE candidate for call answer"
       },
       "serverCallAnswerParams": {
         "type": "object",
@@ -6899,7 +6935,8 @@
           "jid",
           "jsep",
           "uid"
-        ]
+        ],
+        "description": "Params of the server.call.answer event"
       },
       "serverCallBuzzParams": {
         "type": "object",
@@ -6951,7 +6988,8 @@
           "uid",
           "buzz_timeout",
           "team"
-        ]
+        ],
+        "description": "Params of the server.call.buzz event"
       },
       "serverCallBuzzcancelParams": {
         "type": "object",
@@ -6973,7 +7011,8 @@
           "jid",
           "team",
           "uid"
-        ]
+        ],
+        "description": "Params of the server.call.buzzcancel event"
       },
       "serverCallCheckFingerprintParams": {
         "type": "object",
@@ -6984,7 +7023,8 @@
         },
         "required": [
           "fingerprint"
-        ]
+        ],
+        "description": "Params of the server.call.checkfingerprint event"
       },
       "serverCallLeaveParams": {
         "type": "object",
@@ -7001,7 +7041,8 @@
         "required": [
           "jid",
           "uid"
-        ]
+        ],
+        "description": "Params of the server.call.leave event"
       },
       "serverCallMuteallParams": {
         "type": "object",
@@ -7018,7 +7059,8 @@
         "required": [
           "jid",
           "muted"
-        ]
+        ],
+        "description": "Params of the server.call.muteall event"
       },
       "serverCallRejectParams": {
         "type": "object",
@@ -7040,7 +7082,8 @@
           "jid",
           "uid",
           "reason"
-        ]
+        ],
+        "description": "Params of the server.call.reject event"
       },
       "serverCallRestartParams": {
         "type": "object",
@@ -7062,7 +7105,8 @@
           "jid",
           "uid",
           "team"
-        ]
+        ],
+        "description": "Params of the server.call.restart event"
       },
       "serverCallSdpParams": {
         "type": "object",
@@ -7084,7 +7128,8 @@
           "jid",
           "uid",
           "jsep"
-        ]
+        ],
+        "description": "Params of the server.call.sdp event"
       },
       "serverCallTalkingParams": {
         "type": "object",
@@ -7106,7 +7151,8 @@
           "jid",
           "actor",
           "talking"
-        ]
+        ],
+        "description": "Params of the server.call.talking event"
       },
       "serverChatComposingParams": {
         "type": "object",
@@ -7137,7 +7183,8 @@
           "jid",
           "actor",
           "composing"
-        ]
+        ],
+        "description": "Params of the server.chat.composing event"
       },
       "serverChatDeletedParams": {
         "type": "object",
@@ -7162,7 +7209,8 @@
         "required": [
           "chats",
           "badge"
-        ]
+        ],
+        "description": "Params of the server.chat.deleted event"
       },
       "serverChatDraftParams": {
         "type": "object",
@@ -7191,7 +7239,8 @@
           "draft",
           "draft_gentime",
           "draft_num"
-        ]
+        ],
+        "description": "Params of the server.chat.draft event"
       },
       "serverChatLastreadParams": {
         "type": "object",
@@ -7216,7 +7265,8 @@
         "required": [
           "chats",
           "badge"
-        ]
+        ],
+        "description": "Params of the server.chat.lastread event"
       },
       "serverChatUpdatedParams": {
         "type": "object",
@@ -7241,7 +7291,8 @@
         "required": [
           "chats",
           "badge"
-        ]
+        ],
+        "description": "Params of the server.chat.updated event"
       },
       "serverConfirmParams": {
         "type": "object",
@@ -7253,7 +7304,8 @@
         },
         "required": [
           "confirm_id"
-        ]
+        ],
+        "description": "Params of the server.confirm event"
       },
       "serverContactUpdatedParams": {
         "type": "object",
@@ -7268,7 +7320,8 @@
         },
         "required": [
           "contacts"
-        ]
+        ],
+        "description": "Params of the server.contact.updated event"
       },
       "serverDebugParams": {
         "type": "object",
@@ -7280,7 +7333,8 @@
         },
         "required": [
           "text"
-        ]
+        ],
+        "description": "Params of the server.debug event"
       },
       "serverLoginParams": {
         "type": "object",
@@ -7292,7 +7346,8 @@
         },
         "required": [
           "device_name"
-        ]
+        ],
+        "description": "Params of the server.login event"
       },
       "serverMessageReceivedParams": {
         "type": "object",
@@ -7307,7 +7362,8 @@
         },
         "required": [
           "messages"
-        ]
+        ],
+        "description": "Params of the server.message.received event"
       },
       "serverMessageUpdatedParams": {
         "type": "object",
@@ -7345,7 +7401,8 @@
           "messages",
           "delayed",
           "chat_counters"
-        ]
+        ],
+        "description": "Params of the server.message.updated event"
       },
       "serverOnlineParams": {
         "type": "object",
@@ -7367,7 +7424,8 @@
         },
         "required": [
           "contacts"
-        ]
+        ],
+        "description": "Params of the server.online event"
       },
       "serverPanicParams": {
         "type": "object",
@@ -7383,7 +7441,8 @@
         },
         "required": [
           "code"
-        ]
+        ],
+        "description": "Params of the server.panic event"
       },
       "serverProcessingParams": {
         "type": "object",
@@ -7415,7 +7474,8 @@
           "has_error",
           "num",
           "total"
-        ]
+        ],
+        "description": "Params of the server.processing event"
       },
       "serverRemindDeletedParams": {
         "type": "object",
@@ -7430,7 +7490,8 @@
         },
         "required": [
           "reminds"
-        ]
+        ],
+        "description": "Params of the server.remind.deleted event"
       },
       "serverRemindFiredParams": {
         "type": "object",
@@ -7445,7 +7506,8 @@
         },
         "required": [
           "reminds"
-        ]
+        ],
+        "description": "Params of the server.remind.fired event"
       },
       "serverRemindUpdatedParams": {
         "type": "object",
@@ -7460,7 +7522,8 @@
         },
         "required": [
           "reminds"
-        ]
+        ],
+        "description": "Params of the server.remind.updated event"
       },
       "serverSectionDeletedParams": {
         "type": "object",
@@ -7486,7 +7549,8 @@
           "chat_type",
           "sections",
           "gentime"
-        ]
+        ],
+        "description": "Params of the server.section.deleted event"
       },
       "serverSectionUpdatedParams": {
         "type": "object",
@@ -7512,7 +7576,8 @@
           "chat_type",
           "sections",
           "gentime"
-        ]
+        ],
+        "description": "Params of the server.section.updated event"
       },
       "serverTagDeletedParams": {
         "type": "object",
@@ -7527,7 +7592,8 @@
         },
         "required": [
           "tags"
-        ]
+        ],
+        "description": "Params of the server.tag.deleted event"
       },
       "serverTagUpdatedParams": {
         "type": "object",
@@ -7542,7 +7608,8 @@
         },
         "required": [
           "tags"
-        ]
+        ],
+        "description": "Params of the server.tag.updated event"
       },
       "serverTeamCountersParams": {
         "type": "object",
@@ -7562,7 +7629,8 @@
         "required": [
           "teams",
           "badge"
-        ]
+        ],
+        "description": "Params of the server.team.counters event"
       },
       "serverTeamDeletedParams": {
         "type": "object",
@@ -7577,7 +7645,8 @@
         },
         "required": [
           "teams"
-        ]
+        ],
+        "description": "Params of the server.team.deleted event"
       },
       "serverTeamUpdatedParams": {
         "type": "object",
@@ -7591,7 +7660,8 @@
         },
         "required": [
           "teams"
-        ]
+        ],
+        "description": "Params of the server.team.updated event"
       },
       "serverTimeParams": {
         "type": "object",
@@ -7604,7 +7674,8 @@
         },
         "required": [
           "time"
-        ]
+        ],
+        "description": "Params of the server.time event"
       },
       "serverUploadUpdatedParams": {
         "type": "object",
@@ -7619,7 +7690,8 @@
         },
         "required": [
           "uploads"
-        ]
+        ],
+        "description": "Params of the server.upload.updated event"
       },
       "serverWarningParams": {
         "type": "object",
@@ -7636,7 +7708,8 @@
         "required": [
           "message",
           "orig"
-        ]
+        ],
+        "description": "Params of the server.warning event"
       }
     },
     "securitySchemes": {
