@@ -2129,6 +2129,10 @@
             "type": "boolean",
             "description": "Deprecated: use CanDeleteAnyMessage in chat object"
           },
+          "can_import_tasks": {
+            "type": "boolean",
+            "description": "Can I import tasks in this team"
+          },
           "can_join_public_groups": {
             "type": "boolean",
             "description": "Can I view/join public group in this team"
