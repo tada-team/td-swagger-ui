@@ -2145,9 +2145,13 @@
             "type": "boolean",
             "description": "Can I manage integrations in this team"
           },
+          "can_manage_projects": {
+            "type": "boolean",
+            "description": "Can I manage task projects in this team"
+          },
           "can_manage_sections": {
             "type": "boolean",
-            "description": "Can I manage sections in this team"
+            "description": "Can I manage contact sections in this team"
           },
           "can_manage_tags": {
             "type": "boolean",
