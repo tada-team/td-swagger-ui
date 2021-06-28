@@ -3052,8 +3052,7 @@
           }
         },
         "required": [
-          "jid",
-          "status"
+          "jid"
         ],
         "description": "Group chat membership status"
       },
