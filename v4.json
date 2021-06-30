@@ -3483,6 +3483,33 @@
         ],
         "description": "Complete integrations data, as received from server"
       },
+      "InvitableUser": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Full name"
+          },
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icons"
+          },
+          "node": {
+            "type": "string",
+            "description": "Node uid for external users"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Account id"
+          }
+        },
+        "required": [
+          "uid",
+          "display_name",
+          "icons"
+        ],
+        "description": "Account from other team, Active Directory or server"
+      },
       "Invitation": {
         "type": "object",
         "properties": {
