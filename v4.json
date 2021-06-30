@@ -3057,6 +3057,10 @@
             "type": "string",
             "description": "Default UI theme"
           },
+          "theme_settings": {
+            "$ref": "#/components/schemas/Theme",
+            "description": "Theme settings containing colors for app and web"
+          },
           "userver": {
             "type": "string",
             "description": "Static files server address"
