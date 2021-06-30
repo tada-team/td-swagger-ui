@@ -2430,6 +2430,10 @@
             "type": "boolean",
             "description": "Show unread chats first in feed in mobile app"
           },
+          "node": {
+            "type": "string",
+            "description": "Node uid for external users"
+          },
           "patronymic": {
             "type": "string",
             "description": "Patronymic, if any"
@@ -4101,6 +4105,29 @@
           "all"
         ],
         "description": "Reactions to messages: frequently used and all available"
+      },
+      "Node": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Synchronization with node works"
+          },
+          "title": {
+            "type": "string",
+            "description": "Node title"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Node uid"
+          }
+        },
+        "required": [
+          "uid",
+          "title",
+          "enabled"
+        ],
+        "description": "Node (for external users)"
       },
       "OAuthService": {
         "type": "object",
