@@ -1300,7 +1300,7 @@
           "simple_active",
           "simple_disable"
         ],
-        "description": "Button colors for app"
+        "description": "ButtonColors button colors for app"
       },
       "CallDevice": {
         "type": "object",
@@ -3198,7 +3198,7 @@
           "bubble_sent",
           "bubble_received"
         ],
-        "description": "Font colors for app"
+        "description": "FontColors font colors for app"
       },
       "GroupAccessRequest": {
         "type": "object",
@@ -3285,7 +3285,7 @@
           "brand",
           "other"
         ],
-        "description": "Icon colors for app"
+        "description": "IconColors icon colors for app"
       },
       "IconData": {
         "type": "object",
@@ -3347,7 +3347,7 @@
           "disable",
           "error"
         ],
-        "description": "Input colors for app"
+        "description": "InputColors input colors for app"
       },
       "Integration": {
         "type": "object",
@@ -3819,7 +3819,7 @@
           "status_bubble",
           "allocated"
         ],
-        "description": "Message colors for app"
+        "description": "MessageColors message colors for app"
       },
       "MessageContent": {
         "type": "object",
@@ -5564,7 +5564,7 @@
           "on",
           "off"
         ],
-        "description": "Switcher colors for app"
+        "description": "SwitcherColors switcher colors for app"
       },
       "Tag": {
         "type": "object",
@@ -6481,6 +6481,11 @@
           "title_background": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Title background color for app"
+          },
+          "web_base": {
+            "$ref": "#/components/schemas/WebBase",
+            "nullable": true,
+            "description": "WebBase colors for web"
           }
         },
         "required": [
@@ -6898,6 +6903,38 @@
           "url"
         ],
         "description": "Chat wallpaper"
+      },
+      "WebBase": {
+        "type": "object",
+        "properties": {
+          "back_light": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_dark": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "brand_light": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "error": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "error_light": {
+            "$ref": "#/components/schemas/RGBColor"
+          }
+        },
+        "required": [
+          "brand",
+          "brand_light",
+          "brand_dark",
+          "back_light",
+          "error",
+          "error_light"
+        ],
+        "description": "WebBase base colors for web"
       },
       "clientActivityParams": {
         "type": "object",
