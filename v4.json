@@ -6907,6 +6907,12 @@
       "WebBase": {
         "type": "object",
         "properties": {
+          "attention": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "attention_light": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
           "back_light": {
             "$ref": "#/components/schemas/RGBColor"
           },
@@ -6924,6 +6930,15 @@
           },
           "error_light": {
             "$ref": "#/components/schemas/RGBColor"
+          },
+          "fade": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "success": {
+            "$ref": "#/components/schemas/RGBColor"
+          },
+          "success_light": {
+            "$ref": "#/components/schemas/RGBColor"
           }
         },
         "required": [
@@ -6932,7 +6947,12 @@
           "brand_dark",
           "back_light",
           "error",
-          "error_light"
+          "error_light",
+          "success",
+          "success_light",
+          "attention",
+          "attention_light",
+          "fade"
         ],
         "description": "WebBase base colors for web"
       },
