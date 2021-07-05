@@ -2764,6 +2764,10 @@
             "type": "string",
             "description": "Link to Google Play"
           },
+          "android_corp_app": {
+            "type": "string",
+            "description": "Link to Google Play for corporate app"
+          },
           "app_login_background": {
             "type": "string",
             "description": "AppBackground image url, if any"
@@ -2881,6 +2885,10 @@
           "ios_app": {
             "type": "string",
             "description": "Link to AppStore"
+          },
+          "ios_corp_app": {
+            "type": "string",
+            "description": "Link to AppStore for corporate app"
           },
           "is_testing": {
             "type": "boolean",
@@ -3088,6 +3096,8 @@
           "userver",
           "ios_app",
           "android_app",
+          "ios_corp_app",
+          "android_corp_app",
           "theme",
           "min_ios_version",
           "min_android_version",
