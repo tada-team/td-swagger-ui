@@ -2819,6 +2819,10 @@
             "type": "boolean",
             "description": "True for premise installation"
           },
+          "custom_theme": {
+            "type": "boolean",
+            "description": "True if server has custom theme"
+          },
           "default_wallpaper": {
             "$ref": "#/components/schemas/Wallpaper",
             "description": "Default wallpaper url for mobile apps, if any"
@@ -3069,10 +3073,6 @@
             "type": "string",
             "description": "Default UI theme"
           },
-          "theme_settings": {
-            "$ref": "#/components/schemas/Theme",
-            "description": "Theme settings containing colors for app and web"
-          },
           "userver": {
             "type": "string",
             "description": "Static files server address"
@@ -3146,6 +3146,7 @@
           "single_group_teams",
           "wiki_pages",
           "support_email",
+          "custom_theme",
           "task_checklist",
           "readonly_groups",
           "task_dashboard",
