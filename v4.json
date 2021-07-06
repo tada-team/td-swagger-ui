@@ -2760,6 +2760,10 @@
             "type": "boolean",
             "description": "Wiki pages in chats. Experimental"
           },
+          "amplitude_api_key": {
+            "type": "string",
+            "description": "Amplitude api key"
+          },
           "android_app": {
             "type": "string",
             "description": "Link to Google Play"
