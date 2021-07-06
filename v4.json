@@ -5751,6 +5751,11 @@
             "type": "boolean",
             "description": "Item checked"
           },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Object version"
+          },
           "sort_ordering": {
             "type": "integer",
             "description": "Sort ordering"
@@ -5769,6 +5774,7 @@
           }
         },
         "required": [
+          "gentime",
           "text"
         ],
         "description": "Task checklist item"
