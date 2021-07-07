@@ -5539,6 +5539,10 @@
             "type": "boolean",
             "description": "Can other team member see this task/group chat"
           },
+          "task_status": {
+            "type": "string",
+            "description": "Subtask task status"
+          },
           "title": {
             "type": "string",
             "description": "Task title. Generated from number and description"
