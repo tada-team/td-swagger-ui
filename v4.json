@@ -2749,6 +2749,9 @@
         ],
         "description": "Emoji"
       },
+      "Err": {
+        "type": "string"
+      },
       "Features": {
         "type": "object",
         "properties": {
