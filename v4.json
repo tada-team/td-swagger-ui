@@ -4496,6 +4496,27 @@
         ],
         "description": "Remind"
       },
+      "Resp": {
+        "type": "object",
+        "properties": {
+          "_time": {
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/Err"
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "result": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "ok"
+        ],
+        "description": "Server responce"
+      },
       "Section": {
         "type": "object",
         "properties": {
