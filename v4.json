@@ -4505,6 +4505,9 @@
           "_time": {
             "type": "string"
           },
+          "details": {
+            "type": "string"
+          },
           "error": {
             "$ref": "#/components/schemas/Err"
           },
