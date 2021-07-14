@@ -5623,6 +5623,11 @@
       "Tariff": {
         "type": "object",
         "properties": {
+          "MaxUploadFilesize": {
+            "type": "integer",
+            "format": "int64",
+            "description": "maximum file size for uploading"
+          },
           "cloud_space": {
             "type": "integer",
             "format": "int64",
@@ -5655,7 +5660,8 @@
           "name_ru",
           "cloud_space",
           "max_members_in_team",
-          "max_participants_per_call"
+          "max_participants_per_call",
+          "MaxUploadFilesize"
         ],
         "description": "Tariff for teams"
       },
