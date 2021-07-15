@@ -5623,19 +5623,10 @@
       "Tariff": {
         "type": "object",
         "properties": {
-          "MaxUploadFilesize": {
-            "type": "integer",
-            "format": "int64",
-            "description": "maximum file size for uploading"
-          },
           "cloud_space": {
             "type": "integer",
             "format": "int64",
             "description": "Cloud space reserved for storing team users uploads in megabytes"
-          },
-          "key": {
-            "type": "string",
-            "description": "Key for updating tariff in team"
           },
           "max_members_in_team": {
             "type": "integer",
@@ -5645,23 +5636,28 @@
             "type": "integer",
             "description": "Maximum number of participants per call"
           },
-          "name_en": {
-            "type": "string",
-            "description": "Name of tariff on english"
+          "max_upload_filesize": {
+            "type": "integer",
+            "format": "int64",
+            "description": "maximum file size for uploading"
           },
-          "name_ru": {
+          "title_en": {
             "type": "string",
-            "description": "Name of tariff on russian"
+            "description": "Title of tariff on enlish"
+          },
+          "title_ru": {
+            "type": "string",
+            "description": "Title of tariff on russian"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Tariff id"
           }
         },
         "required": [
-          "key",
-          "name_en",
-          "name_ru",
-          "cloud_space",
-          "max_members_in_team",
-          "max_participants_per_call",
-          "MaxUploadFilesize"
+          "uid",
+          "title_en",
+          "title_ru"
         ],
         "description": "Tariff for teams"
       },
