@@ -3017,6 +3017,10 @@
             "type": "boolean",
             "description": "Calls functions enabled for mobile applications"
           },
+          "multi_nodes": {
+            "type": "boolean",
+            "description": "Multi nodes mode (federation) enabled"
+          },
           "oauth_services": {
             "type": "array",
             "items": {
