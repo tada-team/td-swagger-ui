@@ -4522,6 +4522,9 @@
           "ok": {
             "type": "boolean"
           },
+          "reason": {
+            "type": "string"
+          },
           "result": {
             "type": "object"
           }
