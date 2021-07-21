@@ -2949,13 +2949,17 @@
             "type": "integer",
             "description": "Maximum number of participants per call"
           },
+          "max_project_length": {
+            "type": "integer",
+            "description": "Maximum length for project"
+          },
           "max_role_length": {
             "type": "integer",
             "description": "Maximum chars for role in team"
           },
           "max_section_length": {
             "type": "integer",
-            "description": "Maximum length for project and contact's sections names"
+            "description": "Maximum length for contact's sections names"
           },
           "max_tag_length": {
             "type": "integer",
@@ -3128,6 +3132,7 @@
           "max_mood_length",
           "max_message_length",
           "max_section_length",
+          "max_project_length",
           "max_tag_length",
           "max_task_title_length",
           "max_color_rule_description_length",
