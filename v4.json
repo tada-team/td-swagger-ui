@@ -4524,11 +4524,19 @@
           "error": {
             "$ref": "#/components/schemas/Err"
           },
+          "markup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarkupEntity"
+            },
+            "description": "Entities for reason. Experimental"
+          },
           "ok": {
             "type": "boolean"
           },
           "reason": {
-            "type": "string"
+            "type": "string",
+            "description": "Reason answers why not ok or has error"
           },
           "result": {
             "type": "object"
