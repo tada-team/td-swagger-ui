@@ -5659,11 +5659,11 @@
           },
           "title_en": {
             "type": "string",
-            "description": "Title of tariff on enlish"
+            "description": "Title of tariff in enlish"
           },
           "title_ru": {
             "type": "string",
-            "description": "Title of tariff on russian"
+            "description": "Title of tariff in russian"
           },
           "uid": {
             "type": "string",
