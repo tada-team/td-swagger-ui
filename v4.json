@@ -4516,36 +4516,41 @@
         "type": "object",
         "properties": {
           "_time": {
-            "type": "string"
+            "type": "string",
+            "description": "Server side work time"
           },
           "details": {
-            "type": "string"
+            "type": "string",
+            "description": "Error (only if ok is false and Error is 'InvalidData')"
           },
           "error": {
-            "$ref": "#/components/schemas/Err"
+            "$ref": "#/components/schemas/Err",
+            "description": "Error (only if ok is false)"
           },
           "markup": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/MarkupEntity"
             },
-            "description": "Entities for reason. Experimental"
+            "description": "Reason markup (only if ok is false and Error is `AccessDenied`)"
           },
           "ok": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Request status"
           },
           "reason": {
             "type": "string",
-            "description": "Reason answers why not ok or has error"
+            "description": "Reason (only if ok is false and Error is `AccessDenied`)"
           },
           "result": {
-            "type": "object"
+            "type": "object",
+            "description": "Result only if ok is true)"
           }
         },
         "required": [
           "ok"
         ],
-        "description": "Server responce"
+        "description": "Server response"
       },
       "Section": {
         "type": "object",
