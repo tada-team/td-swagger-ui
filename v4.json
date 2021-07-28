@@ -6192,7 +6192,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Username fields ordering"
+            "description": "Username fields ordering. Possible values: \"family_name\", \"given_name\", \"patronymic\""
           }
         },
         "required": [
