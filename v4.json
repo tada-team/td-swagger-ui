@@ -2287,7 +2287,7 @@
           },
           "can_create_task": {
             "type": "boolean",
-            "description": "Can I call create task for this contact"
+            "description": "Can I create task for this contact"
           },
           "can_delete": {
             "type": "boolean",
