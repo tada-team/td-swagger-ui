@@ -1574,7 +1574,6 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
-            "nullable": true,
             "description": "Icons info"
           },
           "importance": {
@@ -1751,7 +1750,8 @@
           "chat_type",
           "gentime",
           "created",
-          "display_name"
+          "display_name",
+          "icons"
         ],
         "description": "Chat (direct, group, task) representation"
       },
@@ -1820,7 +1820,6 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
-            "nullable": true,
             "description": "Icon data"
           },
           "jid": {
@@ -1831,7 +1830,8 @@
         "required": [
           "jid",
           "chat_type",
-          "display_name"
+          "display_name",
+          "icons"
         ],
         "description": "Minimal chat representation"
       },
@@ -2406,7 +2406,6 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
-            "nullable": true,
             "description": "Icons data"
           },
           "is_archive": {
@@ -2492,6 +2491,7 @@
           "short_name",
           "contact_email",
           "contact_phone",
+          "icons",
           "role",
           "status",
           "sections"
@@ -2567,7 +2567,6 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
-            "nullable": true,
             "description": "Icons data"
           },
           "jid": {
@@ -2582,7 +2581,8 @@
         "required": [
           "jid",
           "display_name",
-          "short_name"
+          "short_name",
+          "icons"
         ],
         "description": "Short contact representation"
       },
@@ -6813,6 +6813,10 @@
             "type": "string",
             "description": "Given name"
           },
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icon data"
+          },
           "munread_first": {
             "type": "boolean",
             "description": "Show unread chats in chat list first on mobiles"
@@ -6850,7 +6854,8 @@
           "always_send_pushes",
           "unread_first",
           "munread_first",
-          "timezone"
+          "timezone",
+          "icons"
         ],
         "description": "Account data"
       },
@@ -6939,6 +6944,10 @@
             "type": "string",
             "description": "Given name"
           },
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icon data"
+          },
           "inviter": {
             "$ref": "#/components/schemas/JID",
             "description": "Inviter id, if any"
@@ -6989,7 +6998,8 @@
           "always_send_pushes",
           "unread_first",
           "munread_first",
-          "timezone"
+          "timezone",
+          "icons"
         ],
         "description": "Account data with extra information"
       },
@@ -7395,7 +7405,6 @@
           },
           "icons": {
             "$ref": "#/components/schemas/IconData",
-            "nullable": true,
             "description": "Chat icons"
           },
           "jid": {
@@ -7417,6 +7426,7 @@
         },
         "required": [
           "jid",
+          "icons",
           "display_name",
           "teaminfo",
           "chat",
