@@ -2295,7 +2295,7 @@
           },
           "can_delete_any_message": {
             "type": "boolean",
-            "description": "Deprecated: use CanDeleteAnyMessage in chat object"
+            "description": "Deprecated"
           },
           "can_import_tasks": {
             "type": "boolean",
@@ -2387,6 +2387,11 @@
           "family_name": {
             "type": "string",
             "description": "Family name"
+          },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Object version"
           },
           "given_name": {
             "type": "string",
@@ -2492,6 +2497,7 @@
           "contact_email",
           "contact_phone",
           "icons",
+          "gentime",
           "role",
           "status",
           "sections"
@@ -2565,6 +2571,11 @@
             "type": "string",
             "description": "Full name in chats"
           },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Object version"
+          },
           "icons": {
             "$ref": "#/components/schemas/IconData",
             "description": "Icons data"
@@ -2582,7 +2593,8 @@
           "jid",
           "display_name",
           "short_name",
-          "icons"
+          "icons",
+          "gentime"
         ],
         "description": "Short contact representation"
       },
