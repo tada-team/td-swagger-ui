@@ -3529,6 +3529,13 @@
             "type": "string",
             "description": "Node uid for external users"
           },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Common team uids, if any"
+          },
           "uid": {
             "type": "string",
             "description": "Account id"
@@ -3539,7 +3546,7 @@
           "display_name",
           "icons"
         ],
-        "description": "Account from other team, Active Directory or server"
+        "description": "Account from other team, Active Directory or node"
       },
       "Invitation": {
         "type": "object",
