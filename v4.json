@@ -2380,6 +2380,11 @@
             "type": "string",
             "description": "Full name in chats"
           },
+          "dnd_until": {
+            "type": "string",
+            "format": "date-time",
+            "description": "DND mode enabled until"
+          },
           "dropall_enabled": {
             "type": "boolean",
             "description": "Enable remove all messages experimental features"
@@ -4257,6 +4262,10 @@
           "afk": {
             "type": "boolean",
             "description": "Is away from keyboard"
+          },
+          "dnd": {
+            "type": "boolean",
+            "description": "DND mode enabled"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
