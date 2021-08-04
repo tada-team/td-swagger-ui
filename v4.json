@@ -6089,6 +6089,13 @@
       "Team": {
         "type": "object",
         "properties": {
+          "available_tariffs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Team's available tariff by includig archive ones"
+          },
           "bad_profile": {
             "type": "boolean",
             "description": "My profile in this team isn't full"
