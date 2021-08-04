@@ -2414,6 +2414,11 @@
             "type": "boolean",
             "description": "Short view in group list"
           },
+          "hide_pushes_content": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Hide pushes body"
+          },
           "icons": {
             "$ref": "#/components/schemas/IconData",
             "description": "Icons data"
