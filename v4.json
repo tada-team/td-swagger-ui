@@ -6848,6 +6848,10 @@
             "type": "string",
             "description": "Given name"
           },
+          "hide_pushes_content": {
+            "type": "boolean",
+            "description": "Hide pushes body"
+          },
           "icons": {
             "$ref": "#/components/schemas/IconData",
             "description": "Icon data"
@@ -6887,6 +6891,7 @@
           "alt_send",
           "asterisk_mention",
           "always_send_pushes",
+          "hide_pushes_content",
           "unread_first",
           "munread_first",
           "timezone",
@@ -6979,6 +6984,10 @@
             "type": "string",
             "description": "Given name"
           },
+          "hide_pushes_content": {
+            "type": "boolean",
+            "description": "Hide pushes body"
+          },
           "icons": {
             "$ref": "#/components/schemas/IconData",
             "description": "Icon data"
@@ -7031,6 +7040,7 @@
           "alt_send",
           "asterisk_mention",
           "always_send_pushes",
+          "hide_pushes_content",
           "unread_first",
           "munread_first",
           "timezone",
