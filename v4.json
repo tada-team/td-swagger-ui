@@ -5703,6 +5703,10 @@
             "format": "int64",
             "description": "maximum file size for uploading"
           },
+          "price": {
+            "type": "string",
+            "description": "Price of tariff"
+          },
           "title_en": {
             "type": "string",
             "description": "Title of tariff in enlish"
