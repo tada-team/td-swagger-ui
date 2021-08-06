@@ -2380,11 +2380,6 @@
             "type": "string",
             "description": "Full name in chats"
           },
-          "dnd_until": {
-            "type": "string",
-            "format": "date-time",
-            "description": "DND mode enabled until"
-          },
           "dropall_enabled": {
             "type": "boolean",
             "description": "Enable remove all messages experimental features"
@@ -2392,6 +2387,11 @@
           "family_name": {
             "type": "string",
             "description": "Family name"
+          },
+          "focus_until": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Focus mode enabled until"
           },
           "gentime": {
             "type": "integer",
@@ -4268,9 +4268,9 @@
             "type": "boolean",
             "description": "Is away from keyboard"
           },
-          "dnd": {
+          "focused": {
             "type": "boolean",
-            "description": "DND mode enabled"
+            "description": "Focus mode enabled"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
