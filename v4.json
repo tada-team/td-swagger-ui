@@ -5626,7 +5626,7 @@
           },
           "public": {
             "type": "boolean",
-            "description": "Can other team member see this task/group chat"
+            "description": "Is task or group public for non-guests"
           },
           "task_status": {
             "type": "string",
@@ -5778,7 +5778,7 @@
           },
           "public": {
             "type": "boolean",
-            "description": "Is task public"
+            "description": "Is task or group public for non-guests"
           },
           "remind_at": {
             "type": "string",
