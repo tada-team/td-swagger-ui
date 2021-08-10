@@ -5187,25 +5187,6 @@
         ],
         "description": "Online team members and current active calls"
       },
-      "ServerPanic": {
-        "type": "object",
-        "properties": {
-          "confirm_id": {
-            "type": "string"
-          },
-          "event": {
-            "type": "string"
-          },
-          "params": {
-            "$ref": "#/components/schemas/serverPanicParams"
-          }
-        },
-        "required": [
-          "params",
-          "event"
-        ],
-        "description": "Critical server error"
-      },
       "ServerProcessing": {
         "type": "object",
         "properties": {
@@ -8058,23 +8039,6 @@
           "contacts"
         ],
         "description": "Params of the server.online event"
-      },
-      "serverPanicParams": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "description": "Error code"
-          },
-          "debug": {
-            "type": "string",
-            "description": "Debug message"
-          }
-        },
-        "required": [
-          "code"
-        ],
-        "description": "Params of the server.panic event"
       },
       "serverProcessingParams": {
         "type": "object",
