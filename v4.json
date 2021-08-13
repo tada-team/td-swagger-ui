@@ -5518,6 +5518,10 @@
       "SharpLink": {
         "type": "object",
         "properties": {
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icon data, if any"
+          },
           "key": {
             "type": "string",
             "description": "What should be inserted to the chat"
