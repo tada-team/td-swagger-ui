@@ -38,6 +38,31 @@
         ]
       }
     },
+    "/api/v4/badge": {
+      "get": {
+        "description": "Return number of unread messages.",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    },
+                    "result": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v4/ping": {
       "get": {
         "description": "Ping the server.",
