@@ -3088,6 +3088,10 @@
             "type": "integer",
             "description": "Maximum length for task title"
           },
+          "max_team_title_length": {
+            "type": "integer",
+            "description": "Maximum chars for team name"
+          },
           "max_teams": {
             "type": "integer",
             "description": "Maximum teams for one account"
@@ -3247,6 +3251,7 @@
           "max_message_uploads",
           "max_username_part_length",
           "max_group_title_length",
+          "max_team_title_length",
           "max_role_length",
           "max_mood_length",
           "max_message_length",
