@@ -3153,7 +3153,7 @@
           },
           "only_one_device_per_call": {
             "type": "boolean",
-            "description": "Disallow call from multiply devices. Experimental"
+            "description": "Disallow call from multiple devices. Experimental"
           },
           "readonly_groups": {
             "type": "boolean",
