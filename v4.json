@@ -5455,14 +5455,31 @@
             "type": "string"
           },
           "params": {
-            "$ref": "#/components/schemas/UiSettings",
-            "nullable": true
+            "$ref": "#/components/schemas/ServerUiSettingsParams"
           }
         },
         "required": [
+          "params",
           "event"
         ],
         "description": "Part of UI settings changed"
+      },
+      "ServerUiSettingsParams": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UiSettingsData",
+            "description": "UiSettingsData"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Namespace. For example: web, app"
+          }
+        },
+        "required": [
+          "namespace",
+          "data"
+        ]
       },
       "ServerUploadUpdated": {
         "type": "object",
@@ -6826,7 +6843,7 @@
         ],
         "description": "Color theme"
       },
-      "UiSettings": {
+      "UiSettingsData": {
         "type": "object",
         "additionalProperties": {
           "type": "object",
