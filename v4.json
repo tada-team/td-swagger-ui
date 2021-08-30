@@ -6050,6 +6050,10 @@
       "TaskItem": {
         "type": "object",
         "properties": {
+          "can_change": {
+            "type": "boolean",
+            "description": "Can I change this item"
+          },
           "can_toggle": {
             "type": "boolean",
             "description": "Can I toggle this item"
