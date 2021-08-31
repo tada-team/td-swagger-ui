@@ -4503,6 +4503,29 @@
         ],
         "description": "Paginated UploadShortMessage"
       },
+      "Payment": {
+        "type": "object",
+        "properties": {
+          "confirmation_url": {
+            "type": "string"
+          },
+          "tariff_uid": {
+            "type": "string"
+          },
+          "team_uid": {
+            "type": "string"
+          },
+          "user_uid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tariff_uid",
+          "team_uid",
+          "user_uid",
+          "confirmation_url"
+        ]
+      },
       "PdfVersion": {
         "type": "object",
         "properties": {
@@ -5769,6 +5792,35 @@
         ],
         "description": "Collection of stickers"
       },
+      "Subscription": {
+        "type": "object",
+        "properties": {
+          "activated": {
+            "type": "string",
+            "description": "Subscription activation time"
+          },
+          "expires": {
+            "type": "string",
+            "description": "Subscription expiration time"
+          },
+          "tariff_uid": {
+            "type": "string",
+            "description": "ID of the tariff for which the subscription is valid"
+          },
+          "uid": {
+            "type": "string",
+            "description": "Subscription id"
+          },
+          "user_uid": {
+            "type": "string",
+            "description": "ID of the user who subscribed"
+          }
+        },
+        "required": [
+          "uid"
+        ],
+        "description": "Subscription - an entity that signifies the fact of subscribing to the tariff of any team for a certain period (not defined, in the case of the default tariff)"
+      },
       "Subtask": {
         "type": "object",
         "properties": {
@@ -6343,6 +6395,10 @@
           "single_group": {
             "$ref": "#/components/schemas/JID",
             "description": "For single group teams, jid of chat"
+          },
+          "subscription": {
+            "$ref": "#/components/schemas/Subscription",
+            "description": "Сurrent team subscription"
           },
           "task_importance_max": {
             "type": "integer",
