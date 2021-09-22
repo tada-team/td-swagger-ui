@@ -2470,7 +2470,6 @@
           },
           "hide_pushes_content": {
             "type": "boolean",
-            "nullable": true,
             "description": "Hide pushes body"
           },
           "icons": {
