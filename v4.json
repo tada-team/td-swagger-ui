@@ -3028,6 +3028,10 @@
             "type": "string",
             "description": "Link to AppStore for corporate app"
           },
+          "is_pin_code_required": {
+            "type": "boolean",
+            "description": "Mandatory setting of the pin code in the application"
+          },
           "is_testing": {
             "type": "boolean",
             "description": "Testing installation"
@@ -3162,6 +3166,10 @@
           "only_one_device_per_call": {
             "type": "boolean",
             "description": "Disallow call from multiple devices. Experimental"
+          },
+          "pin_code_wrong_limit": {
+            "type": "integer",
+            "description": "Max number of attempts to enter an invalid PIN code"
           },
           "readonly_groups": {
             "type": "boolean",
