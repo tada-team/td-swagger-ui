@@ -3277,6 +3277,8 @@
           "max_teams",
           "max_message_search_limit",
           "afk_age",
+          "is_pin_code_required",
+          "pin_code_wrong_limit",
           "ice_servers",
           "custom_server",
           "installation_type",
