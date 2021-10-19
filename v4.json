@@ -2696,6 +2696,163 @@
         ],
         "description": "Country for phone numbers selection on login screen"
       },
+      "DLPBasicData": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "number",
+          "name",
+          "description"
+        ],
+        "description": "DLPBasicData structure for basic data (used for team, group, task, etc.)"
+      },
+      "DLPEvent": {
+        "type": "object",
+        "properties": {
+          "direct_data": {
+            "$ref": "#/components/schemas/DLPUserData"
+          },
+          "event_channel": {
+            "$ref": "#/components/schemas/ChatType"
+          },
+          "event_time": {
+            "type": "string"
+          },
+          "file_data": {
+            "$ref": "#/components/schemas/DLPFileData"
+          },
+          "group_data": {
+            "$ref": "#/components/schemas/DLPBasicData"
+          },
+          "media_type": {
+            "$ref": "#/components/schemas/Mediatype"
+          },
+          "message_data": {
+            "$ref": "#/components/schemas/DLPMessageData"
+          },
+          "sender_data": {
+            "$ref": "#/components/schemas/DLPUserData"
+          },
+          "task_data": {
+            "$ref": "#/components/schemas/DLPBasicData"
+          },
+          "team_data": {
+            "$ref": "#/components/schemas/DLPBasicData"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "event_channel",
+          "event_time",
+          "media_type",
+          "team_data",
+          "sender_data",
+          "direct_data",
+          "group_data",
+          "task_data",
+          "file_data",
+          "message_data"
+        ],
+        "description": "DLPEvent structure to store all information about event"
+      },
+      "DLPFileData": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "description": "Content []byte `json:\"content\"` // TODO"
+          },
+          "link": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "link",
+          "comment"
+        ],
+        "description": "DLPFileData structure to store information about file event"
+      },
+      "DLPMessageData": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "comment"
+        ],
+        "description": "DLPMessageData structure to store information about message"
+      },
+      "DLPUserData": {
+        "type": "object",
+        "properties": {
+          "contact_email": {
+            "type": "string"
+          },
+          "contact_phone": {
+            "type": "string"
+          },
+          "contact_uuid": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "is_bot": {
+            "type": "boolean"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "middle_name": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "contact_uuid",
+          "name",
+          "first_name",
+          "middle_name",
+          "last_name",
+          "role",
+          "contact_phone",
+          "contact_email",
+          "is_bot"
+        ],
+        "description": "DLPUserData structure to store sender/receiver user information"
+      },
       "DeletedChat": {
         "type": "object",
         "properties": {
