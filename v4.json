@@ -2572,7 +2572,7 @@
         "properties": {
           "ad_uid": {
             "type": "string",
-            "description": "AD UID"
+            "description": "User UUID in Active Directory"
           },
           "company": {
             "type": "string",
