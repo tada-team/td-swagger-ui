@@ -3486,10 +3486,7 @@
           "task_public",
           "task_tags",
           "calls",
-          "min_app_version",
-          "file_extension_whitelist",
-          "file_extension_blacklist",
-          "file_extension_whitelist_priority"
+          "min_app_version"
         ],
         "description": "Server information. Readonly"
       },
