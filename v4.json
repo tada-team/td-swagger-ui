@@ -1450,6 +1450,10 @@
             "type": "string",
             "description": "Contact name"
           },
+          "enabled_video": {
+            "type": "boolean",
+            "description": "Video state"
+          },
           "icon": {
             "type": "string",
             "description": "Contact icon"
@@ -2063,6 +2067,25 @@
           "event"
         ],
         "description": "Send trickle candidate for webrtc connection"
+      },
+      "ClientCallVideo": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/clientCallVideoParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Change video state in call"
       },
       "ClientChatComposing": {
         "type": "object",
@@ -4527,6 +4550,10 @@
       "OnlineCall": {
         "type": "object",
         "properties": {
+          "call_type": {
+            "type": "string",
+            "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room)"
+          },
           "jid": {
             "$ref": "#/components/schemas/JID",
             "description": "Chat or contact id"
@@ -7623,13 +7650,25 @@
       "clientCallOfferParams": {
         "type": "object",
         "properties": {
+          "call_type": {
+            "type": "string",
+            "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room). default = \"audio\""
+          },
+          "enabled_audio": {
+            "type": "boolean",
+            "description": "Audio state"
+          },
+          "enabled_video": {
+            "type": "boolean",
+            "description": "Video state"
+          },
           "jid": {
             "$ref": "#/components/schemas/JID",
             "description": "Chat or contact id"
           },
           "muted": {
             "type": "boolean",
-            "description": "Mute state"
+            "description": "Mute state Deprecated: use EnabledAudio"
           },
           "sdp": {
             "type": "string",
@@ -7731,6 +7770,24 @@
           "candidate"
         ],
         "description": "Params of client.call.trickle event"
+      },
+      "clientCallVideoParams": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Enable video state"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Chat or contact id"
+          }
+        },
+        "required": [
+          "jid",
+          "enabled"
+        ],
+        "description": "Params of the client.call.video event"
       },
       "clientChatComposingParams": {
         "type": "object",
@@ -7860,6 +7917,10 @@
           "buzz_timeout": {
             "type": "integer",
             "description": "Number of seconds for stop buzzing"
+          },
+          "call_type": {
+            "type": "string",
+            "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room)"
           },
           "chat": {
             "$ref": "#/components/schemas/ChatShort",
