@@ -3096,6 +3096,10 @@
             "type": "boolean",
             "description": "Two-factor authentication (2FA) enabled"
           },
+          "auth_by_ntlm": {
+            "type": "boolean",
+            "description": "NTLM authentication enabled"
+          },
           "auth_by_password": {
             "type": "boolean",
             "description": "Password authentication enabled"
