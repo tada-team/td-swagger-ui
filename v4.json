@@ -3229,6 +3229,10 @@
             "type": "string",
             "description": "Link to AppStore for corporate app"
           },
+          "is_captcha_enabled": {
+            "type": "boolean",
+            "description": "Captcha enabled"
+          },
           "is_pin_code_required": {
             "type": "boolean",
             "description": "Mandatory setting of the pin code in the application"
