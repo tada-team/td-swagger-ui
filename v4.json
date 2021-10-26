@@ -6158,6 +6158,80 @@
         ],
         "description": "Tariff for teams"
       },
+      "TariffBilling": {
+        "type": "object",
+        "properties": {
+          "billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "close_date": {
+            "type": "string",
+            "description": "Date of closing tariff"
+          },
+          "cost_workplace": {
+            "type": "string",
+            "description": "Cost of one workplace"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency of tariff in ISO"
+          },
+          "default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "disk_space_quota": {
+            "type": "string",
+            "description": "Disk space limit per user"
+          },
+          "free_workplace": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Count of free workspaces"
+          },
+          "max_video_user": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Maximum count of users in video conference"
+          },
+          "max_voice_user": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Maximum count of users in voice conference"
+          },
+          "open_date": {
+            "type": "string",
+            "description": "Date of opening tariff"
+          },
+          "period_days": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Number of paid days"
+          },
+          "recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Tariff id"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name of tariff on russian"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "TariffBilling struct of billing api"
+      },
       "Task": {
         "type": "object",
         "properties": {
