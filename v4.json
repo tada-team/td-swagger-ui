@@ -3381,7 +3381,7 @@
             "description": "Deprecated"
           },
           "recaptcha_web_key": {
-            "type": "boolean",
+            "type": "string",
             "description": "ReCaptcha Web Key"
           },
           "resend_timeout": {
