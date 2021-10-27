@@ -3229,13 +3229,13 @@
             "type": "string",
             "description": "Link to AppStore for corporate app"
           },
-          "is_captcha_enabled": {
-            "type": "boolean",
-            "description": "Captcha enabled"
-          },
           "is_pin_code_required": {
             "type": "boolean",
             "description": "Mandatory setting of the pin code in the application"
+          },
+          "is_recaptcha_enabled": {
+            "type": "boolean",
+            "description": "Captcha enabled"
           },
           "is_testing": {
             "type": "boolean",
@@ -3379,6 +3379,10 @@
           "readonly_groups": {
             "type": "boolean",
             "description": "Deprecated"
+          },
+          "recaptcha_web_key": {
+            "type": "boolean",
+            "description": "ReCaptcha Web Key"
           },
           "resend_timeout": {
             "type": "integer",
