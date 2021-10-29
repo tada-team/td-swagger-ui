@@ -3380,9 +3380,13 @@
             "type": "boolean",
             "description": "Deprecated"
           },
-          "recaptcha_web_key": {
+          "recaptcha_web_key_v2": {
             "type": "string",
-            "description": "ReCaptcha Web Key"
+            "description": "ReCaptcha Web Key V2"
+          },
+          "recaptcha_web_key_v3": {
+            "type": "string",
+            "description": "ReCaptcha Web Key V3"
           },
           "resend_timeout": {
             "type": "integer",
