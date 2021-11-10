@@ -1221,6 +1221,53 @@
   },
   "components": {
     "schemas": {
+      "ActivatePersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "ActivatePersonalAccountRequest request on activate suspended personal account"
+      },
+      "ActivatePersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "ActivatePersonalAccountResponse response on activate suspended personal account"
+      },
+      "ActivateWorkplacesOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "count_workplaces": {
+            "$ref": "#/components/schemas/int32"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "ActivateWorkplacesOnPersonalAccountRequest request on activate workplace on personal account"
+      },
+      "ActivateWorkplacesOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "ActivateWorkplacesOnPersonalAccountResponse response on activate workplace on personal account"
+      },
       "ActiveUserDailyStat": {
         "type": "object",
         "properties": {
@@ -1259,6 +1306,75 @@
         "description": "Active daily users statistics"
       },
       "ActiveUserDailyStatList": {},
+      "AddTeamOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "delete_date": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "AddTeamOnPersonalAccountRequest request on add team on personal account"
+      },
+      "AddTeamOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "AddTeamOnPersonalAccountResponse response on add team on personal account"
+      },
+      "AddUserInWorkplaceRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "AddUserInWorkplaceRequest request on add user in workplace on personal account"
+      },
+      "AddUserInWorkplaceResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "AddUserInWorkplaceResponse response on add user in workplace on personal account"
+      },
+      "AddWorkplacesOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "count_workplaces": {
+            "$ref": "#/components/schemas/int32"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "AddWorkplacesOnPersonalAccountRequest request on add workplace on personal account"
+      },
+      "AddWorkplacesOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "AddWorkplacesOnPersonalAccountResponse response on add workplace on personal account"
+      },
       "AnyEvent": {
         "type": "object",
         "properties": {
@@ -1288,6 +1404,31 @@
           "event"
         ],
         "description": "Base of all events"
+      },
+      "BlockPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "BlockPersonalAccountRequest request on block unblocked personal account"
+      },
+      "BlockPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "BlockPersonalAccountResponse response on block unblocked personal account"
       },
       "BotCommand": {
         "type": "object",
@@ -2253,6 +2394,34 @@
         ],
         "description": "Empty message for checking server connection"
       },
+      "CloseTariffRequest": {
+        "type": "object",
+        "properties": {
+          "close_date": {
+            "type": "string"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "CloseTariffRequest request on close(archive) tariff"
+      },
+      "CloseTariffResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "CloseTariffResponse response on close(archive) tariff"
+      },
       "ColorRule": {
         "type": "object",
         "properties": {
@@ -2719,6 +2888,246 @@
         ],
         "description": "Country for phone numbers selection on login screen"
       },
+      "CreatePersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "owner_uuid": {
+            "type": "string"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner_uuid",
+          "team_uuid"
+        ],
+        "description": "CreatePersonalAccountRequest request on create personal account"
+      },
+      "CreatePersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "discount_amount": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Amount of Discount on personal account"
+          },
+          "discount_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Discount on personal account"
+          },
+          "free_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workplaces on personal account"
+          },
+          "next_billing_date": {
+            "type": "string",
+            "description": "Date of next debiting funds"
+          },
+          "owner_uuid": {
+            "type": "string",
+            "description": "ID User who owns this personal account"
+          },
+          "paid_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of paid workplaces on personal account"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "PersonalAccountBilling ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of personal account"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Tariff on this personal account"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name Tariff on this personal account"
+          },
+          "team_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of teams on personal account"
+          },
+          "users_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of user on personal account"
+          },
+          "workplace_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of workplaces on personal account"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "owner_uuid",
+          "tariff_id",
+          "tariff_name",
+          "discount_id",
+          "discount_amount",
+          "status",
+          "next_billing_date",
+          "team_count",
+          "workplace_count",
+          "users_count",
+          "free_workplaces",
+          "paid_workplaces"
+        ],
+        "description": "CreatePersonalAccountResponse response on create personal account"
+      },
+      "CreateTariffRequest": {
+        "type": "object",
+        "properties": {
+          "billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "close_date": {
+            "type": "string",
+            "description": "Date of closing tariff"
+          },
+          "cost_workplace": {
+            "type": "string",
+            "description": "Cost of one workplace"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency of tariff in ISO"
+          },
+          "default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "disk_space_quota": {
+            "type": "string",
+            "description": "Disk space limit per user"
+          },
+          "free_workplace": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workspaces"
+          },
+          "max_video_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in video conference"
+          },
+          "max_voice_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in voice conference"
+          },
+          "open_date": {
+            "type": "string",
+            "description": "Date of opening tariff"
+          },
+          "period_days": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Number of paid days"
+          },
+          "recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of tariff"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Tariff id"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name of tariff"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "CreateTariffRequest request on create tariff"
+      },
+      "CreateTariffResponse": {
+        "type": "object",
+        "properties": {
+          "billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "close_date": {
+            "type": "string",
+            "description": "Date of closing tariff"
+          },
+          "cost_workplace": {
+            "type": "string",
+            "description": "Cost of one workplace"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency of tariff in ISO"
+          },
+          "default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "disk_space_quota": {
+            "type": "string",
+            "description": "Disk space limit per user"
+          },
+          "free_workplace": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workspaces"
+          },
+          "max_video_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in video conference"
+          },
+          "max_voice_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in voice conference"
+          },
+          "open_date": {
+            "type": "string",
+            "description": "Date of opening tariff"
+          },
+          "period_days": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Number of paid days"
+          },
+          "recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of tariff"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Tariff id"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name of tariff"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "CreateTariffResponse response on create tariff"
+      },
       "DLPBasicData": {
         "type": "object",
         "properties": {
@@ -2875,6 +3284,75 @@
           "is_bot"
         ],
         "description": "DLPUserData structure to store sender/receiver user information"
+      },
+      "DeleteTeamFromPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "delete_date": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "DeleteTeamFromPersonalAccountRequest request on delete team from personal account"
+      },
+      "DeleteTeamFromPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "DeleteTeamFromPersonalAccountResponse response on delete team from personal account"
+      },
+      "DeleteUserFromWorkplaceRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "DeleteUserFromWorkplaceRequest request on delete user from workplace on personal account"
+      },
+      "DeleteUserFromWorkplaceResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "DeleteUserFromWorkplaceResponse response on delete user from workplace on personal account"
+      },
+      "DeleteWorkplacesOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "count_workplaces": {
+            "$ref": "#/components/schemas/int32"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "DeleteWorkplacesOnPersonalAccountRequest request on delete workplace on personal account"
+      },
+      "DeleteWorkplacesOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "DeleteWorkplacesOnPersonalAccountResponse response on delete workplace on personal account"
       },
       "DeletedChat": {
         "type": "object",
@@ -3571,6 +4049,240 @@
           "bubble_received"
         ],
         "description": "FontColors font colors for app"
+      },
+      "GetActiveTariffsListResponse": {
+        "type": "object",
+        "properties": {
+          "tariffs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffBilling"
+            }
+          }
+        },
+        "required": [
+          "tariffs"
+        ],
+        "description": "GetActiveTariffsListResponse response on get active tariffs list"
+      },
+      "GetPersonalAccountByIDRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "GetPersonalAccountByIDRequest request on get personal account by ID"
+      },
+      "GetPersonalAccountByIDResponse": {
+        "type": "object",
+        "properties": {
+          "discount_amount": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Amount of Discount on personal account"
+          },
+          "discount_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Discount on personal account"
+          },
+          "free_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workplaces on personal account"
+          },
+          "next_billing_date": {
+            "type": "string",
+            "description": "Date of next debiting funds"
+          },
+          "owner_uuid": {
+            "type": "string",
+            "description": "ID User who owns this personal account"
+          },
+          "paid_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of paid workplaces on personal account"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "PersonalAccountBilling ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of personal account"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Tariff on this personal account"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name Tariff on this personal account"
+          },
+          "team_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of teams on personal account"
+          },
+          "users_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of user on personal account"
+          },
+          "workplace_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of workplaces on personal account"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "owner_uuid",
+          "tariff_id",
+          "tariff_name",
+          "discount_id",
+          "discount_amount",
+          "status",
+          "next_billing_date",
+          "team_count",
+          "workplace_count",
+          "users_count",
+          "free_workplaces",
+          "paid_workplaces"
+        ],
+        "description": "GetPersonalAccountByIDResponse response on get personal account by ID"
+      },
+      "GetPersonalAccountsListRequest": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/Options"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "GetPersonalAccountsListRequest request on get list of personal accounts"
+      },
+      "GetPersonalAccountsListResponse": {
+        "type": "object",
+        "properties": {
+          "personal_accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonalAccountBilling"
+            }
+          }
+        },
+        "required": [
+          "personal_accounts"
+        ],
+        "description": "GetPersonalAccountsListResponse response on get list of personal accounts"
+      },
+      "GetTariffByIdRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "description": "GetTariffByIdRequest request on get tariff by ID"
+      },
+      "GetTariffByIdResponse": {
+        "type": "object",
+        "properties": {
+          "billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "close_date": {
+            "type": "string",
+            "description": "Date of closing tariff"
+          },
+          "cost_workplace": {
+            "type": "string",
+            "description": "Cost of one workplace"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency of tariff in ISO"
+          },
+          "default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "disk_space_quota": {
+            "type": "string",
+            "description": "Disk space limit per user"
+          },
+          "free_workplace": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workspaces"
+          },
+          "max_video_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in video conference"
+          },
+          "max_voice_user": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Maximum count of users in voice conference"
+          },
+          "open_date": {
+            "type": "string",
+            "description": "Date of opening tariff"
+          },
+          "period_days": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Number of paid days"
+          },
+          "recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of tariff"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Tariff id"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name of tariff"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "GetTariffByIdResponse response on get tariff by ID"
+      },
+      "GetTariffsListResponse": {
+        "type": "object",
+        "properties": {
+          "tariffs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffBilling"
+            }
+          }
+        },
+        "required": [
+          "tariffs"
+        ],
+        "description": "GetTariffsListResponse response on get tariffs list"
       },
       "GroupAccessRequest": {
         "type": "object",
@@ -4620,6 +5332,20 @@
         ],
         "description": "Contact online status"
       },
+      "Options": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "Options struct for pagination"
+      },
       "PaginatedChats": {
         "type": "object",
         "properties": {
@@ -4773,6 +5499,82 @@
           "url"
         ],
         "description": "PDF preview of mediafile. Experimental"
+      },
+      "PersonalAccountBilling": {
+        "type": "object",
+        "properties": {
+          "discount_amount": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Amount of Discount on personal account"
+          },
+          "discount_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Discount on personal account"
+          },
+          "free_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of free workplaces on personal account"
+          },
+          "next_billing_date": {
+            "type": "string",
+            "description": "Date of next debiting funds"
+          },
+          "owner_uuid": {
+            "type": "string",
+            "description": "ID User who owns this personal account"
+          },
+          "paid_workplaces": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of paid workplaces on personal account"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "PersonalAccountBilling ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of personal account"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "ID Tariff on this personal account"
+          },
+          "tariff_name": {
+            "type": "string",
+            "description": "Name Tariff on this personal account"
+          },
+          "team_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of teams on personal account"
+          },
+          "users_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of user on personal account"
+          },
+          "workplace_count": {
+            "$ref": "#/components/schemas/int32",
+            "description": "Count of workplaces on personal account"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "owner_uuid",
+          "tariff_id",
+          "tariff_name",
+          "discount_id",
+          "discount_amount",
+          "status",
+          "next_billing_date",
+          "team_count",
+          "workplace_count",
+          "users_count",
+          "free_workplaces",
+          "paid_workplaces"
+        ],
+        "description": "PersonalAccountBilling struct of billing api"
       },
       "PushDevice": {
         "type": "object",
@@ -5816,6 +6618,31 @@
         ],
         "description": "Websocket session"
       },
+      "SetTariffAsDefaultRequest": {
+        "type": "object",
+        "properties": {
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "tariff_id"
+        ],
+        "description": "SetTariffAsDefaultRequest request on set tariff as default"
+      },
+      "SetTariffAsDefaultResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "SetTariffAsDefaultResponse response on set tariff as default"
+      },
       "SharpLink": {
         "type": "object",
         "properties": {
@@ -6093,6 +6920,31 @@
         ],
         "description": "Link to sub/sup task"
       },
+      "SuspendPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "SuspendPersonalAccountRequest request on suspend active personal account"
+      },
+      "SuspendPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "SuspendPersonalAccountResponse response on suspend active personal account"
+      },
       "SwitcherColors": {
         "type": "object",
         "properties": {
@@ -6206,18 +7058,15 @@
             "description": "Disk space limit per user"
           },
           "free_workplace": {
-            "type": "integer",
-            "format": "int64",
+            "$ref": "#/components/schemas/int32",
             "description": "Count of free workspaces"
           },
           "max_video_user": {
-            "type": "integer",
-            "format": "int64",
+            "$ref": "#/components/schemas/int32",
             "description": "Maximum count of users in video conference"
           },
           "max_voice_user": {
-            "type": "integer",
-            "format": "int64",
+            "$ref": "#/components/schemas/int32",
             "description": "Maximum count of users in voice conference"
           },
           "open_date": {
@@ -6225,13 +7074,16 @@
             "description": "Date of opening tariff"
           },
           "period_days": {
-            "type": "integer",
-            "format": "int64",
+            "$ref": "#/components/schemas/int32",
             "description": "Number of paid days"
           },
           "recalc_change_tariff": {
             "type": "boolean",
             "description": "Flag for accounting for unspent days when switching to a new tariff"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of tariff"
           },
           "tariff_id": {
             "type": "integer",
@@ -6240,7 +7092,7 @@
           },
           "tariff_name": {
             "type": "string",
-            "description": "Name of tariff on russian"
+            "description": "Name of tariff"
           }
         },
         "required": [
@@ -6781,6 +7633,22 @@
         ],
         "description": "Team"
       },
+      "TeamBilling": {
+        "type": "object",
+        "properties": {
+          "delete_date": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "TeamBilling struct of billing api"
+      },
       "TeamCounter": {
         "type": "object",
         "properties": {
@@ -7214,6 +8082,31 @@
           "type": "object",
           "description": "Any user data"
         }
+      },
+      "UnblockPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "UnblockPersonalAccountRequest request on unblock blocked personal account"
+      },
+      "UnblockPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "UnblockPersonalAccountResponse response on unblock blocked personal account"
       },
       "Unread": {
         "type": "object",
