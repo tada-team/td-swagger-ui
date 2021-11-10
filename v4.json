@@ -3613,7 +3613,7 @@
           },
           "calls_version": {
             "type": "integer",
-            "description": "Calls version. 0 = disabled, 1 = audio only, 2 = audio+video deprecated: use CallsAudioEnabled and CallsVideoEnabled"
+            "description": "Calls version. 0 = disabled, 1 = audio only, 2 = audio+video Deprecated: use CallsAudioEnabled and CallsVideoEnabled"
           },
           "calls_video_enabled": {
             "type": "boolean",
