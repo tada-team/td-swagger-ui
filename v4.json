@@ -1618,9 +1618,14 @@
           "role",
           "icon",
           "muted",
+          "enabled_video",
           "devices"
         ],
         "description": "Call participant"
+      },
+      "CallType": {
+        "type": "string",
+        "description": "CallType .."
       },
       "Chat": {
         "type": "object",
@@ -3598,13 +3603,21 @@
             "type": "boolean",
             "description": "Deprecated"
           },
+          "calls_audio_enabled": {
+            "type": "boolean",
+            "description": "CallsAudioEnabled enabled or disabled audio calls"
+          },
           "calls_record": {
             "type": "boolean",
             "description": "Calls record enabled"
           },
           "calls_version": {
             "type": "integer",
-            "description": "Calls version. 0 = disabled, 1 = audio only, 2 = audio+video"
+            "description": "Calls version. 0 = disabled, 1 = audio only, 2 = audio+video deprecated: use CallsAudioEnabled and CallsVideoEnabled"
+          },
+          "calls_video_enabled": {
+            "type": "boolean",
+            "description": "CallsVideoEnabled enabled or disabled video calls"
           },
           "custom_app_icon_name": {
             "type": "string",
@@ -3987,6 +4000,8 @@
           "firebase_project_id",
           "firebase_storage_bucket",
           "calls_version",
+          "calls_audio_enabled",
+          "calls_video_enabled",
           "mobile_calls",
           "calls_record",
           "safari_push_id",
@@ -5279,7 +5294,7 @@
         "type": "object",
         "properties": {
           "call_type": {
-            "type": "string",
+            "$ref": "#/components/schemas/CallType",
             "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room)"
           },
           "jid": {
@@ -5302,7 +5317,8 @@
         },
         "required": [
           "jid",
-          "uid"
+          "uid",
+          "call_type"
         ],
         "description": "Active call status"
       },
@@ -8634,7 +8650,7 @@
         "type": "object",
         "properties": {
           "call_type": {
-            "type": "string",
+            "$ref": "#/components/schemas/CallType",
             "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room). default = \"audio\""
           },
           "enabled_audio": {
@@ -8902,7 +8918,7 @@
             "description": "Number of seconds for stop buzzing"
           },
           "call_type": {
-            "type": "string",
+            "$ref": "#/components/schemas/CallType",
             "description": "CallType is a type of call(\"audio\" - audio room, \"video\" - video room)"
           },
           "chat": {
@@ -8943,7 +8959,8 @@
           "actor",
           "uid",
           "buzz_timeout",
-          "team"
+          "team",
+          "call_type"
         ],
         "description": "Params of the server.call.buzz event"
       },
