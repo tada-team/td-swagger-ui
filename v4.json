@@ -1229,9 +1229,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "ActivatePersonalAccountRequest request on activate suspended personal account"
       },
       "ActivatePersonalAccountResponse": {
@@ -1413,9 +1410,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "BlockPersonalAccountRequest request on block unblocked personal account"
       },
       "BlockPersonalAccountResponse": {
@@ -2410,9 +2404,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "CloseTariffRequest request on close(archive) tariff"
       },
       "CloseTariffResponse": {
@@ -2896,7 +2887,13 @@
       "CreatePersonalAccountRequest": {
         "type": "object",
         "properties": {
+          "full_name": {
+            "type": "string"
+          },
           "owner_uuid": {
+            "type": "string"
+          },
+          "phone": {
             "type": "string"
           },
           "team_uuid": {
@@ -2925,6 +2922,10 @@
             "$ref": "#/components/schemas/int32",
             "description": "Count of free workplaces on personal account"
           },
+          "full_name": {
+            "type": "string",
+            "description": "Full name of owner personal account"
+          },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
@@ -2942,8 +2943,12 @@
             "format": "int64",
             "description": "PersonalAccountBilling ID"
           },
-          "status": {
+          "phone": {
             "type": "string",
+            "description": "Phone number of owner account"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
           "tariff_id": {
@@ -2969,7 +2974,6 @@
           }
         },
         "required": [
-          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -3041,7 +3045,7 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
           },
           "tariff_id": {
@@ -3054,9 +3058,6 @@
             "description": "Name of tariff"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "CreateTariffRequest request on create tariff"
       },
       "CreateTariffResponse": {
@@ -3115,7 +3116,7 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
           },
           "tariff_id": {
@@ -3128,9 +3129,6 @@
             "description": "Name of tariff"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "CreateTariffResponse response on create tariff"
       },
       "DLPBasicData": {
@@ -4088,9 +4086,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "GetPersonalAccountByIDRequest request on get personal account by ID"
       },
       "GetPersonalAccountByIDResponse": {
@@ -4109,6 +4104,10 @@
             "$ref": "#/components/schemas/int32",
             "description": "Count of free workplaces on personal account"
           },
+          "full_name": {
+            "type": "string",
+            "description": "Full name of owner personal account"
+          },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
@@ -4126,8 +4125,12 @@
             "format": "int64",
             "description": "PersonalAccountBilling ID"
           },
-          "status": {
+          "phone": {
             "type": "string",
+            "description": "Phone number of owner account"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
           "tariff_id": {
@@ -4153,7 +4156,6 @@
           }
         },
         "required": [
-          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -4192,9 +4194,6 @@
             }
           }
         },
-        "required": [
-          "personal_accounts"
-        ],
         "description": "GetPersonalAccountsListResponse response on get list of personal accounts"
       },
       "GetTariffByIdRequest": {
@@ -4205,9 +4204,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "id"
-        ],
         "description": "GetTariffByIdRequest request on get tariff by ID"
       },
       "GetTariffByIdResponse": {
@@ -4266,7 +4262,7 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
           },
           "tariff_id": {
@@ -4279,9 +4275,6 @@
             "description": "Name of tariff"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "GetTariffByIdResponse response on get tariff by ID"
       },
       "GetTariffsListResponse": {
@@ -5532,6 +5525,10 @@
             "$ref": "#/components/schemas/int32",
             "description": "Count of free workplaces on personal account"
           },
+          "full_name": {
+            "type": "string",
+            "description": "Full name of owner personal account"
+          },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
@@ -5549,8 +5546,12 @@
             "format": "int64",
             "description": "PersonalAccountBilling ID"
           },
-          "status": {
+          "phone": {
             "type": "string",
+            "description": "Phone number of owner account"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
           "tariff_id": {
@@ -5576,7 +5577,6 @@
           }
         },
         "required": [
-          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -5591,6 +5591,10 @@
           "paid_workplaces"
         ],
         "description": "PersonalAccountBilling struct of billing api"
+      },
+      "PersonalAccountStatus": {
+        "type": "string",
+        "description": "PersonalAccountStatus is status of personal account"
       },
       "PushDevice": {
         "type": "object",
@@ -6642,9 +6646,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "SetTariffAsDefaultRequest request on set tariff as default"
       },
       "SetTariffAsDefaultResponse": {
@@ -6944,9 +6945,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "SuspendPersonalAccountRequest request on suspend active personal account"
       },
       "SuspendPersonalAccountResponse": {
@@ -7098,7 +7096,7 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
           },
           "tariff_id": {
@@ -7111,10 +7109,11 @@
             "description": "Name of tariff"
           }
         },
-        "required": [
-          "tariff_id"
-        ],
         "description": "TariffBilling struct of billing api"
+      },
+      "TariffStatus": {
+        "type": "string",
+        "description": "TariffStatus is status of tariff"
       },
       "Task": {
         "type": "object",
@@ -8107,9 +8106,6 @@
             "format": "int64"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "UnblockPersonalAccountRequest request on unblock blocked personal account"
       },
       "UnblockPersonalAccountResponse": {
