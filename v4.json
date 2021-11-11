@@ -2398,10 +2398,6 @@
         "properties": {
           "close_date": {
             "type": "string"
-          },
-          "tariff_id": {
-            "type": "integer",
-            "format": "int64"
           }
         },
         "description": "CloseTariffRequest request on close(archive) tariff"
@@ -3009,8 +3005,8 @@
             "description": "Cost of one workplace"
           },
           "currency": {
-            "type": "string",
-            "description": "Currency of tariff in ISO"
+            "$ref": "#/components/schemas/Currency",
+            "description": "Currency of tariff"
           },
           "default_tariff": {
             "type": "boolean",
@@ -3044,92 +3040,21 @@
             "type": "boolean",
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
-          "status": {
-            "$ref": "#/components/schemas/TariffStatus",
-            "description": "Status of tariff"
-          },
-          "tariff_id": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Tariff id"
-          },
           "tariff_name": {
             "type": "string",
             "description": "Name of tariff"
           }
         },
+        "required": [
+          "currency",
+          "period_days",
+          "tariff_name"
+        ],
         "description": "CreateTariffRequest request on create tariff"
       },
-      "CreateTariffResponse": {
-        "type": "object",
-        "properties": {
-          "billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
-          },
-          "billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
-          "close_date": {
-            "type": "string",
-            "description": "Date of closing tariff"
-          },
-          "cost_workplace": {
-            "type": "string",
-            "description": "Cost of one workplace"
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency of tariff in ISO"
-          },
-          "default_tariff": {
-            "type": "boolean",
-            "description": "Default tariff flag that is set when registering an account"
-          },
-          "disk_space_quota": {
-            "type": "string",
-            "description": "Disk space limit per user"
-          },
-          "free_workplace": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Count of free workspaces"
-          },
-          "max_video_user": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Maximum count of users in video conference"
-          },
-          "max_voice_user": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Maximum count of users in voice conference"
-          },
-          "open_date": {
-            "type": "string",
-            "description": "Date of opening tariff"
-          },
-          "period_days": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Number of paid days"
-          },
-          "recalc_change_tariff": {
-            "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
-          },
-          "status": {
-            "$ref": "#/components/schemas/TariffStatus",
-            "description": "Status of tariff"
-          },
-          "tariff_id": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Tariff id"
-          },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name of tariff"
-          }
-        },
-        "description": "CreateTariffResponse response on create tariff"
+      "Currency": {
+        "type": "string",
+        "description": "ISO 4217 currency code"
       },
       "DLPBasicData": {
         "type": "object",
@@ -4195,87 +4120,6 @@
           }
         },
         "description": "GetPersonalAccountsListResponse response on get list of personal accounts"
-      },
-      "GetTariffByIdRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "GetTariffByIdRequest request on get tariff by ID"
-      },
-      "GetTariffByIdResponse": {
-        "type": "object",
-        "properties": {
-          "billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
-          },
-          "billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
-          "close_date": {
-            "type": "string",
-            "description": "Date of closing tariff"
-          },
-          "cost_workplace": {
-            "type": "string",
-            "description": "Cost of one workplace"
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency of tariff in ISO"
-          },
-          "default_tariff": {
-            "type": "boolean",
-            "description": "Default tariff flag that is set when registering an account"
-          },
-          "disk_space_quota": {
-            "type": "string",
-            "description": "Disk space limit per user"
-          },
-          "free_workplace": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Count of free workspaces"
-          },
-          "max_video_user": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Maximum count of users in video conference"
-          },
-          "max_voice_user": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Maximum count of users in voice conference"
-          },
-          "open_date": {
-            "type": "string",
-            "description": "Date of opening tariff"
-          },
-          "period_days": {
-            "$ref": "#/components/schemas/int32",
-            "description": "Number of paid days"
-          },
-          "recalc_change_tariff": {
-            "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
-          },
-          "status": {
-            "$ref": "#/components/schemas/TariffStatus",
-            "description": "Status of tariff"
-          },
-          "tariff_id": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Tariff id"
-          },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name of tariff"
-          }
-        },
-        "description": "GetTariffByIdResponse response on get tariff by ID"
       },
       "GetTariffsListResponse": {
         "type": "object",
@@ -6638,16 +6482,6 @@
         ],
         "description": "Websocket session"
       },
-      "SetTariffAsDefaultRequest": {
-        "type": "object",
-        "properties": {
-          "tariff_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "SetTariffAsDefaultRequest request on set tariff as default"
-      },
       "SetTariffAsDefaultResponse": {
         "type": "object",
         "properties": {
@@ -7060,8 +6894,8 @@
             "description": "Cost of one workplace"
           },
           "currency": {
-            "type": "string",
-            "description": "Currency of tariff in ISO"
+            "$ref": "#/components/schemas/Currency",
+            "description": "Currency of tariff"
           },
           "default_tariff": {
             "type": "boolean",
@@ -7085,6 +6919,7 @@
           },
           "open_date": {
             "type": "string",
+            "nullable": true,
             "description": "Date of opening tariff"
           },
           "period_days": {
@@ -7109,11 +6944,27 @@
             "description": "Name of tariff"
           }
         },
+        "required": [
+          "cost_workplace",
+          "currency",
+          "disk_space_quota",
+          "free_workplace",
+          "billing_free",
+          "billing_full_time",
+          "default_tariff",
+          "recalc_change_tariff",
+          "max_voice_user",
+          "max_video_user",
+          "period_days",
+          "status",
+          "tariff_id",
+          "tariff_name"
+        ],
         "description": "TariffBilling struct of billing api"
       },
       "TariffStatus": {
         "type": "string",
-        "description": "TariffStatus is status of tariff"
+        "description": "Tariff status"
       },
       "Task": {
         "type": "object",
