@@ -6995,51 +6995,6 @@
         ],
         "description": "Task tag"
       },
-      "Tariff": {
-        "type": "object",
-        "properties": {
-          "cloud_space": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Cloud space reserved for storing team users uploads in megabytes"
-          },
-          "max_members_in_team": {
-            "type": "integer",
-            "description": "Maximum allowed number of members in a team"
-          },
-          "max_participants_per_call": {
-            "type": "integer",
-            "description": "Maximum number of participants per call"
-          },
-          "max_upload_filesize": {
-            "type": "integer",
-            "format": "int64",
-            "description": "maximum file size for uploading"
-          },
-          "price": {
-            "type": "string",
-            "description": "Price of tariff"
-          },
-          "title_en": {
-            "type": "string",
-            "description": "Title of tariff in enlish"
-          },
-          "title_ru": {
-            "type": "string",
-            "description": "Title of tariff in russian"
-          },
-          "uid": {
-            "type": "string",
-            "description": "Tariff id"
-          }
-        },
-        "required": [
-          "uid",
-          "title_en",
-          "title_ru"
-        ],
-        "description": "Tariff for teams"
-      },
       "TariffBilling": {
         "type": "object",
         "properties": {
