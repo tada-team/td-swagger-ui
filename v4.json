@@ -2400,7 +2400,7 @@
             "type": "string"
           }
         },
-        "description": "CloseTariffRequest request on close(archive) tariff"
+        "description": "Request to close (archive) the tariff"
       },
       "CloseTariffResponse": {
         "type": "object",
@@ -2412,7 +2412,7 @@
         "required": [
           "success"
         ],
-        "description": "CloseTariffResponse response on close(archive) tariff"
+        "description": "Response from closing (archiving) the tariff"
       },
       "ColorRule": {
         "type": "object",
@@ -2988,14 +2988,6 @@
       "CreateTariffRequest": {
         "type": "object",
         "properties": {
-          "billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
-          },
-          "billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
           "close_date": {
             "type": "string",
             "description": "Date of closing tariff"
@@ -3008,17 +3000,29 @@
             "$ref": "#/components/schemas/Currency",
             "description": "Currency of tariff"
           },
-          "default_tariff": {
-            "type": "boolean",
-            "description": "Default tariff flag that is set when registering an account"
-          },
-          "disk_space_quota": {
+          "disk_space_quota_mb": {
             "type": "string",
             "description": "Disk space limit per user"
           },
-          "free_workplace": {
+          "free_workplaces": {
             "$ref": "#/components/schemas/int32",
             "description": "Count of free workspaces"
+          },
+          "is_billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "is_billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "is_default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "is_recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "max_video_user": {
             "$ref": "#/components/schemas/int32",
@@ -3036,10 +3040,6 @@
             "$ref": "#/components/schemas/int32",
             "description": "Number of paid days"
           },
-          "recalc_change_tariff": {
-            "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
-          },
           "tariff_name": {
             "type": "string",
             "description": "Name of tariff"
@@ -3050,7 +3050,7 @@
           "period_days",
           "tariff_name"
         ],
-        "description": "CreateTariffRequest request on create tariff"
+        "description": "Request to create the tariff"
       },
       "Currency": {
         "type": "string",
@@ -4001,7 +4001,7 @@
         "required": [
           "tariffs"
         ],
-        "description": "GetActiveTariffsListResponse response on get active tariffs list"
+        "description": "Response from getting a list of active tariffs"
       },
       "GetPersonalAccountByIDRequest": {
         "type": "object",
@@ -4134,7 +4134,7 @@
         "required": [
           "tariffs"
         ],
-        "description": "GetTariffsListResponse response on get tariffs list"
+        "description": "Response from getting a list of tariffs"
       },
       "GroupAccessRequest": {
         "type": "object",
@@ -6492,7 +6492,7 @@
         "required": [
           "success"
         ],
-        "description": "SetTariffAsDefaultResponse response on set tariff as default"
+        "description": "Response from setting the tariff as default"
       },
       "SharpLink": {
         "type": "object",
@@ -6877,14 +6877,6 @@
       "TariffBilling": {
         "type": "object",
         "properties": {
-          "billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
-          },
-          "billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
           "close_date": {
             "type": "string",
             "description": "Date of closing tariff"
@@ -6897,17 +6889,29 @@
             "$ref": "#/components/schemas/Currency",
             "description": "Currency of tariff"
           },
-          "default_tariff": {
-            "type": "boolean",
-            "description": "Default tariff flag that is set when registering an account"
-          },
-          "disk_space_quota": {
+          "disk_space_quota_mb": {
             "type": "string",
             "description": "Disk space limit per user"
           },
-          "free_workplace": {
+          "free_workplaces": {
             "$ref": "#/components/schemas/int32",
             "description": "Count of free workspaces"
+          },
+          "is_billing_free": {
+            "type": "boolean",
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "is_billing_full_time": {
+            "type": "boolean",
+            "description": "Flag of accounting without looking at the number of days before the billing period"
+          },
+          "is_default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "is_recalc_change_tariff": {
+            "type": "boolean",
+            "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "max_video_user": {
             "$ref": "#/components/schemas/int32",
@@ -6926,10 +6930,6 @@
             "$ref": "#/components/schemas/int32",
             "description": "Number of paid days"
           },
-          "recalc_change_tariff": {
-            "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
-          },
           "status": {
             "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
@@ -6947,12 +6947,12 @@
         "required": [
           "cost_workplace",
           "currency",
-          "disk_space_quota",
-          "free_workplace",
-          "billing_free",
-          "billing_full_time",
-          "default_tariff",
-          "recalc_change_tariff",
+          "disk_space_quota_mb",
+          "free_workplaces",
+          "is_billing_free",
+          "is_billing_full_time",
+          "is_default_tariff",
+          "is_recalc_change_tariff",
           "max_voice_user",
           "max_video_user",
           "period_days",
@@ -6960,7 +6960,7 @@
           "tariff_id",
           "tariff_name"
         ],
-        "description": "TariffBilling struct of billing api"
+        "description": "Tariff struct of billing API"
       },
       "TariffStatus": {
         "type": "string",
