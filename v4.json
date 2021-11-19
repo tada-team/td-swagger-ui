@@ -1237,7 +1237,8 @@
         "type": "object",
         "properties": {
           "count_workplaces": {
-            "$ref": "#/components/schemas/int32"
+            "type": "integer",
+            "format": "int32"
           },
           "personal_account_id": {
             "type": "string"
@@ -1341,7 +1342,8 @@
         "type": "object",
         "properties": {
           "count_workplaces": {
-            "$ref": "#/components/schemas/int32"
+            "type": "integer",
+            "format": "int32"
           },
           "personal_account_id": {
             "type": "string"
@@ -2882,7 +2884,8 @@
         "type": "object",
         "properties": {
           "discount_amount": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
@@ -2890,7 +2893,8 @@
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of free workplaces on personal account"
           },
           "full_name": {
@@ -2906,7 +2910,8 @@
             "description": "ID User who owns this personal account"
           },
           "paid_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
@@ -2930,15 +2935,18 @@
             "description": "Name Tariff on this personal account"
           },
           "team_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of teams on personal account"
           },
           "users_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of user on personal account"
           },
           "workplace_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of workplaces on personal account"
           }
         },
@@ -2978,7 +2986,8 @@
             "description": "Disk space limit per user"
           },
           "free_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of free workspaces"
           },
           "is_billing_free": {
@@ -2998,11 +3007,13 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "max_video_user": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Maximum count of users in video conference"
           },
           "max_voice_user": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Maximum count of users in voice conference"
           },
           "open_date": {
@@ -3010,7 +3021,8 @@
             "description": "Date of opening tariff"
           },
           "period_days": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Number of paid days"
           },
           "tariff_name": {
@@ -3235,7 +3247,8 @@
         "type": "object",
         "properties": {
           "count_workplaces": {
-            "$ref": "#/components/schemas/int32"
+            "type": "integer",
+            "format": "int32"
           },
           "personal_account_id": {
             "type": "string"
@@ -3977,7 +3990,8 @@
         "type": "object",
         "properties": {
           "discount_amount": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
@@ -3985,7 +3999,8 @@
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of free workplaces on personal account"
           },
           "full_name": {
@@ -4001,7 +4016,8 @@
             "description": "ID User who owns this personal account"
           },
           "paid_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
@@ -4025,15 +4041,18 @@
             "description": "Name Tariff on this personal account"
           },
           "team_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of teams on personal account"
           },
           "users_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of user on personal account"
           },
           "workplace_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of workplaces on personal account"
           }
         },
@@ -5287,7 +5306,8 @@
         "type": "object",
         "properties": {
           "discount_amount": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
@@ -5295,7 +5315,8 @@
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of free workplaces on personal account"
           },
           "full_name": {
@@ -5311,7 +5332,8 @@
             "description": "ID User who owns this personal account"
           },
           "paid_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
@@ -5335,15 +5357,18 @@
             "description": "Name Tariff on this personal account"
           },
           "team_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of teams on personal account"
           },
           "users_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of user on personal account"
           },
           "workplace_count": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of workplaces on personal account"
           }
         },
@@ -6811,7 +6836,8 @@
             "description": "Disk space limit per user"
           },
           "free_workplaces": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Count of free workspaces"
           },
           "is_billing_free": {
@@ -6831,11 +6857,13 @@
             "description": "Flag for accounting for unspent days when switching to a new tariff"
           },
           "max_video_user": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Maximum count of users in video conference"
           },
           "max_voice_user": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Maximum count of users in voice conference"
           },
           "open_date": {
@@ -6844,7 +6872,8 @@
             "description": "Date of opening tariff"
           },
           "period_days": {
-            "$ref": "#/components/schemas/int32",
+            "type": "integer",
+            "format": "int32",
             "description": "Number of paid days"
           },
           "status": {
