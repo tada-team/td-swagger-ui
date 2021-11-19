@@ -6935,8 +6935,7 @@
             "description": "Status of tariff"
           },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "Tariff id"
           },
           "tariff_name": {
