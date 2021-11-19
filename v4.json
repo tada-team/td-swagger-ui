@@ -1221,16 +1221,6 @@
   },
   "components": {
     "schemas": {
-      "ActivatePersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "ActivatePersonalAccountRequest request on activate suspended personal account"
-      },
       "ActivatePersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -1250,8 +1240,7 @@
             "$ref": "#/components/schemas/int32"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "description": "ActivateWorkplacesOnPersonalAccountRequest request on activate workplace on personal account"
@@ -1310,8 +1299,7 @@
             "type": "string"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "team_uuid": {
             "type": "string"
@@ -1332,8 +1320,7 @@
         "type": "object",
         "properties": {
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_uuid": {
             "type": "string"
@@ -1357,8 +1344,7 @@
             "$ref": "#/components/schemas/int32"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "description": "AddWorkplacesOnPersonalAccountRequest request on add workplace on personal account"
@@ -1401,16 +1387,6 @@
           "event"
         ],
         "description": "Base of all events"
-      },
-      "BlockPersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "BlockPersonalAccountRequest request on block unblocked personal account"
       },
       "BlockPersonalAccountResponse": {
         "type": "object",
@@ -2910,8 +2886,7 @@
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
@@ -2935,8 +2910,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "phone": {
@@ -2948,8 +2922,7 @@
             "description": "Status of personal account"
           },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Tariff on this personal account"
           },
           "tariff_name": {
@@ -3220,8 +3193,7 @@
             "type": "string"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "team_uuid": {
             "type": "string"
@@ -3242,8 +3214,7 @@
         "type": "object",
         "properties": {
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_uuid": {
             "type": "string"
@@ -3267,8 +3238,7 @@
             "$ref": "#/components/schemas/int32"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "description": "DeleteWorkplacesOnPersonalAccountRequest request on delete workplace on personal account"
@@ -4003,16 +3973,6 @@
         ],
         "description": "Response from getting a list of active tariffs"
       },
-      "GetPersonalAccountByIDRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "GetPersonalAccountByIDRequest request on get personal account by ID"
-      },
       "GetPersonalAccountByIDResponse": {
         "type": "object",
         "properties": {
@@ -4021,8 +3981,7 @@
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
@@ -4046,8 +4005,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "phone": {
@@ -4059,8 +4017,7 @@
             "description": "Status of personal account"
           },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Tariff on this personal account"
           },
           "tariff_name": {
@@ -4095,19 +4052,6 @@
           "paid_workplaces"
         ],
         "description": "GetPersonalAccountByIDResponse response on get personal account by ID"
-      },
-      "GetPersonalAccountsListRequest": {
-        "type": "object",
-        "properties": {
-          "options": {
-            "$ref": "#/components/schemas/Options"
-          },
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "GetPersonalAccountsListRequest request on get list of personal accounts"
       },
       "GetPersonalAccountsListResponse": {
         "type": "object",
@@ -5185,20 +5129,6 @@
         ],
         "description": "Contact online status"
       },
-      "Options": {
-        "type": "object",
-        "properties": {
-          "limit": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "offset": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "Options struct for pagination"
-      },
       "PaginatedChats": {
         "type": "object",
         "properties": {
@@ -5361,8 +5291,7 @@
             "description": "Amount of Discount on personal account"
           },
           "discount_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Discount on personal account"
           },
           "free_workplaces": {
@@ -5386,8 +5315,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "phone": {
@@ -5399,8 +5327,7 @@
             "description": "Status of personal account"
           },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
             "description": "ID Tariff on this personal account"
           },
           "tariff_name": {
@@ -6771,16 +6698,6 @@
         ],
         "description": "Link to sub/sup task"
       },
-      "SuspendPersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "SuspendPersonalAccountRequest request on suspend active personal account"
-      },
       "SuspendPersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -7505,8 +7422,7 @@
             "type": "string"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "team_uuid": {
             "type": "string"
@@ -7947,16 +7863,6 @@
           "type": "object",
           "description": "Any user data"
         }
-      },
-      "UnblockPersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "UnblockPersonalAccountRequest request on unblock blocked personal account"
       },
       "UnblockPersonalAccountResponse": {
         "type": "object",
