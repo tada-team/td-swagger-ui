@@ -2371,27 +2371,6 @@
         ],
         "description": "Empty message for checking server connection"
       },
-      "CloseTariffRequest": {
-        "type": "object",
-        "properties": {
-          "close_date": {
-            "type": "string"
-          }
-        },
-        "description": "Request to close (archive) the tariff"
-      },
-      "CloseTariffResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "success"
-        ],
-        "description": "Response from closing (archiving) the tariff"
-      },
       "ColorRule": {
         "type": "object",
         "properties": {
@@ -6437,18 +6416,6 @@
         ],
         "description": "Websocket session"
       },
-      "SetTariffAsDefaultResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "success"
-        ],
-        "description": "Response from setting the tariff as default"
-      },
       "SharpLink": {
         "type": "object",
         "properties": {
@@ -7930,6 +7897,24 @@
           "chats"
         ],
         "description": "Unread message counters"
+      },
+      "UpdateTariffRequest": {
+        "type": "object",
+        "properties": {
+          "close_date": {
+            "type": "string",
+            "description": "Date of closing tariff"
+          },
+          "is_default_tariff": {
+            "type": "boolean",
+            "description": "Default tariff flag that is set when registering an account"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TariffStatus",
+            "description": "Status of tariff"
+          }
+        },
+        "description": "Request to update the tariff"
       },
       "Upload": {
         "type": "object",
