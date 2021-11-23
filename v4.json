@@ -2951,6 +2951,7 @@
           }
         },
         "required": [
+          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -4057,6 +4058,7 @@
           }
         },
         "required": [
+          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -5373,6 +5375,7 @@
           }
         },
         "required": [
+          "personal_account_id",
           "owner_uuid",
           "tariff_id",
           "tariff_name",
@@ -5390,7 +5393,7 @@
       },
       "PersonalAccountStatus": {
         "type": "string",
-        "description": "PersonalAccountStatus is status of personal account"
+        "description": "Personal account status"
       },
       "PushDevice": {
         "type": "object",
