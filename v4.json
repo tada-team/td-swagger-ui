@@ -1244,6 +1244,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "personal_account_id",
+          "count_workplaces"
+        ],
         "description": "ActivateWorkplacesOnPersonalAccountRequest request on activate workplace on personal account"
       },
       "ActivateWorkplacesOnPersonalAccountResponse": {
@@ -1327,6 +1331,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "personal_account_id",
+          "user_uuid"
+        ],
         "description": "AddUserInWorkplaceRequest request on add user in workplace on personal account"
       },
       "AddUserInWorkplaceResponse": {
@@ -1349,6 +1357,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "personal_account_id",
+          "count_workplaces"
+        ],
         "description": "AddWorkplacesOnPersonalAccountRequest request on add workplace on personal account"
       },
       "AddWorkplacesOnPersonalAccountResponse": {
@@ -3335,6 +3347,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "personal_account_id",
+          "user_uuid"
+        ],
         "description": "DeleteUserFromWorkplaceRequest request on delete user from workplace on personal account"
       },
       "DeleteUserFromWorkplaceResponse": {
@@ -3357,6 +3373,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "personal_account_id",
+          "count_workplaces"
+        ],
         "description": "DeleteWorkplacesOnPersonalAccountRequest request on delete workplace on personal account"
       },
       "DeleteWorkplacesOnPersonalAccountResponse": {
@@ -4242,8 +4262,7 @@
         "type": "object",
         "properties": {
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
@@ -4261,23 +4280,94 @@
         },
         "description": "GetUnpaidWorkplacesByPersonalAccountResponse response on get count unpaid workplaces by personal account"
       },
+      "GetUsersInfoByUserUUIDArrayExcludingTeamMembersRequest": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "team_uuid": {
+            "type": "string"
+          },
+          "user_uuid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "user_uuid",
+          "team_uuid"
+        ],
+        "description": "GetUsersInfoByUserUUIDArrayExcludingTeamMembersRequest request on get user information by array of UUID's users excluding team members in uuid team"
+      },
+      "GetUsersInfoByUserUUIDArrayExcludingTeamMembersResponse": {
+        "type": "object",
+        "properties": {
+          "user_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserInfo"
+            }
+          }
+        },
+        "description": "GetUsersInfoByUserUUIDArrayExcludingTeamMembersResponse response on get user information by array of UUID's users excluding team members in uuid team"
+      },
+      "GetUsersInfoByUserUUIDArrayRequest": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user_uuid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "user_uuid"
+        ],
+        "description": "GetUsersInfoByUserUUIDArrayRequest request on get user information by array of UUID's users"
+      },
+      "GetUsersInfoByUserUUIDArrayResponse": {
+        "type": "object",
+        "properties": {
+          "user_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserInfo"
+            }
+          }
+        },
+        "description": "GetUsersInfoByUserUUIDArrayResponse response on get user information by array of UUID's users"
+      },
       "GetWorkplaceByPersonalAccountResponse": {
         "type": "object",
         "properties": {
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_uuid": {
             "type": "string"
           },
           "workplace_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
@@ -4292,8 +4382,7 @@
             "$ref": "#/components/schemas/WorkplaceOptions"
           },
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
@@ -8448,6 +8537,30 @@
         ],
         "description": "User authentication"
       },
+      "UserInfo": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "fio": {
+            "type": "string"
+          },
+          "last_activity": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid"
+        ],
+        "description": "UserInfo user information"
+      },
       "UserWithMe": {
         "type": "object",
         "properties": {
@@ -8629,19 +8742,16 @@
         "type": "object",
         "properties": {
           "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "user_uuid": {
             "type": "string"
           },
           "workplace_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
