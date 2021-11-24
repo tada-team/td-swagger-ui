@@ -1599,6 +1599,32 @@
         "type": "string",
         "description": "CallType .."
       },
+      "ChangeTariffBilling": {
+        "type": "object",
+        "properties": {
+          "close_date": {
+            "type": "string"
+          },
+          "create_date": {
+            "type": "string"
+          },
+          "open_date": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "ChangeTariffBilling struct of changes tariffs by personal account"
+      },
       "Chat": {
         "type": "object",
         "properties": {
@@ -2014,6 +2040,28 @@
       "ChatType": {
         "type": "string",
         "description": "Chat type"
+      },
+      "CheckActivePersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "CheckActivePersonalAccountRequest request on check active personal account"
+      },
+      "CheckActivePersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "CheckActivePersonalAccountResponse response on check active personal account"
       },
       "ClientActivity": {
         "type": "object",
@@ -2837,6 +2885,36 @@
         ],
         "description": "Country for phone numbers selection on login screen"
       },
+      "CreateChangeTariffOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "open_date": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "tariff_id"
+        ],
+        "description": "CreateChangeTariffOnPersonalAccountRequest request on create change tariff on personal account"
+      },
+      "CreateChangeTariffOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "CreateChangeTariffOnPersonalAccountResponse response on create change tariff on personal account"
+      },
       "CreatePersonalAccountRequest": {
         "type": "object",
         "properties": {
@@ -2996,6 +3074,16 @@
             "format": "int32",
             "description": "Maximum count of users in voice conference"
           },
+          "min_step_workplaces": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Minimum step of change count workspaces on tariff"
+          },
+          "min_tariff_workplaces": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Count of minimum workspaces on tariff"
+          },
           "open_date": {
             "type": "string",
             "description": "Date of opening tariff"
@@ -3008,10 +3096,18 @@
           "tariff_name": {
             "type": "string",
             "description": "Name of tariff"
+          },
+          "video_call_bitrate": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Bitrate of video in video co"
           }
         },
         "required": [
           "currency",
+          "min_tariff_workplaces",
+          "min_step_workplaces",
+          "video_call_bitrate",
           "period_days",
           "tariff_name"
         ],
@@ -3177,6 +3273,33 @@
           "is_bot"
         ],
         "description": "DLPUserData structure to store sender/receiver user information"
+      },
+      "DeleteChangeTariffOnPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tariff_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "tariff_id"
+        ],
+        "description": "DeleteChangeTariffOnPersonalAccountRequest request on delete change tariff on personal account"
+      },
+      "DeleteChangeTariffOnPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "DeleteChangeTariffOnPersonalAccountResponse response on delete change tariff om personal account"
       },
       "DeleteTeamFromPersonalAccountRequest": {
         "type": "object",
@@ -3966,6 +4089,41 @@
         ],
         "description": "Response from getting a list of active tariffs"
       },
+      "GetChangesTariffsByPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "GetChangesTariffsByPersonalAccountRequest request on get changes tariffs by personal account"
+      },
+      "GetChangesTariffsByPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "tariffs_changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChangeTariffBilling"
+            }
+          }
+        },
+        "description": "GetChangesTariffsByPersonalAccountResponse response on get changes tariffs by personal account"
+      },
+      "GetPersonalAccountByIDRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "GetPersonalAccountByIDRequest request on get personal account by ID"
+      },
       "GetPersonalAccountByIDResponse": {
         "type": "object",
         "properties": {
@@ -4079,6 +4237,81 @@
           "tariffs"
         ],
         "description": "Response from getting a list of tariffs"
+      },
+      "GetUnpaidWorkplacesByPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "GetUnpaidWorkplacesByPersonalAccountRequest request on get count unpaid workplaces by personal account"
+      },
+      "GetUnpaidWorkplacesByPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "description": "GetUnpaidWorkplacesByPersonalAccountResponse response on get count unpaid workplaces by personal account"
+      },
+      "GetWorkplaceByPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_uuid": {
+            "type": "string"
+          },
+          "workplace_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "GetWorkplaceByPersonalAccountResponse response on get workplace by personal account"
+      },
+      "GetWorkplacesByPersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/WorkplaceOptions"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "GetWorkplacesByPersonalAccountRequest request on get workplaces by personal account"
+      },
+      "GetWorkplacesByPersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "workplaces": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkplaceBilling"
+            }
+          }
+        },
+        "description": "GetWorkplacesByPersonalAccountResponse response on get workplaces by personal account"
       },
       "GroupAccessRequest": {
         "type": "object",
@@ -6836,6 +7069,16 @@
             "format": "int32",
             "description": "Maximum count of users in voice conference"
           },
+          "min_step_workplaces": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Minimum step of change count workspaces on tariff"
+          },
+          "min_tariff_workplaces": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Count of minimum workspaces on tariff"
+          },
           "open_date": {
             "type": "string",
             "nullable": true,
@@ -6857,11 +7100,18 @@
           "tariff_name": {
             "type": "string",
             "description": "Name of tariff"
+          },
+          "video_call_bitrate": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Bitrate of video in video co"
           }
         },
         "required": [
           "cost_workplace",
           "currency",
+          "min_tariff_workplaces",
+          "min_step_workplaces",
           "disk_space_quota_mb",
           "free_workplaces",
           "is_billing_free",
@@ -6870,6 +7120,7 @@
           "is_recalc_change_tariff",
           "max_voice_user",
           "max_video_user",
+          "video_call_bitrate",
           "period_days",
           "status",
           "tariff_id",
@@ -7898,6 +8149,34 @@
         ],
         "description": "Unread message counters"
       },
+      "UpdatePersonalAccountRequest": {
+        "type": "object",
+        "properties": {
+          "full_name": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "phone": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "UpdatePersonalAccountRequest request on update personal account"
+      },
+      "UpdatePersonalAccountResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "description": "UpdatePersonalAccountResponse response on update personal account"
+      },
       "UpdateTariffRequest": {
         "type": "object",
         "properties": {
@@ -7912,8 +8191,15 @@
           "status": {
             "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
+          },
+          "tariff_id": {
+            "type": "string",
+            "description": "Tariff id"
           }
         },
+        "required": [
+          "tariff_id"
+        ],
         "description": "Request to update the tariff"
       },
       "Upload": {
@@ -8338,6 +8624,44 @@
           "fade"
         ],
         "description": "WebBase base colors for web"
+      },
+      "WorkplaceBilling": {
+        "type": "object",
+        "properties": {
+          "personal_account_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_uuid": {
+            "type": "string"
+          },
+          "workplace_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "personal_account_id"
+        ],
+        "description": "WorkplaceBilling struct of workplace on personal account"
+      },
+      "WorkplaceOptions": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "description": "WorkplaceOptions struct for pagination"
       },
       "clientActivityParams": {
         "type": "object",
