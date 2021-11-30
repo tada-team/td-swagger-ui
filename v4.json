@@ -1239,13 +1239,9 @@
           "count_workplaces": {
             "type": "integer",
             "format": "int32"
-          },
-          "personal_account_id": {
-            "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "count_workplaces"
         ],
         "description": "ActivateWorkplacesOnPersonalAccountRequest request on activate workplace on personal account"
@@ -1303,9 +1299,6 @@
           "delete_date": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "string"
-          },
           "team_uuid": {
             "type": "string"
           }
@@ -1321,18 +1314,47 @@
         },
         "description": "AddTeamOnPersonalAccountResponse response on add team on personal account"
       },
+      "AddUserInWorkplaceByJidRequest": {
+        "type": "object",
+        "properties": {
+          "contact_uuid": {
+            "type": "string"
+          }
+        },
+        "description": "AddUserInWorkplaceByJidRequest request on add user on workplace by contact JID"
+      },
+      "AddUserInWorkplaceByJidResponse": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "last_activity": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid"
+        ],
+        "description": "AddUserInWorkplaceByJidResponse response on add user on workplace by contact JID"
+      },
       "AddUserInWorkplaceRequest": {
         "type": "object",
         "properties": {
-          "personal_account_id": {
-            "type": "string"
-          },
           "user_uuid": {
             "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "user_uuid"
         ],
         "description": "AddUserInWorkplaceRequest request on add user in workplace on personal account"
@@ -1352,13 +1374,9 @@
           "count_workplaces": {
             "type": "integer",
             "format": "int32"
-          },
-          "personal_account_id": {
-            "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "count_workplaces"
         ],
         "description": "AddWorkplacesOnPersonalAccountRequest request on add workplace on personal account"
@@ -2052,19 +2070,6 @@
       "ChatType": {
         "type": "string",
         "description": "Chat type"
-      },
-      "CheckActivePersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "required": [
-          "personal_account_id"
-        ],
-        "description": "CheckActivePersonalAccountRequest request on check active personal account"
       },
       "CheckActivePersonalAccountResponse": {
         "type": "object",
@@ -2903,17 +2908,12 @@
           "open_date": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "tariff_id": {
             "type": "integer",
             "format": "int64"
           }
         },
         "required": [
-          "personal_account_id",
           "tariff_id"
         ],
         "description": "CreateChangeTariffOnPersonalAccountRequest request on create change tariff on personal account"
@@ -3113,6 +3113,11 @@
             "type": "integer",
             "format": "int32",
             "description": "Bitrate of video in video co"
+          },
+          "video_sharing_bitrate": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Bitrate of video in video sharing"
           }
         },
         "required": [
@@ -3120,6 +3125,7 @@
           "min_tariff_workplaces",
           "min_step_workplaces",
           "video_call_bitrate",
+          "video_sharing_bitrate",
           "period_days",
           "tariff_name"
         ],
@@ -3289,17 +3295,12 @@
       "DeleteChangeTariffOnPersonalAccountRequest": {
         "type": "object",
         "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "tariff_id": {
             "type": "integer",
             "format": "int64"
           }
         },
         "required": [
-          "personal_account_id",
           "tariff_id"
         ],
         "description": "DeleteChangeTariffOnPersonalAccountRequest request on delete change tariff on personal account"
@@ -3317,9 +3318,6 @@
         "type": "object",
         "properties": {
           "delete_date": {
-            "type": "string"
-          },
-          "personal_account_id": {
             "type": "string"
           },
           "team_uuid": {
@@ -3340,15 +3338,11 @@
       "DeleteUserFromWorkplaceRequest": {
         "type": "object",
         "properties": {
-          "personal_account_id": {
-            "type": "string"
-          },
           "user_uuid": {
             "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "user_uuid"
         ],
         "description": "DeleteUserFromWorkplaceRequest request on delete user from workplace on personal account"
@@ -3368,13 +3362,9 @@
           "count_workplaces": {
             "type": "integer",
             "format": "int32"
-          },
-          "personal_account_id": {
-            "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "count_workplaces"
         ],
         "description": "DeleteWorkplacesOnPersonalAccountRequest request on delete workplace on personal account"
@@ -4109,19 +4099,6 @@
         ],
         "description": "Response from getting a list of active tariffs"
       },
-      "GetChangesTariffsByPersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "required": [
-          "personal_account_id"
-        ],
-        "description": "GetChangesTariffsByPersonalAccountRequest request on get changes tariffs by personal account"
-      },
       "GetChangesTariffsByPersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -4133,16 +4110,6 @@
           }
         },
         "description": "GetChangesTariffsByPersonalAccountResponse response on get changes tariffs by personal account"
-      },
-      "GetPersonalAccountByIDRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "description": "GetPersonalAccountByIDRequest request on get personal account by ID"
       },
       "GetPersonalAccountByIDResponse": {
         "type": "object",
@@ -4258,18 +4225,6 @@
         ],
         "description": "Response from getting a list of tariffs"
       },
-      "GetUnpaidWorkplacesByPersonalAccountRequest": {
-        "type": "object",
-        "properties": {
-          "personal_account_id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "personal_account_id"
-        ],
-        "description": "GetUnpaidWorkplacesByPersonalAccountRequest request on get count unpaid workplaces by personal account"
-      },
       "GetUnpaidWorkplacesByPersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -4357,9 +4312,6 @@
       "GetWorkplaceByPersonalAccountResponse": {
         "type": "object",
         "properties": {
-          "personal_account_id": {
-            "type": "string"
-          },
           "user_id": {
             "type": "string"
           },
@@ -4370,9 +4322,6 @@
             "type": "string"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "GetWorkplaceByPersonalAccountResponse response on get workplace by personal account"
       },
       "GetWorkplacesByPersonalAccountRequest": {
@@ -4380,14 +4329,8 @@
         "properties": {
           "options": {
             "$ref": "#/components/schemas/WorkplaceOptions"
-          },
-          "personal_account_id": {
-            "type": "string"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "GetWorkplacesByPersonalAccountRequest request on get workplaces by personal account"
       },
       "GetWorkplacesByPersonalAccountResponse": {
@@ -7194,6 +7137,11 @@
             "type": "integer",
             "format": "int32",
             "description": "Bitrate of video in video co"
+          },
+          "video_sharing_bitrate": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Bitrate of video in video sharing"
           }
         },
         "required": [
@@ -7210,6 +7158,7 @@
           "max_voice_user",
           "max_video_user",
           "video_call_bitrate",
+          "video_sharing_bitrate",
           "period_days",
           "status",
           "tariff_id",
@@ -7760,9 +7709,6 @@
           "delete_date": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "string"
-          },
           "team_uuid": {
             "type": "string"
           }
@@ -8244,17 +8190,10 @@
           "full_name": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "phone": {
             "type": "string"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "UpdatePersonalAccountRequest request on update personal account"
       },
       "UpdatePersonalAccountResponse": {
@@ -8543,7 +8482,7 @@
           "email": {
             "type": "string"
           },
-          "fio": {
+          "full_name": {
             "type": "string"
           },
           "last_activity": {
@@ -8741,9 +8680,6 @@
       "WorkplaceBilling": {
         "type": "object",
         "properties": {
-          "personal_account_id": {
-            "type": "string"
-          },
           "user_id": {
             "type": "string"
           },
@@ -8754,9 +8690,6 @@
             "type": "string"
           }
         },
-        "required": [
-          "personal_account_id"
-        ],
         "description": "WorkplaceBilling struct of workplace on personal account"
       },
       "WorkplaceOptions": {
