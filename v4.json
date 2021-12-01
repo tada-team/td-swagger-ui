@@ -1405,6 +1405,19 @@
         ],
         "description": "Generic event representation"
       },
+      "AvatarColors": {
+        "type": "object",
+        "properties": {
+          "task_default": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "TaskDefault color"
+          }
+        },
+        "required": [
+          "task_default"
+        ],
+        "description": "AvatarColors avatar colors for app"
+      },
       "BaseEvent": {
         "type": "object",
         "properties": {
@@ -8006,6 +8019,11 @@
           "attention_light": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Attention light color for app"
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/AvatarColors",
+            "nullable": true,
+            "description": "Avatar colors for app"
           },
           "back": {
             "$ref": "#/components/schemas/RGBColor",
