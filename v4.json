@@ -1654,17 +1654,12 @@
           "open_date": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
-          "personal_account_id"
+          "tariff_id"
         ],
         "description": "ChangeTariffBilling struct of changes tariffs by personal account"
       },
@@ -2922,8 +2917,7 @@
             "type": "string"
           },
           "tariff_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
@@ -3309,8 +3303,7 @@
         "type": "object",
         "properties": {
           "tariff_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           }
         },
         "required": [
