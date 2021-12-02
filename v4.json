@@ -1433,6 +1433,24 @@
         ],
         "description": "Base of all events"
       },
+      "Bg": {
+        "type": "object",
+        "properties": {
+          "badge_background": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "BadgeBackground color"
+          },
+          "fade": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Fade color"
+          }
+        },
+        "required": [
+          "badge_background",
+          "fade"
+        ],
+        "description": "Bg bg colors for app"
+      },
       "BlockPersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -1511,6 +1529,34 @@
           "simple_disable"
         ],
         "description": "ButtonColors button colors for app"
+      },
+      "CallColors": {
+        "type": "object",
+        "properties": {
+          "button_active": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "ButtonActive color"
+          },
+          "button_end_call": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "ButtonEndCall color"
+          },
+          "callbar_background": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "CallBarBackground color"
+          },
+          "icon_callbar": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "IconCallBar color"
+          }
+        },
+        "required": [
+          "callbar_background",
+          "icon_callbar",
+          "button_active",
+          "button_end_call"
+        ],
+        "description": "CallColors call colors for app"
       },
       "CallDevice": {
         "type": "object",
@@ -4074,6 +4120,14 @@
             "$ref": "#/components/schemas/RGBColor",
             "description": "Text color"
           },
+          "text_avatar": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "TextAvatar color"
+          },
+          "text_badge": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "TextBadge color"
+          },
           "title": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Title color"
@@ -4086,7 +4140,9 @@
           "brand_button",
           "simple_button",
           "bubble_sent",
-          "bubble_received"
+          "bubble_received",
+          "text_avatar",
+          "text_badge"
         ],
         "description": "FontColors font colors for app"
       },
@@ -4487,6 +4543,10 @@
             "$ref": "#/components/schemas/RGBColor",
             "description": "Error color"
           },
+          "selection": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Selection color"
+          },
           "static": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Static color"
@@ -4496,7 +4556,8 @@
           "static",
           "active",
           "disable",
-          "error"
+          "error",
+          "selection"
         ],
         "description": "InputColors input colors for app"
       },
@@ -6976,6 +7037,44 @@
         ],
         "description": "SuspendPersonalAccountResponse response on suspend active personal account"
       },
+      "SwipeColors": {
+        "type": "object",
+        "properties": {
+          "call": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Call color"
+          },
+          "end_call": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "EndCall"
+          },
+          "hide": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Hide color"
+          },
+          "message": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Message color"
+          },
+          "notification": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Notification color"
+          },
+          "pin": {
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Pin color"
+          }
+        },
+        "required": [
+          "notification",
+          "call",
+          "end_call",
+          "hide",
+          "pin",
+          "message"
+        ],
+        "description": "SwipeColors swipe colors for app"
+      },
       "SwitcherColors": {
         "type": "object",
         "properties": {
@@ -8034,6 +8133,11 @@
             "$ref": "#/components/schemas/RGBColor",
             "description": "Background color for app"
           },
+          "bg": {
+            "$ref": "#/components/schemas/Bg",
+            "nullable": true,
+            "description": "Bg colors for app"
+          },
           "brand": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Brand color for app"
@@ -8050,6 +8154,10 @@
             "$ref": "#/components/schemas/ButtonColors",
             "nullable": true,
             "description": "Button colors for app"
+          },
+          "call": {
+            "$ref": "#/components/schemas/CallColors",
+            "description": "Call colors for app"
           },
           "chat_input_background": {
             "$ref": "#/components/schemas/RGBColor",
@@ -8098,6 +8206,11 @@
           "success_light": {
             "$ref": "#/components/schemas/RGBColor",
             "description": "Success light color for app"
+          },
+          "swipe": {
+            "$ref": "#/components/schemas/SwipeColors",
+            "nullable": true,
+            "description": "Swipe colors for app"
           },
           "switcher": {
             "$ref": "#/components/schemas/SwitcherColors",
@@ -8148,6 +8261,7 @@
           "title_background",
           "attention",
           "attention_light",
+          "call",
           "AppAccentColor",
           "AppPrimaryColor"
         ],
@@ -8640,37 +8754,48 @@
         "type": "object",
         "properties": {
           "attention": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Attention color"
           },
           "attention_light": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "AttentionLight color"
           },
           "back_light": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "BackLight color"
           },
           "brand": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Brand color"
           },
           "brand_dark": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "BrandDark color"
           },
           "brand_light": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "BrandLight color"
           },
           "error": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Error color"
           },
           "error_light": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "ErrorLight color"
           },
           "fade": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Fade color"
           },
           "success": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "Success color"
           },
           "success_light": {
-            "$ref": "#/components/schemas/RGBColor"
+            "$ref": "#/components/schemas/RGBColor",
+            "description": "SuccessLight color"
           }
         },
         "required": [
