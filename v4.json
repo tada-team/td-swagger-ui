@@ -8157,6 +8157,7 @@
           },
           "call": {
             "$ref": "#/components/schemas/CallColors",
+            "nullable": true,
             "description": "Call colors for app"
           },
           "chat_input_background": {
@@ -8261,7 +8262,6 @@
           "title_background",
           "attention",
           "attention_light",
-          "call",
           "AppAccentColor",
           "AppPrimaryColor"
         ],
