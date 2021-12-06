@@ -2248,6 +2248,25 @@
         ],
         "description": "Reject the call"
       },
+      "ClientCallScreenShare": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/clientCallScreenShareParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "ClientCallScreenShare event for enable/disable screen share"
+      },
       "ClientCallSdp": {
         "type": "object",
         "properties": {
@@ -6062,6 +6081,25 @@
         ],
         "description": "Call restarted"
       },
+      "ServerCallScreenShare": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverCallScreenShareParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "ServerCallScreenShare screen share event"
+      },
       "ServerCallSdp": {
         "type": "object",
         "properties": {
@@ -8975,6 +9013,24 @@
         ],
         "description": "Params of the client.call.reject event"
       },
+      "clientCallScreenShareParams": {
+        "type": "object",
+        "properties": {
+          "call_jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "CallJid Chat or contact id"
+          },
+          "screenshare_enabled": {
+            "type": "boolean",
+            "description": "ScreenShareEnabled enabled or disabled screen share"
+          }
+        },
+        "required": [
+          "screenshare_enabled",
+          "call_jid"
+        ],
+        "description": "Params of the client.call.screenshare event"
+      },
       "clientCallSdpParams": {
         "type": "object",
         "properties": {
@@ -9352,6 +9408,29 @@
           "team"
         ],
         "description": "Params of the server.call.restart event"
+      },
+      "serverCallScreenShareParams": {
+        "type": "object",
+        "properties": {
+          "actor_jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "ActorJid - contact id which enable/disable screen sharing"
+          },
+          "call_jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "CallJid - Chat or contact id"
+          },
+          "screenshare_enabled": {
+            "type": "boolean",
+            "description": "ScreenShareEnabled enabled or disabled screen share"
+          }
+        },
+        "required": [
+          "screenshare_enabled",
+          "call_jid",
+          "actor_jid"
+        ],
+        "description": "Params of the server.call.screenshare event"
       },
       "serverCallSdpParams": {
         "type": "object",
