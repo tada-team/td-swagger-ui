@@ -3669,9 +3669,9 @@
             "type": "boolean",
             "description": "Two-factor authentication (2FA) enabled"
           },
-          "auth_by_ntlm": {
+          "auth_by_kerberos": {
             "type": "boolean",
-            "description": "NTLM authentication enabled"
+            "description": "Kerberos authentication enabled"
           },
           "auth_by_password": {
             "type": "boolean",
