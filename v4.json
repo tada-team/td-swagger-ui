@@ -8666,6 +8666,10 @@
       "UserWithMe": {
         "type": "object",
         "properties": {
+          "account": {
+            "$ref": "#/components/schemas/PersonalAccountBilling",
+            "description": "Billing personal account"
+          },
           "alt_send": {
             "type": "boolean",
             "description": "Use Ctrl/Cmd + Enter instead Enter"
@@ -8754,6 +8758,7 @@
         "required": [
           "teams",
           "devices",
+          "account",
           "alt_send",
           "asterisk_mention",
           "always_send_pushes",
