@@ -1405,6 +1405,32 @@
         ],
         "description": "Generic event representation"
       },
+      "Auth": {
+        "type": "object",
+        "properties": {
+          "me": {
+            "$ref": "#/components/schemas/UserWithMe"
+          },
+          "method2fa": {
+            "type": "string"
+          },
+          "recovery2fa": {
+            "type": "boolean"
+          },
+          "required2fa": {
+            "type": "boolean"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "me",
+          "required2fa",
+          "recovery2fa",
+          "method2fa"
+        ]
+      },
       "AvatarColors": {
         "type": "object",
         "properties": {
