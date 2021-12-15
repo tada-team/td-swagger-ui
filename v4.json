@@ -8694,7 +8694,7 @@
         "properties": {
           "account": {
             "$ref": "#/components/schemas/PersonalAccountBilling",
-            "description": "Billing personal account"
+            "description": "Personal account from billing"
           },
           "alt_send": {
             "type": "boolean",
@@ -8784,7 +8784,6 @@
         "required": [
           "teams",
           "devices",
-          "account",
           "alt_send",
           "asterisk_mention",
           "always_send_pushes",
