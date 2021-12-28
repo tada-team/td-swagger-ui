@@ -1371,13 +1371,13 @@
       "AddWorkplacesOnPersonalAccountRequest": {
         "type": "object",
         "properties": {
-          "count_workplaces": {
+          "workplaces_count": {
             "type": "integer",
             "format": "int32"
           }
         },
         "required": [
-          "count_workplaces"
+          "workplaces_count"
         ],
         "description": "AddWorkplacesOnPersonalAccountRequest request on add workplace on personal account"
       },
@@ -3711,6 +3711,10 @@
             "type": "boolean",
             "description": "SMS authentication enabled"
           },
+          "billing": {
+            "type": "boolean",
+            "description": "Billing services integrations"
+          },
           "build": {
             "type": "string",
             "description": "Build/revision of server side"
@@ -5749,7 +5753,7 @@
       },
       "PersonalAccountStatus": {
         "type": "string",
-        "description": "Personal account status"
+        "description": "PersonalAccountStatus account status"
       },
       "PushDevice": {
         "type": "object",
