@@ -3001,6 +3001,48 @@
         ],
         "description": "Country for phone numbers selection on login screen"
       },
+      "CreateBillingContactRequest": {
+        "type": "object",
+        "properties": {
+          "family_name": {
+            "type": "string"
+          },
+          "given_name": {
+            "type": "string"
+          },
+          "patronymic": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/TeamStatus"
+          },
+          "user_uid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "phone",
+          "given_name",
+          "family_name",
+          "patronymic",
+          "status",
+          "role",
+          "user_uid",
+          "sections"
+        ]
+      },
       "CreateChangeTariffOnPersonalAccountRequest": {
         "type": "object",
         "properties": {
