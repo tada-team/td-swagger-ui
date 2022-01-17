@@ -3033,14 +3033,7 @@
           }
         },
         "required": [
-          "phone",
-          "given_name",
-          "family_name",
-          "patronymic",
-          "status",
-          "role",
-          "user_uid",
-          "sections"
+          "phone"
         ]
       },
       "CreateChangeTariffOnPersonalAccountRequest": {
