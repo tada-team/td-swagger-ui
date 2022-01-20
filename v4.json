@@ -6034,6 +6034,25 @@
         ],
         "description": "Task project or contact section"
       },
+      "ServerAccountUpdated": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverAccountUpdatedParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Personal Account created or updated"
+      },
       "ServerCallAnswer": {
         "type": "object",
         "properties": {
@@ -9289,6 +9308,19 @@
           }
         },
         "description": "Params of the client.message.deleted event"
+      },
+      "serverAccountUpdatedParams": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/PersonalAccountBilling",
+            "description": "Personal Account info"
+          }
+        },
+        "required": [
+          "account"
+        ],
+        "description": "Params of the server.account.updated event"
       },
       "serverCallAnswerCandidate": {
         "type": "object",
