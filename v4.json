@@ -6867,6 +6867,25 @@
         ],
         "description": "Something went wrong with client message"
       },
+      "ServerWorkplaceUpdated": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverWorkplaceUpdatedParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "ServerWorkplaceUpdated Workplace created or updated"
+      },
       "Session": {
         "type": "object",
         "properties": {
@@ -10158,6 +10177,22 @@
           "orig"
         ],
         "description": "Params of the server.warning event"
+      },
+      "serverWorkplaceUpdatedParams": {
+        "type": "object",
+        "properties": {
+          "workplaces": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserInfo"
+            },
+            "description": "Workplaces info"
+          }
+        },
+        "required": [
+          "workplaces"
+        ],
+        "description": "Params of the server.workplace.updated event"
       }
     },
     "securitySchemes": {
