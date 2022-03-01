@@ -5001,6 +5001,350 @@
       "Mediatype": {
         "type": "string"
       },
+      "Meeting": {
+        "type": "object",
+        "properties": {
+          "can_add_member": {
+            "type": "boolean"
+          },
+          "can_delete": {
+            "type": "boolean"
+          },
+          "can_edit": {
+            "type": "boolean"
+          },
+          "can_join": {
+            "type": "boolean"
+          },
+          "chat_uuid": {
+            "type": "string"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "freq": {
+            "type": "integer"
+          },
+          "freq_days": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "is_archive": {
+            "type": "boolean"
+          },
+          "is_outside": {
+            "type": "boolean"
+          },
+          "is_public": {
+            "type": "boolean"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "team_uuid",
+          "chat_uuid",
+          "start_at",
+          "end_at"
+        ]
+      },
+      "MeetingMember": {
+        "type": "object",
+        "properties": {
+          "can_change_presence": {
+            "type": "boolean"
+          },
+          "can_change_status": {
+            "type": "boolean"
+          },
+          "can_remove": {
+            "type": "boolean"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "is_required": {
+            "type": "boolean"
+          },
+          "presence": {
+            "$ref": "#/components/schemas/MeetingMemberPresence"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          }
+        },
+        "required": [
+          "contact",
+          "presence",
+          "status"
+        ]
+      },
+      "MeetingMemberPresence": {
+        "type": "string"
+      },
+      "MeetingMemberStatus": {
+        "type": "string"
+      },
+      "MeetingsCreateRequest": {
+        "type": "object",
+        "properties": {
+          "end_at": {
+            "type": "string"
+          },
+          "freq": {
+            "type": "integer"
+          },
+          "freq_days": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "is_outside": {
+            "type": "boolean"
+          },
+          "is_public": {
+            "type": "boolean"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingsCreateRequestMembers"
+            }
+          },
+          "owner_presence": {
+            "$ref": "#/components/schemas/MeetingMemberPresence"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_at",
+          "end_at",
+          "members",
+          "owner_presence"
+        ]
+      },
+      "MeetingsCreateRequestMembers": {
+        "type": "object",
+        "properties": {
+          "is_required": {
+            "type": "boolean"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          }
+        },
+        "required": [
+          "jid"
+        ]
+      },
+      "MeetingsMembersCreateRequest": {
+        "type": "object",
+        "properties": {
+          "is_required": {
+            "type": "boolean"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          }
+        },
+        "required": [
+          "jid"
+        ]
+      },
+      "MeetingsMembersRequestParams": {
+        "type": "object",
+        "properties": {
+          "is_required": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "presence": {
+            "$ref": "#/components/schemas/MeetingMemberPresence"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          }
+        }
+      },
+      "MeetingsMembersResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingMember"
+            }
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "MeetingsMembersUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "is_required": {
+            "type": "boolean"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          }
+        }
+      },
+      "MeetingsRequestParams": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "integer"
+          },
+          "is_archive": {
+            "type": "boolean"
+          },
+          "is_freq": {
+            "type": "boolean"
+          },
+          "is_outside": {
+            "type": "boolean"
+          },
+          "is_public": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "month": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "owners_sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "team_uuid": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "month"
+        ]
+      },
+      "MeetingsResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Meeting"
+            }
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "MeetingsUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "active_from": {
+            "type": "string"
+          },
+          "end_at": {
+            "type": "string"
+          },
+          "freq": {
+            "type": "integer"
+          },
+          "freq_days": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "is_outside": {
+            "type": "boolean"
+          },
+          "is_public": {
+            "type": "boolean"
+          },
+          "start_at": {
+            "type": "string"
+          }
+        }
+      },
       "Message": {
         "type": "object",
         "properties": {
