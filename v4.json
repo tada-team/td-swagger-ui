@@ -5079,7 +5079,7 @@
             "type": "boolean"
           },
           "presence": {
-            "$ref": "#/components/schemas/MeetingMemberPresence"
+            "$ref": "#/components/schemas/MeetingPresenceStatus"
           },
           "status": {
             "$ref": "#/components/schemas/MeetingMemberStatus"
@@ -5091,10 +5091,10 @@
           "status"
         ]
       },
-      "MeetingMemberPresence": {
+      "MeetingMemberStatus": {
         "type": "string"
       },
-      "MeetingMemberStatus": {
+      "MeetingPresenceStatus": {
         "type": "string"
       },
       "MeetingsCreateRequest": {
@@ -5125,7 +5125,7 @@
             }
           },
           "owner_presence": {
-            "$ref": "#/components/schemas/MeetingMemberPresence"
+            "$ref": "#/components/schemas/MeetingPresenceStatus"
           },
           "start_at": {
             "type": "string",
@@ -5198,7 +5198,7 @@
             "type": "integer"
           },
           "presence": {
-            "$ref": "#/components/schemas/MeetingMemberPresence"
+            "$ref": "#/components/schemas/MeetingPresenceStatus"
           },
           "sections": {
             "type": "array",
