@@ -5024,12 +5024,14 @@
             "format": "date-time"
           },
           "freq": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "freq_days": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int32"
             }
           },
           "id": {
@@ -5115,12 +5117,14 @@
             "type": "string"
           },
           "freq": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "freq_days": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int32"
             }
           },
           "is_freq": {
@@ -5200,13 +5204,15 @@
         "type": "object",
         "properties": {
           "limit": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "meeting_id": {
             "type": "string"
           },
           "offset": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "presence": {
             "$ref": "#/components/schemas/MeetingPresenceStatus"
@@ -5235,13 +5241,16 @@
             }
           },
           "limit": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "offset": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "required": [
@@ -5263,7 +5272,8 @@
         "type": "object",
         "properties": {
           "day": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "is_archive": {
             "type": "boolean"
@@ -5287,7 +5297,8 @@
             }
           },
           "month": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "offset": {
             "type": "integer"
@@ -5311,7 +5322,8 @@
             "type": "string"
           },
           "year": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "required": [
@@ -5353,12 +5365,14 @@
             "type": "string"
           },
           "freq": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "freq_days": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int32"
             }
           },
           "is_freq": {
