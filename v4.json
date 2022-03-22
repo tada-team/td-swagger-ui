@@ -5038,11 +5038,17 @@
           "is_archive": {
             "type": "boolean"
           },
+          "is_freq": {
+            "type": "boolean"
+          },
           "is_outside": {
             "type": "boolean"
           },
           "is_public": {
             "type": "boolean"
+          },
+          "personal_account_id": {
+            "type": "string"
           },
           "start_at": {
             "type": "string",
@@ -5057,7 +5063,9 @@
           "team_uuid",
           "chat_uuid",
           "start_at",
-          "end_at"
+          "end_at",
+          "personal_account_id",
+          "is_freq"
         ]
       },
       "MeetingMember": {
@@ -5077,6 +5085,9 @@
           },
           "is_required": {
             "type": "boolean"
+          },
+          "meeting_id": {
+            "type": "string"
           },
           "presence": {
             "$ref": "#/components/schemas/MeetingPresenceStatus"
@@ -5112,6 +5123,9 @@
               "type": "integer"
             }
           },
+          "is_freq": {
+            "type": "boolean"
+          },
           "is_outside": {
             "type": "boolean"
           },
@@ -5123,9 +5137,6 @@
             "items": {
               "$ref": "#/components/schemas/MeetingsCreateRequestMembers"
             }
-          },
-          "owner_presence": {
-            "$ref": "#/components/schemas/MeetingPresenceStatus"
           },
           "start_at": {
             "type": "string",
@@ -5139,7 +5150,7 @@
           "start_at",
           "end_at",
           "members",
-          "owner_presence"
+          "is_freq"
         ]
       },
       "MeetingsCreateRequestMembers": {
@@ -5188,11 +5199,11 @@
       "MeetingsMembersRequestParams": {
         "type": "object",
         "properties": {
-          "is_required": {
-            "type": "boolean"
-          },
           "limit": {
             "type": "integer"
+          },
+          "meeting_id": {
+            "type": "string"
           },
           "offset": {
             "type": "integer"
@@ -5200,16 +5211,19 @@
           "presence": {
             "$ref": "#/components/schemas/MeetingPresenceStatus"
           },
-          "sections": {
+          "status": {
+            "$ref": "#/components/schemas/MeetingMemberStatus"
+          },
+          "uuid_sections": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "status": {
-            "$ref": "#/components/schemas/MeetingMemberStatus"
           }
-        }
+        },
+        "required": [
+          "meeting_id"
+        ]
       },
       "MeetingsMembersResponse": {
         "type": "object",
@@ -5290,6 +5304,9 @@
               "type": "string"
             }
           },
+          "personal_account_id": {
+            "type": "string"
+          },
           "team_uuid": {
             "type": "string"
           },
@@ -5298,6 +5315,7 @@
           }
         },
         "required": [
+          "personal_account_id",
           "year",
           "month"
         ]
@@ -5343,16 +5361,29 @@
               "type": "integer"
             }
           },
+          "is_freq": {
+            "type": "boolean"
+          },
           "is_outside": {
             "type": "boolean"
           },
           "is_public": {
             "type": "boolean"
           },
+          "meeting_id": {
+            "type": "string"
+          },
           "start_at": {
             "type": "string"
+          },
+          "team_uuid": {
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "meeting_id",
+          "is_freq"
+        ]
       },
       "Message": {
         "type": "object",
