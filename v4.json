@@ -5303,18 +5303,6 @@
           "offset": {
             "type": "integer"
           },
-          "owners": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "owners_sections": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "personal_account_id": {
             "type": "string"
           },
