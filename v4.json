@@ -5288,7 +5288,8 @@
             "type": "boolean"
           },
           "limit": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "members": {
             "type": "array",
@@ -5301,7 +5302,8 @@
             "format": "int32"
           },
           "offset": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "personal_account_id": {
             "type": "string"
@@ -5330,13 +5332,16 @@
             }
           },
           "limit": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "offset": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           },
           "total": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "required": [
