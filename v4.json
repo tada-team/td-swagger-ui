@@ -3891,6 +3891,10 @@
             },
             "description": "ICE servers for WebRTC"
           },
+          "ice_transport_policy": {
+            "$ref": "#/components/schemas/ICETransportPolicy",
+            "description": "IceTransportPolicy a ice transport policy"
+          },
           "installation_title": {
             "type": "string",
             "description": "Installation title, used on login screen"
@@ -4612,15 +4616,27 @@
       "ICEServer": {
         "type": "object",
         "properties": {
+          "credential": {
+            "type": "string",
+            "description": "Credential - credential for TURN server"
+          },
           "urls": {
             "type": "string",
-            "description": "URls"
+            "description": "Urls - STUN or TURN addresses"
+          },
+          "username": {
+            "type": "string",
+            "description": "UserName - username for TURN server"
           }
         },
         "required": [
           "urls"
         ],
         "description": "Interactive Connectivity Establishment Server for WEB Rtc connection. Readonly"
+      },
+      "ICETransportPolicy": {
+        "type": "string",
+        "description": "ICETransportPolicy is a string indicating the transport selection policy the ICE agent should use during negotiation of connections. Available values: 'all', 'relay'"
       },
       "ISODateTimeString": {
         "type": "string",
