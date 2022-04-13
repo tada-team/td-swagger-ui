@@ -5032,12 +5032,12 @@
           "can_join": {
             "type": "boolean"
           },
-          "chat_uuid": {
+          "description": {
             "type": "string"
           },
-          "end_at": {
-            "type": "string",
-            "format": "date-time"
+          "duration": {
+            "type": "integer",
+            "format": "int32"
           },
           "freq": {
             "type": "integer",
@@ -5049,6 +5049,9 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          "group_uuid": {
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -5065,6 +5068,15 @@
           "is_public": {
             "type": "boolean"
           },
+          "meeting_members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingMember"
+            }
+          },
+          "owner_uuid": {
+            "type": "string"
+          },
           "personal_account_id": {
             "type": "string"
           },
@@ -5074,15 +5086,18 @@
           },
           "team_uuid": {
             "type": "string"
+          },
+          "title": {
+            "type": "string"
           }
         },
         "required": [
           "id",
           "team_uuid",
-          "chat_uuid",
+          "group_uuid",
+          "owner_uuid",
           "start_at",
-          "end_at",
-          "personal_account_id",
+          "duration",
           "is_freq"
         ]
       },
@@ -5097,6 +5112,9 @@
           },
           "can_remove": {
             "type": "boolean"
+          },
+          "chat_uuid": {
+            "type": "string"
           },
           "contact": {
             "$ref": "#/components/schemas/Contact"
@@ -5115,6 +5133,8 @@
           }
         },
         "required": [
+          "meeting_id",
+          "chat_uuid",
           "contact",
           "presence",
           "status"
@@ -5129,8 +5149,12 @@
       "MeetingsCreateRequest": {
         "type": "object",
         "properties": {
-          "end_at": {
+          "description": {
             "type": "string"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
           },
           "freq": {
             "type": "integer",
@@ -5155,8 +5179,11 @@
           "members": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MeetingsCreateRequestMembers"
+              "$ref": "#/components/schemas/MeetingsMembersCreateParams"
             }
+          },
+          "owner_uuid": {
+            "type": "string"
           },
           "start_at": {
             "type": "string",
@@ -5164,30 +5191,18 @@
           },
           "team_uuid": {
             "type": "string"
+          },
+          "title": {
+            "type": "string"
           }
         },
         "required": [
+          "owner_uuid",
+          "team_uuid",
           "start_at",
-          "end_at",
+          "duration",
           "members",
           "is_freq"
-        ]
-      },
-      "MeetingsCreateRequestMembers": {
-        "type": "object",
-        "properties": {
-          "is_required": {
-            "type": "boolean"
-          },
-          "jid": {
-            "$ref": "#/components/schemas/JID"
-          },
-          "status": {
-            "$ref": "#/components/schemas/MeetingMemberStatus"
-          }
-        },
-        "required": [
-          "jid"
         ]
       },
       "MeetingsDeleteRequestParams": {
@@ -5196,10 +5211,16 @@
           "date": {
             "type": "string",
             "format": "date-time"
+          },
+          "team_uuid": {
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "team_uuid"
+        ]
       },
-      "MeetingsMembersCreateRequest": {
+      "MeetingsMembersCreateParams": {
         "type": "object",
         "properties": {
           "is_required": {
@@ -5214,6 +5235,52 @@
         },
         "required": [
           "jid"
+        ]
+      },
+      "MeetingsMembersCreateRequest": {
+        "type": "object",
+        "properties": {
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingsMembersCreateParams"
+            }
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "members",
+          "team_uuid"
+        ]
+      },
+      "MeetingsMembersCreateResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingMember"
+            }
+          }
+        }
+      },
+      "MeetingsMembersDeleteRequestParams": {
+        "type": "object",
+        "properties": {
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "team_uuid"
         ]
       },
       "MeetingsMembersRequestParams": {
@@ -5236,6 +5303,9 @@
           "status": {
             "$ref": "#/components/schemas/MeetingMemberStatus"
           },
+          "team_uuid": {
+            "type": "string"
+          },
           "uuid_sections": {
             "type": "array",
             "items": {
@@ -5244,7 +5314,8 @@
           }
         },
         "required": [
-          "meeting_id"
+          "meeting_id",
+          "team_uuid"
         ]
       },
       "MeetingsMembersResponse": {
@@ -5281,6 +5352,9 @@
           },
           "status": {
             "$ref": "#/components/schemas/MeetingMemberStatus"
+          },
+          "team_uuid": {
+            "type": "string"
           }
         }
       },
@@ -5321,9 +5395,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "personal_account_id": {
-            "type": "string"
-          },
           "team_uuid": {
             "type": "string"
           },
@@ -5333,7 +5404,7 @@
           }
         },
         "required": [
-          "personal_account_id",
+          "team_uuid",
           "year",
           "month"
         ]
@@ -5370,8 +5441,9 @@
           "active_from": {
             "type": "string"
           },
-          "end_at": {
-            "type": "string"
+          "duration": {
+            "type": "integer",
+            "format": "int32"
           },
           "freq": {
             "type": "integer",
