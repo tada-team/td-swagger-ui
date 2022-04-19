@@ -5130,9 +5130,6 @@
           "contact": {
             "$ref": "#/components/schemas/Contact"
           },
-          "is_required": {
-            "type": "boolean"
-          },
           "meeting_id": {
             "type": "string"
           },
@@ -5225,9 +5222,6 @@
       "MeetingsMembersCreateParams": {
         "type": "object",
         "properties": {
-          "is_required": {
-            "type": "boolean"
-          },
           "jid": {
             "$ref": "#/components/schemas/JID"
           },
@@ -5349,9 +5343,6 @@
       "MeetingsMembersUpdateRequest": {
         "type": "object",
         "properties": {
-          "is_required": {
-            "type": "boolean"
-          },
           "status": {
             "$ref": "#/components/schemas/MeetingMemberStatus"
           },
