@@ -4266,6 +4266,29 @@
         ],
         "description": "FontColors font colors for app"
       },
+      "Freq": {
+        "type": "object",
+        "properties": {
+          "freq_days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "frequency": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "repeatability_type": {
+            "$ref": "#/components/schemas/MeetingRepeatabilityType"
+          }
+        },
+        "required": [
+          "frequency",
+          "repeatability_type"
+        ]
+      },
       "GetActiveTariffsListResponse": {
         "type": "object",
         "properties": {
@@ -5040,15 +5063,7 @@
             "format": "int32"
           },
           "freq": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "freq_days": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/schemas/Freq"
           },
           "group_uuid": {
             "type": "string"
@@ -5057,9 +5072,6 @@
             "type": "string"
           },
           "is_archive": {
-            "type": "boolean"
-          },
-          "is_freq": {
             "type": "boolean"
           },
           "is_outside": {
@@ -5097,8 +5109,7 @@
           "group_uuid",
           "owner_uuid",
           "start_at",
-          "duration",
-          "is_freq"
+          "duration"
         ]
       },
       "MeetingMember": {
@@ -5146,6 +5157,9 @@
       "MeetingPresenceStatus": {
         "type": "string"
       },
+      "MeetingRepeatabilityType": {
+        "type": "string"
+      },
       "MeetingsCreateRequest": {
         "type": "object",
         "properties": {
@@ -5157,18 +5171,7 @@
             "format": "int32"
           },
           "freq": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "freq_days": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          "is_freq": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Freq"
           },
           "is_outside": {
             "type": "boolean"
@@ -5201,8 +5204,7 @@
           "team_uuid",
           "start_at",
           "duration",
-          "members",
-          "is_freq"
+          "members"
         ]
       },
       "MeetingsDeleteRequestParams": {
@@ -5446,18 +5448,7 @@
             "format": "int32"
           },
           "freq": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "freq_days": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          "is_freq": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/Freq"
           },
           "is_outside": {
             "type": "boolean"
@@ -5476,8 +5467,7 @@
           }
         },
         "required": [
-          "meeting_id",
-          "is_freq"
+          "meeting_id"
         ]
       },
       "Message": {
