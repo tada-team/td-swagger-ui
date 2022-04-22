@@ -5080,6 +5080,9 @@
           "is_public": {
             "type": "boolean"
           },
+          "is_required": {
+            "type": "boolean"
+          },
           "meeting_members": {
             "type": "array",
             "items": {
@@ -5368,6 +5371,9 @@
             "type": "boolean"
           },
           "is_public": {
+            "type": "boolean"
+          },
+          "is_required": {
             "type": "boolean"
           },
           "limit": {
