@@ -5055,6 +5055,9 @@
           "can_join": {
             "type": "boolean"
           },
+          "chat_uuid": {
+            "type": "string"
+          },
           "description": {
             "type": "string"
           },
@@ -5064,9 +5067,6 @@
           },
           "freq": {
             "$ref": "#/components/schemas/Freq"
-          },
-          "group_uuid": {
-            "type": "string"
           },
           "id": {
             "type": "string"
@@ -5109,7 +5109,7 @@
         "required": [
           "id",
           "team_uuid",
-          "group_uuid",
+          "chat_uuid",
           "owner_uuid",
           "start_at",
           "duration"
