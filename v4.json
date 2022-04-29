@@ -5089,6 +5089,9 @@
               "$ref": "#/components/schemas/MeetingMember"
             }
           },
+          "owner_jid": {
+            "$ref": "#/components/schemas/JID"
+          },
           "owner_uuid": {
             "type": "string"
           },
@@ -5110,6 +5113,7 @@
           "id",
           "team_uuid",
           "chat_uuid",
+          "owner_jid",
           "owner_uuid",
           "start_at",
           "duration"
