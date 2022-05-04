@@ -1013,6 +1013,13 @@
             }
           },
           {
+            "name": "contact_section",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "tag",
             "in": "query",
             "schema": {
@@ -7673,6 +7680,11 @@
           "assignee": {
             "$ref": "#/components/schemas/JID",
             "description": "Assignee contact id. Tasks only"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Deadline task deadline"
           },
           "display_name": {
             "type": "string",
