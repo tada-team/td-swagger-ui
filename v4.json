@@ -5096,10 +5096,10 @@
               "$ref": "#/components/schemas/MeetingMember"
             }
           },
-          "owner_jid": {
+          "owner_contact_uuid": {
             "$ref": "#/components/schemas/JID"
           },
-          "owner_uuid": {
+          "owner_user_uuid": {
             "type": "string"
           },
           "personal_account_id": {
@@ -5120,8 +5120,8 @@
           "id",
           "team_uuid",
           "chat_uuid",
-          "owner_jid",
-          "owner_uuid",
+          "owner_contact_uuid",
+          "owner_user_uuid",
           "start_at",
           "duration"
         ]
@@ -5196,8 +5196,8 @@
               "$ref": "#/components/schemas/MeetingsMemberCreateParams"
             }
           },
-          "owner_uuid": {
-            "type": "string"
+          "owner_contact_uuid": {
+            "$ref": "#/components/schemas/JID"
           },
           "start_at": {
             "type": "string",
@@ -5211,7 +5211,7 @@
           }
         },
         "required": [
-          "owner_uuid",
+          "owner_contact_uuid",
           "team_uuid",
           "start_at",
           "duration",
@@ -6149,6 +6149,33 @@
           "offset"
         ],
         "description": "Paginated contacts"
+      },
+      "PaginatedMeetings": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Meeting"
+            }
+          },
+          "offset": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "objects",
+          "count",
+          "limit",
+          "offset"
+        ],
+        "description": "Paginated meetings"
       },
       "PaginatedMessages": {
         "type": "object",
