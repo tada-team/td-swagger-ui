@@ -7680,7 +7680,11 @@
           "deadline": {
             "type": "string",
             "format": "date-time",
-            "description": "Deadline task deadline"
+            "description": "Subtask deadline in iso format, if any"
+          },
+          "deadline_expired": {
+            "type": "boolean",
+            "description": "Is subtask deadline expired"
           },
           "display_name": {
             "type": "string",
