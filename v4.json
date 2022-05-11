@@ -5218,6 +5218,20 @@
           "members"
         ]
       },
+      "MeetingsDatesResponse": {
+        "type": "object",
+        "properties": {
+          "dates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "dates"
+        ]
+      },
       "MeetingsDeleteRequestParams": {
         "type": "object",
         "properties": {
@@ -5237,12 +5251,10 @@
         "type": "object",
         "properties": {
           "date_from": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "date_to": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "is_archive": {
             "type": "boolean"
