@@ -5050,33 +5050,172 @@
       "Meeting": {
         "type": "object",
         "properties": {
+          "assignee": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Assignee contact id. Tasks only"
+          },
+          "autocleanup_age": {
+            "type": "integer",
+            "description": "Delete messages in this chat in seconds. Experimental function"
+          },
+          "base_gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Base fields (not related to concrete participant) version"
+          },
           "can_add_member": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Can I add member to this group chat"
+          },
+          "can_call": {
+            "type": "boolean",
+            "description": "Can I call to this chat"
+          },
+          "can_change_member_status": {
+            "type": "boolean",
+            "description": "Can I change member status in this group chat"
+          },
+          "can_change_settings": {
+            "type": "boolean",
+            "description": "deprecated: use changeable fields"
           },
           "can_delete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Can I delete this chat"
+          },
+          "can_delete_any_message": {
+            "type": "boolean",
+            "description": "Can I delete any message in this chat"
           },
           "can_edit": {
             "type": "boolean"
           },
           "can_join": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Can I join to this public group/task"
           },
-          "chat_uuid": {
-            "type": "string"
+          "can_remove_member": {
+            "type": "boolean",
+            "description": "Can I remove member from this group chat"
+          },
+          "can_send_message": {
+            "type": "boolean",
+            "description": "Can I send message to this chat"
+          },
+          "can_set_important_any_message": {
+            "type": "boolean",
+            "description": "Can I change Important flag in any message in this chat"
+          },
+          "cant_send_message_reason": {
+            "type": "string",
+            "description": "Why I can't send message to this chat (if can't)"
+          },
+          "changeable_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of editable fields"
+          },
+          "chat_type": {
+            "$ref": "#/components/schemas/ChatType",
+            "description": "Chat type"
+          },
+          "collapsed": {
+            "type": "boolean",
+            "description": "Description collapsed. Used for tasks only"
+          },
+          "color_index": {
+            "type": "integer",
+            "description": "Custom color index from table of colors. Tasks only"
+          },
+          "complexity": {
+            "type": "integer",
+            "description": "Task complexity, number"
+          },
+          "counters_enabled": {
+            "type": "boolean",
+            "description": "Include unread messages to counters"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation date, iso datetime"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Task deadline in iso format, if any"
+          },
+          "deadline_expired": {
+            "type": "boolean",
+            "description": "Is task deadline expired"
+          },
+          "default_for_all": {
+            "type": "boolean",
+            "description": "Any new team member will be added to this group chat"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "Group or task description"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Title"
+          },
+          "done": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Task done date in iso format, if any"
+          },
+          "done_reason": {
+            "type": "string",
+            "description": "Task done reason, if any"
+          },
+          "draft": {
+            "type": "string",
+            "description": "Last message draft, if any"
+          },
+          "draft_gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any"
+          },
+          "draft_num": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Deprecated"
           },
           "duration": {
             "type": "integer",
             "format": "int32"
           },
+          "feed": {
+            "type": "boolean",
+            "description": "Present in feed (main screen)"
+          },
           "freq": {
             "$ref": "#/components/schemas/Freq"
           },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Chat fields related to concrete participant) version"
+          },
+          "hidden": {
+            "type": "boolean",
+            "description": "Hidden chat"
+          },
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icons info"
+          },
           "id": {
             "type": "string"
+          },
+          "importance": {
+            "type": "integer",
+            "description": "Task importance, if available in team"
           },
           "is_archive": {
             "type": "boolean"
@@ -5084,11 +5223,50 @@
           "is_outside": {
             "type": "boolean"
           },
-          "is_public": {
-            "type": "boolean"
-          },
           "is_required": {
             "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskItem"
+            },
+            "description": "Checklist items. Task only"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Group/Task/Contact id"
+          },
+          "last_activity": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date of the last message sent even if it was deleted"
+          },
+          "last_message": {
+            "$ref": "#/components/schemas/Message",
+            "description": "Last message object"
+          },
+          "last_read_message_id": {
+            "type": "string",
+            "description": "Last read message id, if any"
+          },
+          "linked_messages": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Used for \"Create task from messages...\""
+          },
+          "links": {
+            "$ref": "#/components/schemas/MessageLinks",
+            "description": "Links in description"
+          },
+          "markup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarkupEntity"
+            },
+            "description": "Markup entities for description field. Experimental"
           },
           "meeting_members": {
             "type": "array",
@@ -5096,34 +5274,158 @@
               "$ref": "#/components/schemas/MeetingMember"
             }
           },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupMembership"
+            },
+            "description": "Group chat members"
+          },
+          "notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications enabled"
+          },
+          "num": {
+            "type": "integer",
+            "description": "Task number in this team"
+          },
+          "num_checked_items": {
+            "type": "integer",
+            "description": "Checked items in checklist. Tasks only"
+          },
+          "num_importants": {
+            "type": "integer",
+            "description": "Number of important messages"
+          },
+          "num_items": {
+            "type": "integer",
+            "description": "Items in checklist. Tasks only"
+          },
+          "num_members": {
+            "type": "integer",
+            "description": "Non-archive participants number"
+          },
+          "num_unread": {
+            "type": "integer",
+            "description": "Unread counter"
+          },
+          "num_unread_notices": {
+            "type": "integer",
+            "description": "Mentions (@) counter"
+          },
+          "observers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            },
+            "description": "Task followers id's. TODO: rename to \"followers\""
+          },
+          "owner": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Task creator"
+          },
           "owner_contact_uuid": {
             "$ref": "#/components/schemas/JID"
           },
           "owner_user_uuid": {
             "type": "string"
           },
+          "parents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subtask"
+            },
+            "description": "Parent tasks"
+          },
           "personal_account_id": {
             "type": "string"
+          },
+          "pinned": {
+            "type": "boolean",
+            "description": "Is chat pinned on top"
+          },
+          "pinned_message": {
+            "$ref": "#/components/schemas/Message",
+            "description": "Pinned message for this chat"
+          },
+          "pinned_sort_ordering": {
+            "type": "integer",
+            "description": "Sort ordering for pinned chat"
+          },
+          "public": {
+            "type": "boolean",
+            "description": "Can other team member see this task/group chat"
+          },
+          "readonly_for_members": {
+            "type": "boolean",
+            "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
+          },
+          "section": {
+            "type": "string",
+            "description": "Project / section id, if any"
+          },
+          "spent_time": {
+            "type": "integer",
+            "description": "Task spent time, number"
           },
           "start_at": {
             "type": "string",
             "format": "date-time"
           },
+          "status": {
+            "$ref": "#/components/schemas/GroupStatus",
+            "description": "My status in group chat"
+          },
+          "tabs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaskTabKey"
+            },
+            "description": "Tab names"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Task tags list, if any"
+          },
+          "task_status": {
+            "type": "string",
+            "description": "Task status. May be custom"
+          },
           "team_uuid": {
             "type": "string"
           },
           "title": {
-            "type": "string"
+            "type": "string",
+            "description": "Task title. Generated from number and description"
+          },
+          "uploads": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Upload"
+            },
+            "description": "Upload uids for request, upload objects for response"
+          },
+          "urgency": {
+            "type": "integer",
+            "description": "Task urgency, if available in team"
           }
         },
         "required": [
           "id",
           "team_uuid",
-          "chat_uuid",
           "owner_contact_uuid",
           "owner_user_uuid",
           "start_at",
-          "duration"
+          "duration",
+          "jid",
+          "chat_type",
+          "gentime",
+          "created",
+          "display_name",
+          "icons"
         ]
       },
       "MeetingMember": {
@@ -5430,27 +5732,27 @@
       "MeetingsResponse": {
         "type": "object",
         "properties": {
-          "items": {
+          "count": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "objects": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Meeting"
             }
           },
-          "limit": {
-            "type": "integer",
-            "format": "int32"
-          },
           "offset": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           }
         },
         "required": [
-          "items"
+          "objects",
+          "count",
+          "limit",
+          "offset"
         ]
       },
       "MeetingsUpdateRequest": {
