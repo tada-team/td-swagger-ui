@@ -5369,8 +5369,7 @@
             "description": "Task spent time, number"
           },
           "start_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "status": {
             "$ref": "#/components/schemas/GroupStatus",
@@ -5502,8 +5501,7 @@
             "$ref": "#/components/schemas/JID"
           },
           "start_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "team_uuid": {
             "type": "string"
