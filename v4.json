@@ -7333,6 +7333,25 @@
         ],
         "description": "Login from other device"
       },
+      "ServerMeetingUpdated": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverMeetingUpdatedParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Meeting created or updated"
+      },
       "ServerMessagePush": {
         "type": "object",
         "properties": {
@@ -10685,6 +10704,22 @@
           "device_name"
         ],
         "description": "Params of the server.login event"
+      },
+      "serverMeetingUpdatedParams": {
+        "type": "object",
+        "properties": {
+          "meetings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Meeting"
+            },
+            "description": "Meeting info"
+          }
+        },
+        "required": [
+          "meetings"
+        ],
+        "description": "Params of the server.meeting.updated event"
       },
       "serverMessageReceivedParams": {
         "type": "object",
