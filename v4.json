@@ -5369,7 +5369,8 @@
             "description": "Task spent time, number"
           },
           "start_at": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "status": {
             "$ref": "#/components/schemas/GroupStatus",
@@ -5471,6 +5472,23 @@
       },
       "MeetingRepeatabilityType": {
         "type": "string"
+      },
+      "MeetingsCountResponse": {
+        "type": "object",
+        "properties": {
+          "count_cells": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count_meetings": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "count_cells",
+          "count_meetings"
+        ]
       },
       "MeetingsCreateRequest": {
         "type": "object",
