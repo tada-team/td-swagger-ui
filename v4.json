@@ -5777,6 +5777,9 @@
           "active_from": {
             "type": "string"
           },
+          "description": {
+            "type": "string"
+          },
           "duration": {
             "type": "integer",
             "format": "int32"
@@ -5797,6 +5800,9 @@
             "type": "string"
           },
           "team_uuid": {
+            "type": "string"
+          },
+          "title": {
             "type": "string"
           }
         },
