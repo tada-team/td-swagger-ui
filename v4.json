@@ -5627,6 +5627,24 @@
           "jid"
         ]
       },
+      "MeetingsMembersBatchDeleteRequestParams": {
+        "type": "object",
+        "properties": {
+          "members_jids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            }
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "team_uuid",
+          "members_jids"
+        ]
+      },
       "MeetingsMembersCreateRequest": {
         "type": "object",
         "properties": {
@@ -5774,9 +5792,6 @@
       "MeetingsUpdateRequest": {
         "type": "object",
         "properties": {
-          "active_from": {
-            "type": "string"
-          },
           "description": {
             "type": "string"
           },
