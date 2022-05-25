@@ -5761,7 +5761,10 @@
           "team_uuid": {
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "team_uuid"
+        ]
       },
       "MeetingsResponse": {
         "type": "object",
@@ -5822,7 +5825,8 @@
           }
         },
         "required": [
-          "meeting_id"
+          "meeting_id",
+          "team_uuid"
         ]
       },
       "Message": {
@@ -10753,10 +10757,16 @@
               "$ref": "#/components/schemas/Meeting"
             },
             "description": "Meeting info"
+          },
+          "meetings_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Meetings count"
           }
         },
         "required": [
-          "meetings"
+          "meetings",
+          "meetings_count"
         ],
         "description": "Params of the server.meeting.updated event"
       },
