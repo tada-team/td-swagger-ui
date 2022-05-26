@@ -5795,6 +5795,12 @@
       "MeetingsUpdateRequest": {
         "type": "object",
         "properties": {
+          "add_members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingsMemberCreateParams"
+            }
+          },
           "description": {
             "type": "string"
           },
@@ -5813,6 +5819,12 @@
           },
           "meeting_id": {
             "type": "string"
+          },
+          "remove_members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            }
           },
           "start_at": {
             "type": "string"
