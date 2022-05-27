@@ -5580,9 +5580,6 @@
           "is_freq": {
             "type": "boolean"
           },
-          "is_only_mу_meetings": {
-            "type": "boolean"
-          },
           "is_outside": {
             "type": "boolean"
           },
@@ -5600,6 +5597,12 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "members_jids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
             }
           },
           "offset": {
