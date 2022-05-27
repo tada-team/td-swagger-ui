@@ -5580,6 +5580,9 @@
           "is_freq": {
             "type": "boolean"
           },
+          "is_only_mу_meetings": {
+            "type": "boolean"
+          },
           "is_outside": {
             "type": "boolean"
           },
@@ -10770,15 +10773,21 @@
             },
             "description": "Meeting info"
           },
-          "meetings_count": {
+          "team_meetings_count": {
             "type": "integer",
             "format": "int32",
-            "description": "Meetings count"
+            "description": "Team Meetings count"
+          },
+          "user_meetings_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "User Meetings count"
           }
         },
         "required": [
           "meetings",
-          "meetings_count"
+          "team_meetings_count",
+          "user_meetings_count"
         ],
         "description": "Params of the server.meeting.updated event"
       },
