@@ -5600,10 +5600,7 @@
             }
           },
           "members_jids": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JID"
-            }
+            "type": "string"
           },
           "offset": {
             "type": "integer",
