@@ -5823,6 +5823,9 @@
           "meeting_id": {
             "type": "string"
           },
+          "notification_enabled": {
+            "type": "boolean"
+          },
           "remove_members": {
             "type": "array",
             "items": {
