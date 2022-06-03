@@ -5804,6 +5804,9 @@
               "$ref": "#/components/schemas/MeetingsMemberCreateParams"
             }
           },
+          "counters_enabled": {
+            "type": "boolean"
+          },
           "description": {
             "type": "string"
           },
