@@ -4081,6 +4081,10 @@
             "type": "integer",
             "description": "Resend message in n seconds if no confirmation from server given"
           },
+          "rumarket_app": {
+            "type": "string",
+            "description": "Link to Rumarket store"
+          },
           "safari_push_id": {
             "type": "string",
             "description": "Safari push id for web-push notifications"
@@ -4154,6 +4158,7 @@
           "android_app",
           "ios_corp_app",
           "android_corp_app",
+          "rumarket_app",
           "theme",
           "min_ios_version",
           "min_android_version",
