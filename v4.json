@@ -7402,6 +7402,25 @@
         ],
         "description": "Login from other device"
       },
+      "ServerMeetingDeleted": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverMeetingDeletedParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Meeting deleted"
+      },
       "ServerMeetingUpdated": {
         "type": "object",
         "properties": {
@@ -10773,6 +10792,47 @@
           "device_name"
         ],
         "description": "Params of the server.login event"
+      },
+      "serverMeetingDeletedParams": {
+        "type": "object",
+        "properties": {
+          "meeting_id": {
+            "type": "string",
+            "description": "Meeting info"
+          },
+          "team_meetings_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Team Meetings count"
+          },
+          "team_meetings_dates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dates of team meetings"
+          },
+          "user_meetings_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "User Meetings count"
+          },
+          "user_meetings_dates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dates of user meetings"
+          }
+        },
+        "required": [
+          "meeting_id",
+          "team_meetings_count",
+          "user_meetings_count",
+          "team_meetings_dates",
+          "user_meetings_dates"
+        ],
+        "description": "Params of the server.meeting.deleted event"
       },
       "serverMeetingUpdatedParams": {
         "type": "object",
