@@ -10797,40 +10797,15 @@
         "type": "object",
         "properties": {
           "meeting_id": {
-            "type": "string",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "description": "Meeting info"
-          },
-          "team_meetings_count": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Team Meetings count"
-          },
-          "team_meetings_dates": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Dates of team meetings"
-          },
-          "user_meetings_count": {
-            "type": "integer",
-            "format": "int32",
-            "description": "User Meetings count"
-          },
-          "user_meetings_dates": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Dates of user meetings"
           }
         },
         "required": [
-          "meeting_id",
-          "team_meetings_count",
-          "user_meetings_count",
-          "team_meetings_dates",
-          "user_meetings_dates"
+          "meeting_id"
         ],
         "description": "Params of the server.meeting.deleted event"
       },
