@@ -2683,6 +2683,10 @@
             "type": "boolean",
             "description": "Can I create group chats in this team"
           },
+          "can_create_meeting": {
+            "type": "boolean",
+            "description": "Can I create meetings in this team"
+          },
           "can_create_task": {
             "type": "boolean",
             "description": "Can I create task for this contact"
