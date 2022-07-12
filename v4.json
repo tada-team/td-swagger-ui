@@ -2837,6 +2837,14 @@
             "format": "date-time",
             "description": "Last activity in this team (iso datetime)"
           },
+          "meeting_mshort_view": {
+            "type": "boolean",
+            "description": "Short view in meeting list in mobile app"
+          },
+          "meeting_short_view": {
+            "type": "boolean",
+            "description": "Short view in meeting list"
+          },
           "mood": {
             "type": "string",
             "description": "Mood in this team"
