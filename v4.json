@@ -5004,6 +5004,44 @@
         ],
         "description": "JavaScript Session Establishment Protocol"
       },
+      "MappedUser": {
+        "type": "object",
+        "properties": {
+          "contact_id": {
+            "$ref": "#/components/schemas/JID",
+            "description": "ContactID tada contact id"
+          },
+          "external_user_id": {
+            "type": "string",
+            "description": "ExternalUserID user id from messenger"
+          },
+          "external_user_name": {
+            "type": "string",
+            "description": "ExternalUserName user name from messenger"
+          },
+          "is_admin": {
+            "type": "boolean",
+            "description": "IsAdmin group admin flag"
+          },
+          "is_archive": {
+            "type": "boolean",
+            "description": "IsArchive flag of archive user"
+          },
+          "is_deleted": {
+            "type": "boolean",
+            "description": "IsDeleted flag of deleted user from messenger"
+          }
+        },
+        "required": [
+          "contact_id",
+          "external_user_id",
+          "external_user_name",
+          "is_deleted",
+          "is_archive",
+          "is_admin"
+        ],
+        "description": "MappedUser struct for map internal user with external user"
+      },
       "MarkupEntity": {
         "type": "object",
         "properties": {
@@ -6360,6 +6398,10 @@
         ],
         "description": "Message reaction detail"
       },
+      "MessengerType": {
+        "type": "string",
+        "description": "MessengerType type of messenger. Ex. Telegram, WhatsApp etc"
+      },
       "MyReactions": {
         "type": "object",
         "properties": {
@@ -6623,6 +6665,10 @@
           "offset"
         ],
         "description": "Paginated UploadShortMessage"
+      },
+      "ParseStatus": {
+        "type": "string",
+        "description": "ParseStatus parse status"
       },
       "Payment": {
         "type": "object",
