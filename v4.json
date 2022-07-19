@@ -3742,6 +3742,10 @@
       "Features": {
         "type": "object",
         "properties": {
+          "ChatsImportEnabled": {
+            "type": "boolean",
+            "description": "ChatsImportEnabled import chat feature"
+          },
           "afk_age": {
             "type": "integer",
             "description": "Max inactivity seconds"
@@ -4233,7 +4237,8 @@
           "task_public",
           "task_tags",
           "calls",
-          "min_app_version"
+          "min_app_version",
+          "ChatsImportEnabled"
         ],
         "description": "Server information. Readonly"
       },
