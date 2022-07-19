@@ -5008,8 +5008,8 @@
         "type": "object",
         "properties": {
           "contact": {
-            "$ref": "#/components/schemas/ContactShort",
-            "description": "Contact short tada contact data"
+            "$ref": "#/components/schemas/Contact",
+            "description": "Contact tada contact data"
           },
           "external_user_id": {
             "type": "string",
