@@ -5007,9 +5007,9 @@
       "MappedUser": {
         "type": "object",
         "properties": {
-          "contact_id": {
-            "$ref": "#/components/schemas/JID",
-            "description": "ContactID tada contact id"
+          "contact": {
+            "$ref": "#/components/schemas/ContactShort",
+            "description": "Contact short tada contact data"
           },
           "external_user_id": {
             "type": "string",
@@ -5033,7 +5033,7 @@
           }
         },
         "required": [
-          "contact_id",
+          "contact",
           "external_user_id",
           "external_user_name",
           "is_deleted",
