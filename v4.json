@@ -6679,6 +6679,121 @@
         "type": "string",
         "description": "ParseStatus parse status"
       },
+      "ParserGenerateChatsResponse": {
+        "type": "object",
+        "properties": {
+          "action_type": {
+            "$ref": "#/components/schemas/ActionType",
+            "description": "ActionType must be generate_chat"
+          },
+          "processing_action": {
+            "type": "string",
+            "description": "ProcessingAction action for background notifications about generation of chats and messages"
+          }
+        },
+        "required": [
+          "processing_action",
+          "action_type"
+        ],
+        "description": "ParserGenerateChatsResponse"
+      },
+      "ParserGetArchiveStatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ParseStatus",
+            "description": "Status archive parse status"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "description": "ParserGetArchiveStatusResponse response structure for method GetArchiveStatus"
+      },
+      "ParserGetMappedUsersResponse": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MappedUser"
+            },
+            "description": "Users .."
+          }
+        },
+        "required": [
+          "users"
+        ],
+        "description": "ParserGetMappedUsersResponse .."
+      },
+      "ParserMapUsersRequest": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MappedUser"
+            },
+            "description": "Users .."
+          }
+        },
+        "required": [
+          "users"
+        ],
+        "description": "ParserMapUsersRequest .."
+      },
+      "ParserMapUsersResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Success result"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "description": "ParserMapUsersResponse .."
+      },
+      "ParserSendArchiveStatusRequest": {
+        "type": "object",
+        "properties": {
+          "progress": {
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ParseStatus"
+          }
+        },
+        "required": [
+          "status",
+          "progress"
+        ],
+        "description": "ParserSendArchiveStatusRequest .."
+      },
+      "ParserUploadArchiveResponse": {
+        "type": "object",
+        "properties": {
+          "action_type": {
+            "$ref": "#/components/schemas/ActionType",
+            "description": "ActionType must be archive_unpacking"
+          },
+          "processing_action": {
+            "type": "string",
+            "description": "ProcessingAction action for background notifications about archive unpacking"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Success result"
+          }
+        },
+        "required": [
+          "success",
+          "processing_action",
+          "action_type"
+        ],
+        "description": "ParserUploadArchiveResponse response structure for method UploadArchive"
+      },
       "Payment": {
         "type": "object",
         "properties": {
