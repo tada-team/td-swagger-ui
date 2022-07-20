@@ -5042,7 +5042,6 @@
           }
         },
         "required": [
-          "contact",
           "external_user_id",
           "external_user_name",
           "is_deleted",
