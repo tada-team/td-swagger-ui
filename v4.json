@@ -1260,6 +1260,10 @@
   },
   "components": {
     "schemas": {
+      "ActionType": {
+        "type": "string",
+        "description": "ActionType for server.processing event"
+      },
       "ActivatePersonalAccountResponse": {
         "type": "object",
         "properties": {
@@ -11000,6 +11004,10 @@
           "action": {
             "type": "string",
             "description": "Action name"
+          },
+          "action_type": {
+            "$ref": "#/components/schemas/ActionType",
+            "description": "ActionType. Ex: [contact_import || task_import || archive_unpacking || generate_chats]"
           },
           "has_error": {
             "type": "boolean",
