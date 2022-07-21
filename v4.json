@@ -11130,6 +11130,10 @@
             "$ref": "#/components/schemas/ActionType",
             "description": "ActionType. Ex: [contact_import || task_import || archive_unpacking || generate_chats]"
           },
+          "body": {
+            "type": "string",
+            "description": "Body"
+          },
           "has_error": {
             "type": "boolean",
             "description": "Has error"
