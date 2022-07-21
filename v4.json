@@ -6699,13 +6699,18 @@
       "ParserGetArchiveStatusResponse": {
         "type": "object",
         "properties": {
+          "progress": {
+            "type": "integer",
+            "description": "Progress of archive unpacking"
+          },
           "status": {
             "$ref": "#/components/schemas/ParseStatus",
             "description": "Status archive parse status"
           }
         },
         "required": [
-          "status"
+          "status",
+          "progress"
         ],
         "description": "ParserGetArchiveStatusResponse response structure for method GetArchiveStatus"
       },
@@ -6758,10 +6763,12 @@
         "type": "object",
         "properties": {
           "progress": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Progress of archive unpacking"
           },
           "status": {
-            "$ref": "#/components/schemas/ParseStatus"
+            "$ref": "#/components/schemas/ParseStatus",
+            "description": "Status archive parse status"
           }
         },
         "required": [
