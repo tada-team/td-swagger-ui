@@ -6694,7 +6694,7 @@
           "processing_action",
           "action_type"
         ],
-        "description": "ParserGenerateChatsResponse"
+        "description": "ParserGenerateChatsResponse .."
       },
       "ParserGetArchiveStatusResponse": {
         "type": "object",
