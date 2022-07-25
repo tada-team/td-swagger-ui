@@ -6690,6 +6690,10 @@
             "$ref": "#/components/schemas/ActionType",
             "description": "ActionType must be generate_chat"
           },
+          "archive_name": {
+            "type": "string",
+            "description": "ArchiveName name of archive"
+          },
           "processing_action": {
             "type": "string",
             "description": "ProcessingAction action for background notifications about generation of chats and messages"
@@ -6697,7 +6701,8 @@
         },
         "required": [
           "processing_action",
-          "action_type"
+          "action_type",
+          "archive_name"
         ],
         "description": "ParserGenerateChatsResponse .."
       },
@@ -6733,6 +6738,10 @@
             "$ref": "#/components/schemas/ActionType",
             "description": "ActionType. Ex: [archive_unpacking || generate_chats]"
           },
+          "archive_name": {
+            "type": "string",
+            "description": "ArchiveName name of archive"
+          },
           "body": {
             "type": "string",
             "description": "Localized Body"
@@ -6756,6 +6765,7 @@
         },
         "required": [
           "state",
+          "archive_name",
           "has_error"
         ],
         "description": "ParserGetStateResponse response structure for method GetArchiveState"
@@ -6818,6 +6828,10 @@
             "$ref": "#/components/schemas/ActionType",
             "description": "ActionType must be archive_unpacking"
           },
+          "archive_name": {
+            "type": "string",
+            "description": "ArchiveName name of archive"
+          },
           "processing_action": {
             "type": "string",
             "description": "ProcessingAction action for background notifications about archive unpacking"
@@ -6830,7 +6844,8 @@
         "required": [
           "success",
           "processing_action",
-          "action_type"
+          "action_type",
+          "archive_name"
         ],
         "description": "ParserUploadArchiveResponse response structure for method UploadArchive"
       },
