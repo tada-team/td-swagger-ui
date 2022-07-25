@@ -6674,6 +6674,11 @@
         ],
         "description": "Paginated UploadShortMessage"
       },
+      "ParseErrCode": {},
+      "ParseState": {
+        "type": "string",
+        "description": "ParseState parse status"
+      },
       "ParseStatus": {
         "type": "string",
         "description": "ParseStatus parse status"
@@ -6696,27 +6701,13 @@
         ],
         "description": "ParserGenerateChatsResponse .."
       },
-      "ParserGetArchiveStatusResponse": {
-        "type": "object",
-        "properties": {
-          "progress": {
-            "type": "integer",
-            "description": "Progress of archive unpacking"
-          },
-          "status": {
-            "$ref": "#/components/schemas/ParseStatus",
-            "description": "Status archive parse status"
-          }
-        },
-        "required": [
-          "status",
-          "progress"
-        ],
-        "description": "ParserGetArchiveStatusResponse response structure for method GetArchiveStatus"
-      },
       "ParserGetMappedUsersResponse": {
         "type": "object",
         "properties": {
+          "chat_name": {
+            "type": "string",
+            "description": "ChatName .."
+          },
           "users": {
             "type": "array",
             "items": {
@@ -6726,9 +6717,48 @@
           }
         },
         "required": [
-          "users"
+          "users",
+          "chat_name"
         ],
         "description": "ParserGetMappedUsersResponse .."
+      },
+      "ParserGetStateResponse": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "Action name"
+          },
+          "action_type": {
+            "$ref": "#/components/schemas/ActionType",
+            "description": "ActionType. Ex: [archive_unpacking || generate_chats]"
+          },
+          "body": {
+            "type": "string",
+            "description": "Localized Body"
+          },
+          "has_error": {
+            "type": "boolean",
+            "description": "Has error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Localized Message"
+          },
+          "progress": {
+            "type": "integer",
+            "description": "Progress of archive unpacking"
+          },
+          "state": {
+            "$ref": "#/components/schemas/ParseState",
+            "description": "State of import chats"
+          }
+        },
+        "required": [
+          "state",
+          "has_error"
+        ],
+        "description": "ParserGetStateResponse response structure for method GetArchiveState"
       },
       "ParserMapUsersRequest": {
         "type": "object",
@@ -6762,6 +6792,10 @@
       "ParserSendArchiveStatusRequest": {
         "type": "object",
         "properties": {
+          "error_code": {
+            "$ref": "#/components/schemas/ParseErrCode",
+            "description": "ErrorCode if smth went wrong"
+          },
           "progress": {
             "type": "integer",
             "description": "Progress of archive unpacking"
