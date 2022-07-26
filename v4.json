@@ -2703,6 +2703,10 @@
             "type": "boolean",
             "description": "Deprecated"
           },
+          "can_import_chats": {
+            "type": "boolean",
+            "description": "Can I import chats from external services (now its only telegram)"
+          },
           "can_import_tasks": {
             "type": "boolean",
             "description": "Can I import tasks in this team"
@@ -3746,10 +3750,6 @@
       "Features": {
         "type": "object",
         "properties": {
-          "ChatsImportEnabled": {
-            "type": "boolean",
-            "description": "ChatsImportEnabled import chat feature"
-          },
           "afk_age": {
             "type": "integer",
             "description": "Max inactivity seconds"
@@ -4241,8 +4241,7 @@
           "task_public",
           "task_tags",
           "calls",
-          "min_app_version",
-          "ChatsImportEnabled"
+          "min_app_version"
         ],
         "description": "Server information. Readonly"
       },
