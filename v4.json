@@ -6678,10 +6678,6 @@
         "type": "string",
         "description": "ParseState parse status"
       },
-      "ParseStatus": {
-        "type": "string",
-        "description": "ParseStatus parse status"
-      },
       "ParserGenerateChatsResponse": {
         "type": "object",
         "properties": {
@@ -6797,28 +6793,6 @@
           "success"
         ],
         "description": "ParserMapUsersResponse .."
-      },
-      "ParserSendArchiveStatusRequest": {
-        "type": "object",
-        "properties": {
-          "error_code": {
-            "$ref": "#/components/schemas/ParseErrCode",
-            "description": "ErrorCode if smth went wrong"
-          },
-          "progress": {
-            "type": "integer",
-            "description": "Progress of archive unpacking"
-          },
-          "status": {
-            "$ref": "#/components/schemas/ParseStatus",
-            "description": "Status archive parse status"
-          }
-        },
-        "required": [
-          "status",
-          "progress"
-        ],
-        "description": "ParserSendArchiveStatusRequest .."
       },
       "ParserUploadArchiveResponse": {
         "type": "object",
