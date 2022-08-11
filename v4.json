@@ -4312,6 +4312,9 @@
             "type": "integer",
             "format": "int32"
           },
+          "repeatability_description": {
+            "type": "string"
+          },
           "repeatability_type": {
             "$ref": "#/components/schemas/MeetingRepeatabilityType"
           }
