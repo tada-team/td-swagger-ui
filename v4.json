@@ -5630,6 +5630,25 @@
           "team_uuid"
         ]
       },
+      "MeetingsGetFrequencyDescriptionParams": {
+        "type": "object",
+        "properties": {
+          "freq_days": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "repeatability_type": {
+            "$ref": "#/components/schemas/MeetingRepeatabilityType"
+          }
+        },
+        "required": [
+          "frequency",
+          "repeatability_type"
+        ]
+      },
       "MeetingsGetRequest": {
         "type": "object",
         "properties": {
