@@ -1721,6 +1721,10 @@
             "type": "string",
             "description": "Contact name"
           },
+          "enabled_screenshare": {
+            "type": "boolean",
+            "description": "Screenshare state"
+          },
           "enabled_video": {
             "type": "boolean",
             "description": "Video state"
@@ -1749,6 +1753,7 @@
           "icon",
           "muted",
           "enabled_video",
+          "enabled_screenshare",
           "devices"
         ],
         "description": "Call participant"
