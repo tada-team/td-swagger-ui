@@ -1982,6 +1982,15 @@
             },
             "description": "Markup entities for description field. Experimental"
           },
+          "meeting_freq": {
+            "type": "boolean",
+            "description": "Meeting has frequency"
+          },
+          "meeting_start_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Start date of meeting chat"
+          },
           "members": {
             "type": "array",
             "items": {
@@ -5338,11 +5347,20 @@
             },
             "description": "Markup entities for description field. Experimental"
           },
+          "meeting_freq": {
+            "type": "boolean",
+            "description": "Meeting has frequency"
+          },
           "meeting_members": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/MeetingMember"
             }
+          },
+          "meeting_start_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Start date of meeting chat"
           },
           "members": {
             "type": "array",
