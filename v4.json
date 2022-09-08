@@ -1982,6 +1982,11 @@
             },
             "description": "Markup entities for description field. Experimental"
           },
+          "meeting_duration": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Meeting duration"
+          },
           "meeting_freq": {
             "type": "boolean",
             "description": "Meeting has frequency"
@@ -5346,6 +5351,11 @@
               "$ref": "#/components/schemas/MarkupEntity"
             },
             "description": "Markup entities for description field. Experimental"
+          },
+          "meeting_duration": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Meeting duration"
           },
           "meeting_freq": {
             "type": "boolean",
