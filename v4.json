@@ -9126,6 +9126,10 @@
             "type": "boolean",
             "description": "Need confirmation after invite to this team"
           },
+          "notebot": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Сurrent team favorites bot, jid of chat"
+          },
           "pinned": {
             "type": "boolean",
             "description": "Team pinned"
