@@ -4720,6 +4720,20 @@
         "format": "date-time",
         "description": "Date and time in RFC3339 format. Example: ``2019-09-18T00:00:07.435409Z``"
       },
+      "IVCSInfo": {
+        "type": "object",
+        "properties": {
+          "conference_id": {
+            "type": "string"
+          },
+          "guest_join_token": {
+            "type": "string"
+          },
+          "moderator_join_token": {
+            "type": "string"
+          }
+        }
+      },
       "IconColors": {
         "type": "object",
         "properties": {
@@ -5317,6 +5331,9 @@
             },
             "description": "Checklist items. Task only"
           },
+          "ivcs_info": {
+            "$ref": "#/components/schemas/IVCSInfo"
+          },
           "jid": {
             "$ref": "#/components/schemas/JID",
             "description": "Group/Task/Contact id"
@@ -5509,6 +5526,9 @@
           "urgency": {
             "type": "integer",
             "description": "Task urgency, if available in team"
+          },
+          "vcs_enabled": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -5624,6 +5644,9 @@
           },
           "title": {
             "type": "string"
+          },
+          "vcs_enabled": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -5960,6 +5983,9 @@
           },
           "title": {
             "type": "string"
+          },
+          "vcs_enabled": {
+            "type": "boolean"
           }
         },
         "required": [
