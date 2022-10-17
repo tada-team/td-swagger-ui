@@ -4726,10 +4726,7 @@
           "conference_id": {
             "type": "string"
           },
-          "guest_join_token": {
-            "type": "string"
-          },
-          "moderator_join_token": {
+          "join_token": {
             "type": "string"
           }
         }
