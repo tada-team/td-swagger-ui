@@ -5285,6 +5285,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
           "feed": {
             "type": "boolean",
             "description": "Present in feed (main screen)"
@@ -5380,6 +5384,9 @@
             "items": {
               "$ref": "#/components/schemas/MeetingMember"
             }
+          },
+          "meeting_recipient_status": {
+            "$ref": "#/components/schemas/MeetingRecipientStatus"
           },
           "meeting_start_at": {
             "type": "string",
@@ -5530,11 +5537,10 @@
         },
         "required": [
           "id",
-          "team_uuid",
-          "owner_contact_uuid",
-          "owner_user_uuid",
           "start_at",
+          "end_at",
           "duration",
+          "meeting_recipient_status",
           "jid",
           "chat_type",
           "gentime",
@@ -5583,6 +5589,9 @@
         "type": "string"
       },
       "MeetingPresenceStatus": {
+        "type": "string"
+      },
+      "MeetingRecipientStatus": {
         "type": "string"
       },
       "MeetingRepeatabilityType": {
