@@ -2678,9 +2678,104 @@
             "type": "boolean",
             "description": "Use * as @ for mentions"
           },
+          "auth_2fa_enabled": {
+            "type": "boolean",
+            "description": "Two-factor authentication is configured and confirmed"
+          },
+          "auth_2fa_status": {
+            "type": "string",
+            "description": "Two-factor authentication status"
+          },
+          "botname": {
+            "type": "string",
+            "description": "Bot name. Empty for users"
+          },
+          "can_add_to_group": {
+            "type": "boolean",
+            "description": "Can I add this contact to group chats"
+          },
+          "can_add_to_team": {
+            "type": "boolean",
+            "description": "Can I add new members to this team"
+          },
+          "can_call": {
+            "type": "boolean",
+            "description": "Can I call to this contact"
+          },
+          "can_create_group": {
+            "type": "boolean",
+            "description": "Can I create group chats in this team"
+          },
+          "can_create_meeting": {
+            "type": "boolean",
+            "description": "Can I create meetings in this team"
+          },
+          "can_create_task": {
+            "type": "boolean",
+            "description": "Can I create task for this contact"
+          },
+          "can_delete": {
+            "type": "boolean",
+            "description": "Can I remove this contact from team"
+          },
+          "can_delete_any_message": {
+            "type": "boolean",
+            "description": "Deprecated"
+          },
+          "can_import_chats": {
+            "type": "boolean",
+            "description": "Can I import chats from external services (now its only telegram)"
+          },
+          "can_import_tasks": {
+            "type": "boolean",
+            "description": "Can I import tasks in this team"
+          },
+          "can_join_public_groups": {
+            "type": "boolean",
+            "description": "Can I view/join public group in this team"
+          },
+          "can_join_public_tasks": {
+            "type": "boolean",
+            "description": "Can I view/join public tasks in this team"
+          },
+          "can_manage_color_rules": {
+            "type": "boolean",
+            "description": "Can I manage color rules in this team"
+          },
+          "can_manage_integrations": {
+            "type": "boolean",
+            "description": "Can I manage integrations in this team"
+          },
+          "can_manage_projects": {
+            "type": "boolean",
+            "description": "Can I manage task projects in this team"
+          },
+          "can_manage_sections": {
+            "type": "boolean",
+            "description": "Can I manage contact sections in this team"
+          },
+          "can_manage_tags": {
+            "type": "boolean",
+            "description": "Can I manage tags in this team"
+          },
+          "can_send_message": {
+            "type": "boolean",
+            "description": "Can I send message to this contact"
+          },
+          "cant_send_message_reason": {
+            "type": "string",
+            "description": "Why I can't send message to this chat (if can't)"
+          },
+          "changeable_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Changeable fields"
+          },
           "contact_email": {
             "type": "string",
-            "description": "Contact email (part of contact information in team, visible by all)"
+            "description": "Contact email in this team"
           },
           "contact_mshort_view": {
             "type": "boolean",
@@ -2688,7 +2783,7 @@
           },
           "contact_phone": {
             "type": "string",
-            "description": "Contact phone number (part of contact information in team, visible by all)"
+            "description": "Contact phone in this team"
           },
           "contact_short_view": {
             "type": "boolean",
@@ -2698,6 +2793,10 @@
             "type": "boolean",
             "description": "Show archived contacts in contact list"
           },
+          "custom_fields": {
+            "$ref": "#/components/schemas/ContactCustomFields",
+            "description": "Extra contact fields"
+          },
           "debug_show_activity": {
             "type": "boolean",
             "description": "Enable debug messages in UI"
@@ -2705,6 +2804,14 @@
           "default_lang": {
             "type": "string",
             "description": "Default language code"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Full name in chats"
+          },
+          "dropall_enabled": {
+            "type": "boolean",
+            "description": "Enable remove all messages experimental features"
           },
           "family_name": {
             "type": "string",
@@ -2714,6 +2821,11 @@
             "type": "string",
             "format": "date-time",
             "description": "Focus mode enabled until"
+          },
+          "gentime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Object version"
           },
           "given_name": {
             "type": "string",
@@ -2735,6 +2847,23 @@
             "type": "boolean",
             "description": "Hide pushes body"
           },
+          "icons": {
+            "$ref": "#/components/schemas/IconData",
+            "description": "Icons data"
+          },
+          "is_archive": {
+            "type": "boolean",
+            "description": "Contact deleted"
+          },
+          "jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Contact Id"
+          },
+          "last_activity": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last activity in this team (iso datetime)"
+          },
           "meeting_mshort_view": {
             "type": "boolean",
             "description": "Short view in meeting list in mobile app"
@@ -2745,19 +2874,19 @@
           },
           "mood": {
             "type": "string",
-            "description": "Mood in team"
+            "description": "Mood in this team"
           },
           "munread_first": {
             "type": "boolean",
-            "description": "Show unread chats first (mobile app)"
+            "description": "Show unread chats first in feed in mobile app"
+          },
+          "node": {
+            "type": "string",
+            "description": "Node uid for external users"
           },
           "patronymic": {
             "type": "string",
-            "description": "Patronymic"
-          },
-          "phone": {
-            "type": "string",
-            "description": "Phone number (for invitation by phone)"
+            "description": "Patronymic, if any"
           },
           "quiet_time_finish": {
             "type": "string",
@@ -2765,22 +2894,26 @@
           },
           "quiet_time_start": {
             "type": "string",
-            "description": "Start silently time (no pushes, no sounds)"
+            "description": "Quiet time start"
           },
           "role": {
             "type": "string",
-            "description": "Role in team"
+            "description": "Role in this team"
           },
           "sections": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "ContactSection uids, if any"
+            "description": "Section ids"
+          },
+          "short_name": {
+            "type": "string",
+            "description": "Short name in chats"
           },
           "status": {
             "$ref": "#/components/schemas/TeamStatus",
-            "description": "Status in team"
+            "description": "Status in this team"
           },
           "task_mshort_view": {
             "type": "boolean",
@@ -2800,49 +2933,22 @@
           },
           "unread_first": {
             "type": "boolean",
-            "description": "Show unread chats first (web/desktop)"
-          },
-          "user_uid": {
-            "type": "string",
-            "description": "User uid (for invitation from other team)"
+            "description": "Show unread chats first in feed"
           }
         },
         "required": [
-          "phone",
-          "contact_phone",
+          "jid",
+          "display_name",
+          "short_name",
           "contact_email",
-          "family_name",
-          "given_name",
-          "patronymic",
+          "contact_phone",
+          "icons",
+          "gentime",
           "role",
-          "mood",
-          "debug_show_activity",
           "status",
-          "sections",
-          "alt_send",
-          "focus_until",
-          "asterisk_mention",
-          "always_send_pushes",
-          "hide_pushes_content",
-          "unread_first",
-          "munread_first",
-          "default_lang",
-          "timezone",
-          "quiet_time_start",
-          "quiet_time_finish",
-          "group_notifications_enabled",
-          "task_notifications_enabled",
-          "contact_short_view",
-          "group_short_view",
-          "task_short_view",
-          "meeting_short_view",
-          "contact_mshort_view",
-          "contact_show_archived",
-          "group_mshort_view",
-          "task_mshort_view",
-          "meeting_mshort_view"
+          "sections"
         ],
-        "description": "Contact invite/edit form"
+        "description": "Contact"
       },
       "ContactCustomFields": {
         "type": "object",
