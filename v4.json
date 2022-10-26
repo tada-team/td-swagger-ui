@@ -4176,6 +4176,10 @@
             "type": "string",
             "description": "Static files server address"
           },
+          "vcs_enabled": {
+            "type": "boolean",
+            "description": "VcsEnabled enabled or disabled vcs"
+          },
           "web_login_background": {
             "type": "string",
             "description": "WebBackground image url, if any"
@@ -4244,6 +4248,7 @@
           "calls_version",
           "calls_audio_enabled",
           "calls_video_enabled",
+          "vcs_enabled",
           "mobile_calls",
           "calls_record",
           "safari_push_id",
