@@ -5744,14 +5744,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "members": {
+          "members_jids": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "members_jids": {
-            "type": "string"
           },
           "offset": {
             "type": "integer",
