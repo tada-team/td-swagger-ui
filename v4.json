@@ -5745,10 +5745,7 @@
             "format": "int32"
           },
           "members_jids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "string"
           },
           "offset": {
             "type": "integer",
