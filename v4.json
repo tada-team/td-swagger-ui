@@ -4731,6 +4731,9 @@
           "conference_id": {
             "type": "string"
           },
+          "invite_link": {
+            "type": "string"
+          },
           "join_token": {
             "type": "string"
           }
@@ -5028,6 +5031,27 @@
           "qr"
         ],
         "description": "Invitation to team"
+      },
+      "InvitationToMeeting": {
+        "type": "object",
+        "properties": {
+          "date_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          },
+          "meeting_jid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "date_start",
+          "meeting_jid"
+        ],
+        "description": "InvitationToMeeting Preview"
       },
       "JID": {
         "type": "string"
@@ -5592,6 +5616,18 @@
       },
       "MeetingMemberStatus": {
         "type": "string"
+      },
+      "MeetingNewGuest": {
+        "type": "object",
+        "properties": {
+          "full_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "full_name"
+        ],
+        "description": "Guest Invitation Form"
       },
       "MeetingPresenceStatus": {
         "type": "string"
