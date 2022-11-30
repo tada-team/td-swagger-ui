@@ -5976,6 +5976,38 @@
           "offset"
         ]
       },
+      "MeetingsUpdateCellRequest": {
+        "type": "object",
+        "properties": {
+          "cell_start_new_date": {
+            "type": "string"
+          },
+          "cell_start_old_date": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "is_outside": {
+            "type": "boolean"
+          },
+          "meeting_id": {
+            "type": "string"
+          },
+          "team_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "meeting_id",
+          "team_uuid",
+          "duration",
+          "is_outside",
+          "cell_start_old_date",
+          "cell_start_new_date"
+        ]
+      },
       "MeetingsUpdateRequest": {
         "type": "object",
         "properties": {
@@ -7733,6 +7765,25 @@
           "event"
         ],
         "description": "Login from other device"
+      },
+      "ServerMeetingCellUpdated": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverMeetingCellUpdatedParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ],
+        "description": "Meeting Cell updated"
       },
       "ServerMeetingDeleted": {
         "type": "object",
@@ -11128,6 +11179,34 @@
           "device_name"
         ],
         "description": "Params of the server.login event"
+      },
+      "serverMeetingCellUpdatedParams": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "meeting_id": {
+            "type": "string",
+            "description": "Meeting Cell info"
+          },
+          "start_at_new": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "start_at_old": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "meeting_id",
+          "start_at_old",
+          "start_at_new",
+          "duration"
+        ],
+        "description": "Params of the server.meetingcell.updated event"
       },
       "serverMeetingDeletedParams": {
         "type": "object",
