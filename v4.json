@@ -5989,9 +5989,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "is_outside": {
-            "type": "boolean"
-          },
           "meeting_id": {
             "type": "string"
           },
@@ -6003,7 +6000,6 @@
           "meeting_id",
           "team_uuid",
           "duration",
-          "is_outside",
           "cell_start_old_date",
           "cell_start_new_date"
         ]
