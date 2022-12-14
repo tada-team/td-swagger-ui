@@ -2868,6 +2868,10 @@
             "type": "boolean",
             "description": "Short view in meeting list in mobile app"
           },
+          "meeting_notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications for meeting chats"
+          },
           "meeting_short_view": {
             "type": "boolean",
             "description": "Short view in meeting list"
