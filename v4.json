@@ -10944,7 +10944,14 @@
         "properties": {
           "jid": {
             "$ref": "#/components/schemas/JID",
-            "description": "Chat or contact id"
+            "description": "Chat or contact id in singlesteam mode"
+          },
+          "jids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JID"
+            },
+            "description": "Jids for tracks in multistream mode"
           },
           "jsep": {
             "$ref": "#/components/schemas/JSEP",
@@ -10957,6 +10964,7 @@
         },
         "required": [
           "jid",
+          "jids",
           "uid",
           "jsep"
         ],
