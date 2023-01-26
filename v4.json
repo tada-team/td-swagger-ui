@@ -3052,6 +3052,36 @@
         ],
         "description": "Short contact representation"
       },
+      "ContactsSectionGetRequest": {
+        "type": "object",
+        "properties": {
+          "IsArchived": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "* ?is_archived="
+          },
+          "IsBot": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "* ?is_bot="
+          },
+          "Limit": {
+            "type": "integer"
+          },
+          "Offset": {
+            "type": "integer"
+          },
+          "SectionUid": {
+            "type": "string",
+            "description": "Team Section"
+          }
+        },
+        "required": [
+          "SectionUid",
+          "Limit",
+          "Offset"
+        ]
+      },
       "Country": {
         "type": "object",
         "properties": {
