@@ -2919,6 +2919,10 @@
             "$ref": "#/components/schemas/TeamStatus",
             "description": "Status in this team"
           },
+          "systembot_notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications from systembot"
+          },
           "task_mshort_view": {
             "type": "boolean",
             "description": "Short view in task list in mobile app"
