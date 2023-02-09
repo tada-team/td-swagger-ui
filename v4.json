@@ -2900,6 +2900,10 @@
             "type": "string",
             "description": "Quiet time start"
           },
+          "reaction_notifications_enabled": {
+            "type": "boolean",
+            "description": "Push notifications for reactions"
+          },
           "role": {
             "type": "string",
             "description": "Role in this team"
