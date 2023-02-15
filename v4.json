@@ -9212,6 +9212,10 @@
       "Team": {
         "type": "object",
         "properties": {
+          "account_status": {
+            "$ref": "#/components/schemas/PersonalAccountStatus",
+            "description": "Personal account status for current team"
+          },
           "available_tariffs": {
             "type": "array",
             "items": {
