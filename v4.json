@@ -9286,6 +9286,10 @@
             "$ref": "#/components/schemas/JID",
             "description": "Сurrent team favorites bot, jid of chat"
           },
+          "owner": {
+            "$ref": "#/components/schemas/Contact",
+            "description": "Team owner"
+          },
           "pinned": {
             "type": "boolean",
             "description": "Team pinned"
