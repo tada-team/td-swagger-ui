@@ -9378,7 +9378,8 @@
           "last_active",
           "need_confirmation",
           "user_fields",
-          "me"
+          "me",
+          "account_status"
         ],
         "description": "Team"
       },
