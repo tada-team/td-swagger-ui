@@ -1827,6 +1827,10 @@
             "type": "boolean",
             "description": "Can I join to this public group/task"
           },
+          "can_mute_all": {
+            "type": "boolean",
+            "description": "Can I mute all in call"
+          },
           "can_remove_member": {
             "type": "boolean",
             "description": "Can I remove member from this group chat"
@@ -3817,7 +3821,7 @@
           },
           "allow_admin_mute": {
             "type": "boolean",
-            "description": "Wiki pages in chats. Experimental"
+            "description": "Wiki pages in chats. Experimental Deprecated: this field is not used"
           },
           "amplitude_api_key": {
             "type": "string",
@@ -5259,6 +5263,10 @@
           "can_join": {
             "type": "boolean",
             "description": "Can I join to this public group/task"
+          },
+          "can_mute_all": {
+            "type": "boolean",
+            "description": "Can I mute all in call"
           },
           "can_remove_member": {
             "type": "boolean",
