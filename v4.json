@@ -3898,6 +3898,10 @@
             "type": "boolean",
             "description": "CallsVideoEnabled enabled or disabled video calls"
           },
+          "calls_video_multistream_enabled": {
+            "type": "boolean",
+            "description": "CallsVideoMultistreamEnabled enabled or disabled video in multistream mode (for janus)"
+          },
           "custom_app_icon_name": {
             "type": "string",
             "description": "Custom application icon name, if any"
@@ -4294,6 +4298,7 @@
           "calls_version",
           "calls_audio_enabled",
           "calls_video_enabled",
+          "calls_video_multistream_enabled",
           "vcs_enabled",
           "mobile_calls",
           "calls_record",
