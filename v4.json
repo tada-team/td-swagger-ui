@@ -3296,9 +3296,9 @@
       "CreateTariffRequest": {
         "type": "object",
         "properties": {
-          "close_date": {
+          "benefit": {
             "type": "string",
-            "description": "Date of closing tariff"
+            "description": "Benefit of tariff"
           },
           "cost_workplace": {
             "type": "string",
@@ -3308,83 +3308,85 @@
             "$ref": "#/components/schemas/Currency",
             "description": "Currency of tariff"
           },
+          "description": {
+            "type": "string",
+            "description": "Description of tariff"
+          },
           "disk_space_quota_mb": {
             "type": "string",
             "description": "Disk space limit per user"
           },
-          "free_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "free_workplace_countt": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of free workspaces"
           },
-          "is_billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
-          },
-          "is_billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
-          "is_default_tariff": {
+          "is_default": {
             "type": "boolean",
             "description": "Default tariff flag that is set when registering an account"
           },
-          "is_recalc_change_tariff": {
+          "is_free": {
             "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "is_public": {
+            "type": "boolean",
+            "description": "Flag of publicity"
           },
           "max_video_user": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Maximum count of users in video conference"
           },
           "max_voice_user": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Maximum count of users in voice conference"
           },
-          "min_step_workplaces": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Minimum step of change count workspaces on tariff"
+          "max_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of maximum workspaces on tariff"
           },
-          "min_tariff_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "min_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of minimum workspaces on tariff"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of tariff"
+          },
+          "nomenclature_name": {
+            "type": "string",
+            "description": "Nomenclature name of tariff"
           },
           "open_date": {
             "type": "string",
             "description": "Date of opening tariff"
           },
           "period_days": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Number of paid days"
           },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name of tariff"
+          "priority": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Priority of tariff"
+          },
+          "step_increasing_workplaces": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Minimum step of change count workspaces on tariff"
           },
           "video_call_bitrate": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Bitrate of video in video co"
           },
           "video_sharing_bitrate": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Bitrate of video in video sharing"
           }
         },
         "required": [
+          "name",
+          "nomenclature_name",
           "currency",
-          "min_tariff_workplaces",
-          "min_step_workplaces",
-          "video_call_bitrate",
-          "video_sharing_bitrate",
-          "period_days",
-          "tariff_name"
+          "cost_workplace",
+          "period_days"
         ],
         "description": "Request to create the tariff"
       },
@@ -8734,6 +8736,10 @@
       "TariffBilling": {
         "type": "object",
         "properties": {
+          "benefit": {
+            "type": "string",
+            "description": "Benefit of tariff"
+          },
           "close_date": {
             "type": "string",
             "description": "Date of closing tariff"
@@ -8746,30 +8752,33 @@
             "$ref": "#/components/schemas/Currency",
             "description": "Currency of tariff"
           },
+          "description": {
+            "type": "string",
+            "description": "Description of tariff"
+          },
           "disk_space_quota_mb": {
             "type": "string",
             "description": "Disk space limit per user"
           },
-          "free_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of free workspaces"
           },
-          "is_billing_free": {
-            "type": "boolean",
-            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          "id": {
+            "$ref": "#/components/schemas/uint64",
+            "description": "Tariff id"
           },
-          "is_billing_full_time": {
-            "type": "boolean",
-            "description": "Flag of accounting without looking at the number of days before the billing period"
-          },
-          "is_default_tariff": {
+          "is_default": {
             "type": "boolean",
             "description": "Default tariff flag that is set when registering an account"
           },
-          "is_recalc_change_tariff": {
+          "is_free": {
             "type": "boolean",
-            "description": "Flag for accounting for unspent days when switching to a new tariff"
+            "description": "Flag of availability of free seats when exceeding FreeWorkplace"
+          },
+          "is_public": {
+            "type": "boolean",
+            "description": "Flag of publicity"
           },
           "max_video_user": {
             "type": "integer",
@@ -8781,15 +8790,21 @@
             "format": "int32",
             "description": "Maximum count of users in voice conference"
           },
-          "min_step_workplaces": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Minimum step of change count workspaces on tariff"
+          "max_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of maximum workspaces on tariff"
           },
-          "min_tariff_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "min_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of minimum workspaces on tariff"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of tariff"
+          },
+          "nomenclature_name": {
+            "type": "string",
+            "description": "Nomenclature name of tariff"
           },
           "open_date": {
             "type": "string",
@@ -8801,17 +8816,17 @@
             "format": "int32",
             "description": "Number of paid days"
           },
+          "priority": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Priority of tariff"
+          },
           "status": {
             "$ref": "#/components/schemas/TariffStatus",
             "description": "Status of tariff"
           },
-          "tariff_id": {
-            "type": "string",
-            "description": "Tariff id"
-          },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name of tariff"
+          "step_increasing_workplaces": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Minimum step of change count workspaces on tariff"
           },
           "video_call_bitrate": {
             "type": "integer",
@@ -8825,24 +8840,24 @@
           }
         },
         "required": [
-          "cost_workplace",
+          "id",
+          "name",
+          "nomenclature_name",
+          "description",
           "currency",
-          "min_tariff_workplaces",
-          "min_step_workplaces",
+          "cost_workplace",
+          "free_workplace_count",
+          "step_increasing_workplaces",
           "disk_space_quota_mb",
-          "free_workplaces",
-          "is_billing_free",
-          "is_billing_full_time",
-          "is_default_tariff",
-          "is_recalc_change_tariff",
+          "period_days",
           "max_voice_user",
           "max_video_user",
           "video_call_bitrate",
           "video_sharing_bitrate",
-          "period_days",
-          "status",
-          "tariff_id",
-          "tariff_name"
+          "is_free",
+          "is_public",
+          "is_default",
+          "status"
         ],
         "description": "Tariff struct of billing API"
       },
@@ -9925,7 +9940,7 @@
             "type": "string",
             "description": "Date of closing tariff"
           },
-          "is_default_tariff": {
+          "is_default": {
             "type": "boolean",
             "description": "Default tariff flag that is set when registering an account"
           },
