@@ -3209,87 +3209,85 @@
       "CreatePersonalAccountResponse": {
         "type": "object",
         "properties": {
-          "discount_amount": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Amount of Discount on personal account"
-          },
-          "discount_id": {
+          "block_date": {
             "type": "string",
-            "description": "ID Discount on personal account"
+            "description": "Account blocking date"
           },
-          "free_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "empty_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of empty workplaces on personal account"
+          },
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of free workplaces on personal account"
           },
-          "full_name": {
-            "type": "string",
-            "description": "Full name of owner personal account"
+          "is_blocked": {
+            "type": "boolean",
+            "description": "Is the account blocked"
+          },
+          "is_suspended": {
+            "type": "boolean",
+            "description": "Is the account suspended"
           },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
           },
-          "owner_uuid": {
-            "type": "string",
+          "occupied_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of occupied workplaces on personal account"
+          },
+          "owner_id": {
+            "$ref": "#/components/schemas/uint64",
             "description": "ID User who owns this personal account"
           },
-          "paid_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "owner_uuid": {
+            "type": "string",
+            "description": "UUID of User who owns this personal account"
+          },
+          "paid_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "string",
+            "$ref": "#/components/schemas/uint64",
             "description": "PersonalAccountBilling ID"
-          },
-          "phone": {
-            "type": "string",
-            "description": "Phone number of owner account"
           },
           "status": {
             "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
-          "tariff_id": {
+          "suspend_date": {
             "type": "string",
-            "description": "ID Tariff on this personal account"
+            "description": "Account suspending date"
           },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name Tariff on this personal account"
+          "tariff": {
+            "$ref": "#/components/schemas/TariffBilling",
+            "description": "Tariff on this personal account"
           },
-          "team_count": {
-            "type": "integer",
-            "format": "int32",
+          "teams_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of teams on personal account"
           },
-          "users_count": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Count of user on personal account"
-          },
           "workplace_count": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of workplaces on personal account"
           }
         },
         "required": [
           "personal_account_id",
+          "owner_id",
           "owner_uuid",
-          "tariff_id",
-          "tariff_name",
-          "discount_id",
-          "discount_amount",
-          "status",
-          "next_billing_date",
-          "team_count",
+          "teams_count",
           "workplace_count",
-          "users_count",
-          "free_workplaces",
-          "paid_workplaces"
+          "empty_workplace_count",
+          "occupied_workplace_count",
+          "free_workplace_count",
+          "paid_workplace_count",
+          "is_blocked",
+          "is_suspended",
+          "status",
+          "tariff"
         ],
         "description": "CreatePersonalAccountResponse response on create personal account"
       },
@@ -4431,87 +4429,85 @@
       "GetPersonalAccountByIDResponse": {
         "type": "object",
         "properties": {
-          "discount_amount": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Amount of Discount on personal account"
-          },
-          "discount_id": {
+          "block_date": {
             "type": "string",
-            "description": "ID Discount on personal account"
+            "description": "Account blocking date"
           },
-          "free_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "empty_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of empty workplaces on personal account"
+          },
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of free workplaces on personal account"
           },
-          "full_name": {
-            "type": "string",
-            "description": "Full name of owner personal account"
+          "is_blocked": {
+            "type": "boolean",
+            "description": "Is the account blocked"
+          },
+          "is_suspended": {
+            "type": "boolean",
+            "description": "Is the account suspended"
           },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
           },
-          "owner_uuid": {
-            "type": "string",
+          "occupied_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of occupied workplaces on personal account"
+          },
+          "owner_id": {
+            "$ref": "#/components/schemas/uint64",
             "description": "ID User who owns this personal account"
           },
-          "paid_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "owner_uuid": {
+            "type": "string",
+            "description": "UUID of User who owns this personal account"
+          },
+          "paid_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "string",
+            "$ref": "#/components/schemas/uint64",
             "description": "PersonalAccountBilling ID"
-          },
-          "phone": {
-            "type": "string",
-            "description": "Phone number of owner account"
           },
           "status": {
             "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
-          "tariff_id": {
+          "suspend_date": {
             "type": "string",
-            "description": "ID Tariff on this personal account"
+            "description": "Account suspending date"
           },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name Tariff on this personal account"
+          "tariff": {
+            "$ref": "#/components/schemas/TariffBilling",
+            "description": "Tariff on this personal account"
           },
-          "team_count": {
-            "type": "integer",
-            "format": "int32",
+          "teams_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of teams on personal account"
           },
-          "users_count": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Count of user on personal account"
-          },
           "workplace_count": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of workplaces on personal account"
           }
         },
         "required": [
           "personal_account_id",
+          "owner_id",
           "owner_uuid",
-          "tariff_id",
-          "tariff_name",
-          "discount_id",
-          "discount_amount",
-          "status",
-          "next_billing_date",
-          "team_count",
+          "teams_count",
           "workplace_count",
-          "users_count",
-          "free_workplaces",
-          "paid_workplaces"
+          "empty_workplace_count",
+          "occupied_workplace_count",
+          "free_workplace_count",
+          "paid_workplace_count",
+          "is_blocked",
+          "is_suspended",
+          "status",
+          "tariff"
         ],
         "description": "GetPersonalAccountByIDResponse response on get personal account by ID"
       },
@@ -7072,87 +7068,85 @@
       "PersonalAccountBilling": {
         "type": "object",
         "properties": {
-          "discount_amount": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Amount of Discount on personal account"
-          },
-          "discount_id": {
+          "block_date": {
             "type": "string",
-            "description": "ID Discount on personal account"
+            "description": "Account blocking date"
           },
-          "free_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "empty_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of empty workplaces on personal account"
+          },
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of free workplaces on personal account"
           },
-          "full_name": {
-            "type": "string",
-            "description": "Full name of owner personal account"
+          "is_blocked": {
+            "type": "boolean",
+            "description": "Is the account blocked"
+          },
+          "is_suspended": {
+            "type": "boolean",
+            "description": "Is the account suspended"
           },
           "next_billing_date": {
             "type": "string",
             "description": "Date of next debiting funds"
           },
-          "owner_uuid": {
-            "type": "string",
+          "occupied_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "Count of occupied workplaces on personal account"
+          },
+          "owner_id": {
+            "$ref": "#/components/schemas/uint64",
             "description": "ID User who owns this personal account"
           },
-          "paid_workplaces": {
-            "type": "integer",
-            "format": "int32",
+          "owner_uuid": {
+            "type": "string",
+            "description": "UUID of User who owns this personal account"
+          },
+          "paid_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "type": "string",
+            "$ref": "#/components/schemas/uint64",
             "description": "PersonalAccountBilling ID"
-          },
-          "phone": {
-            "type": "string",
-            "description": "Phone number of owner account"
           },
           "status": {
             "$ref": "#/components/schemas/PersonalAccountStatus",
             "description": "Status of personal account"
           },
-          "tariff_id": {
+          "suspend_date": {
             "type": "string",
-            "description": "ID Tariff on this personal account"
+            "description": "Account suspending date"
           },
-          "tariff_name": {
-            "type": "string",
-            "description": "Name Tariff on this personal account"
+          "tariff": {
+            "$ref": "#/components/schemas/TariffBilling",
+            "description": "Tariff on this personal account"
           },
-          "team_count": {
-            "type": "integer",
-            "format": "int32",
+          "teams_count": {
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of teams on personal account"
           },
-          "users_count": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Count of user on personal account"
-          },
           "workplace_count": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Count of workplaces on personal account"
           }
         },
         "required": [
           "personal_account_id",
+          "owner_id",
           "owner_uuid",
-          "tariff_id",
-          "tariff_name",
-          "discount_id",
-          "discount_amount",
-          "status",
-          "next_billing_date",
-          "team_count",
+          "teams_count",
           "workplace_count",
-          "users_count",
-          "free_workplaces",
-          "paid_workplaces"
+          "empty_workplace_count",
+          "occupied_workplace_count",
+          "free_workplace_count",
+          "paid_workplace_count",
+          "is_blocked",
+          "is_suspended",
+          "status",
+          "tariff"
         ],
         "description": "PersonalAccountBilling struct of billing api"
       },
@@ -8745,7 +8739,7 @@
             "description": "Date of closing tariff"
           },
           "cost_workplace": {
-            "type": "string",
+            "$ref": "#/components/schemas/float64",
             "description": "Cost of one workplace"
           },
           "currency": {
@@ -8757,7 +8751,7 @@
             "description": "Description of tariff"
           },
           "disk_space_quota_mb": {
-            "type": "string",
+            "$ref": "#/components/schemas/float64",
             "description": "Disk space limit per user"
           },
           "free_workplace_count": {
@@ -8781,13 +8775,11 @@
             "description": "Flag of publicity"
           },
           "max_video_user": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Maximum count of users in video conference"
           },
           "max_voice_user": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Maximum count of users in voice conference"
           },
           "max_workplace_count": {
@@ -8812,8 +8804,7 @@
             "description": "Date of opening tariff"
           },
           "period_days": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Number of paid days"
           },
           "priority": {
@@ -8829,13 +8820,11 @@
             "description": "Minimum step of change count workspaces on tariff"
           },
           "video_call_bitrate": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Bitrate of video in video co"
           },
           "video_sharing_bitrate": {
-            "type": "integer",
-            "format": "int32",
+            "$ref": "#/components/schemas/uint32",
             "description": "Bitrate of video in video sharing"
           }
         },
