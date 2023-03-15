@@ -4402,7 +4402,7 @@
       "GetActiveTariffsListResponse": {
         "type": "object",
         "properties": {
-          "tariffs": {
+          "tariff_list": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TariffBilling"
@@ -4410,7 +4410,7 @@
           }
         },
         "required": [
-          "tariffs"
+          "tariff_list"
         ],
         "description": "Response from getting a list of active tariffs"
       },
@@ -4526,7 +4526,7 @@
       "GetTariffsListResponse": {
         "type": "object",
         "properties": {
-          "tariffs": {
+          "tariff_list": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TariffBilling"
@@ -4534,7 +4534,7 @@
           }
         },
         "required": [
-          "tariffs"
+          "tariff_list"
         ],
         "description": "Response from getting a list of tariffs"
       },
