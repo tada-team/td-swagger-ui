@@ -8759,7 +8759,7 @@
             "description": "Count of free workspaces"
           },
           "id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "Tariff id"
           },
           "is_default": {
