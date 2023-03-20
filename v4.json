@@ -8553,6 +8553,10 @@
             "$ref": "#/components/schemas/JID",
             "description": "Assignee contact id. Tasks only"
           },
+          "complexity": {
+            "type": "integer",
+            "description": "Subtask complexity, number"
+          },
           "deadline": {
             "type": "string",
             "format": "date-time",
@@ -8565,6 +8569,10 @@
           "display_name": {
             "type": "string",
             "description": "Title"
+          },
+          "importance": {
+            "type": "integer",
+            "description": "Subtask importance, if available in team"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
