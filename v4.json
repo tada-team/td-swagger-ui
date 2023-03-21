@@ -2718,6 +2718,10 @@
             "type": "boolean",
             "description": "Can I create task for this contact"
           },
+          "can_create_team": {
+            "type": "boolean",
+            "description": "Can i create new team"
+          },
           "can_delete": {
             "type": "boolean",
             "description": "Can I remove this contact from team"
