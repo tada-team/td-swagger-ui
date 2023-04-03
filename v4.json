@@ -3098,6 +3098,279 @@
           "Offset"
         ]
       },
+      "Counterparty": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "classifier_of_industrial_enterprises": {
+            "type": "string"
+          },
+          "counterparty_type": {
+            "$ref": "#/components/schemas/CounterpartyType"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "electronic_document_management_id": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "legal_address": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "physical_address": {
+            "type": "string"
+          },
+          "taxpayer_identification_number": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "full_name",
+          "taxpayer_identification_number",
+          "legal_address",
+          "physical_address",
+          "created_at",
+          "counterparty_type"
+        ]
+      },
+      "CounterpartyCreateRequest": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "classifier_of_industrial_enterprises": {
+            "type": "string"
+          },
+          "counterparty_type": {
+            "$ref": "#/components/schemas/CounterpartyType"
+          },
+          "electronic_document_management_id": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "legal_address": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "physical_address": {
+            "type": "string"
+          },
+          "taxpayer_identification_number": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "personal_account_id",
+          "full_name",
+          "taxpayer_identification_number",
+          "legal_address",
+          "physical_address",
+          "counterparty_type"
+        ]
+      },
+      "CounterpartyCreateResponse": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "classifier_of_industrial_enterprises": {
+            "type": "string"
+          },
+          "counterparty_type": {
+            "$ref": "#/components/schemas/CounterpartyType"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "electronic_document_management_id": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "legal_address": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "physical_address": {
+            "type": "string"
+          },
+          "taxpayer_identification_number": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "full_name",
+          "taxpayer_identification_number",
+          "legal_address",
+          "physical_address",
+          "created_at",
+          "counterparty_type"
+        ]
+      },
+      "CounterpartyDeleteRequest": {
+        "type": "object",
+        "properties": {
+          "counterparty_ids": {
+            "type": "string"
+          }
+        }
+      },
+      "CounterpartyGetRequest": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "counterparty_ids": {
+            "type": "string"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "personal_account_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CounterpartyGetResponse": {
+        "type": "object",
+        "properties": {
+          "counterparty_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Counterparty"
+            }
+          }
+        },
+        "required": [
+          "counterparty_list"
+        ]
+      },
+      "CounterpartyType": {
+        "type": "string"
+      },
+      "CounterpartyUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "classifier_of_industrial_enterprises": {
+            "type": "string"
+          },
+          "counterparty_type": {
+            "$ref": "#/components/schemas/CounterpartyType"
+          },
+          "electronic_document_management_id": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "legal_address": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "physical_address": {
+            "type": "string"
+          },
+          "taxpayer_identification_number": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "full_name",
+          "taxpayer_identification_number",
+          "legal_address",
+          "physical_address",
+          "counterparty_type"
+        ]
+      },
+      "CounterpartyUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "accounting_dictionary_code": {
+            "type": "string"
+          },
+          "classifier_of_industrial_enterprises": {
+            "type": "string"
+          },
+          "counterparty_type": {
+            "$ref": "#/components/schemas/CounterpartyType"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "electronic_document_management_id": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "legal_address": {
+            "type": "string"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "physical_address": {
+            "type": "string"
+          },
+          "taxpayer_identification_number": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "full_name",
+          "taxpayer_identification_number",
+          "legal_address",
+          "physical_address",
+          "created_at",
+          "counterparty_type"
+        ]
+      },
       "Country": {
         "type": "object",
         "properties": {
