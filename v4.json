@@ -3234,14 +3234,6 @@
           "counterparty_type"
         ]
       },
-      "CounterpartyDeleteRequest": {
-        "type": "object",
-        "properties": {
-          "counterparty_ids": {
-            "type": "string"
-          }
-        }
-      },
       "CounterpartyGetRequest": {
         "type": "object",
         "properties": {
@@ -3297,9 +3289,6 @@
           "full_name": {
             "type": "string"
           },
-          "id": {
-            "type": "string"
-          },
           "legal_address": {
             "type": "string"
           },
@@ -3314,7 +3303,6 @@
           }
         },
         "required": [
-          "id",
           "personal_account_id",
           "full_name",
           "taxpayer_identification_number",
