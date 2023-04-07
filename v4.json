@@ -7321,6 +7321,240 @@
           "confirmation_url"
         ]
       },
+      "PaymentInvoice": {
+        "type": "object",
+        "properties": {
+          "activate_at": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/float64"
+          },
+          "cost_workplace": {
+            "type": "string"
+          },
+          "counterparty_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "free_workplace": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "paid_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tariff_name": {
+            "type": "string"
+          },
+          "workplace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "enquiry_id",
+          "counterparty_id",
+          "status",
+          "amount"
+        ]
+      },
+      "PaymentInvoiceCreateRequest": {
+        "type": "object",
+        "properties": {
+          "counterparty_id": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "paid_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "enquiry_id",
+          "counterparty_id",
+          "status"
+        ]
+      },
+      "PaymentInvoiceCreateResponse": {
+        "type": "object",
+        "properties": {
+          "activate_at": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/float64"
+          },
+          "cost_workplace": {
+            "type": "string"
+          },
+          "counterparty_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "free_workplace": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "paid_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tariff_name": {
+            "type": "string"
+          },
+          "workplace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "enquiry_id",
+          "counterparty_id",
+          "status",
+          "amount"
+        ]
+      },
+      "PaymentInvoiceGetListRequest": {
+        "type": "object",
+        "properties": {
+          "counterparty_id": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "PaymentInvoiceGetListResponse": {
+        "type": "object",
+        "properties": {
+          "payment_invoice_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentInvoice"
+            }
+          }
+        },
+        "required": [
+          "payment_invoice_list"
+        ]
+      },
+      "PaymentInvoiceGetRequest": {
+        "type": "object",
+        "properties": {
+          "payment_invoice_ids": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "payment_invoice_ids"
+        ]
+      },
+      "PaymentInvoiceUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "counterparty_id": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "paid_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "enquiry_id",
+          "counterparty_id",
+          "paid_at",
+          "status"
+        ]
+      },
+      "PaymentInvoiceUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "activate_at": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/float64"
+          },
+          "cost_workplace": {
+            "type": "string"
+          },
+          "counterparty_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "enquiry_id": {
+            "type": "string"
+          },
+          "free_workplace": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "paid_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tariff_name": {
+            "type": "string"
+          },
+          "workplace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "enquiry_id",
+          "counterparty_id",
+          "status",
+          "amount"
+        ]
+      },
       "PdfVersion": {
         "type": "object",
         "properties": {
