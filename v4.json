@@ -10051,6 +10051,10 @@
             "type": "boolean",
             "description": "Team pinned"
           },
+          "pinned_sort_ordering": {
+            "type": "integer",
+            "description": "Sort ordering for pinned team"
+          },
           "single_group": {
             "$ref": "#/components/schemas/JID",
             "description": "For single group teams, jid of chat"
