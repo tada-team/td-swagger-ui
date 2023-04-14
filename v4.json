@@ -4078,6 +4078,259 @@
         ],
         "description": "Emoji"
       },
+      "Enquiry": {
+        "type": "object",
+        "properties": {
+          "activate_at": {
+            "type": "string"
+          },
+          "activation_date": {
+            "type": "string"
+          },
+          "actually_paid_at": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/float64"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "credited_at": {
+            "type": "string"
+          },
+          "deactivation_date": {
+            "type": "string"
+          },
+          "enquiry_payment_status": {
+            "$ref": "#/components/schemas/EnquiryPaymentStatus"
+          },
+          "enquiry_status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
+          },
+          "enquiry_type": {
+            "$ref": "#/components/schemas/EnquiryType"
+          },
+          "expiration_at": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          },
+          "fixation_paid_at": {
+            "type": "string"
+          },
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "id": {
+            "type": "string"
+          },
+          "media_url": {
+            "type": "string"
+          },
+          "payment_type": {
+            "$ref": "#/components/schemas/PaymentType"
+          },
+          "period_days": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "selectable_workplace_count": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "tariff_name": {
+            "type": "string"
+          },
+          "workplace_price": {
+            "$ref": "#/components/schemas/float64"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "selectable_workplace_count",
+          "amount",
+          "tariff_name",
+          "workplace_price",
+          "period_days",
+          "free_workplace_count",
+          "enquiry_type",
+          "enquiry_status",
+          "enquiry_payment_status",
+          "payment_type"
+        ]
+      },
+      "EnquiryCreateRequest": {
+        "type": "object",
+        "properties": {
+          "counterparty_id": {
+            "type": "string"
+          },
+          "selectable_tariff_id": {
+            "type": "string"
+          },
+          "selectable_workplace_count": {
+            "$ref": "#/components/schemas/uint32"
+          }
+        },
+        "required": [
+          "selectable_tariff_id",
+          "selectable_workplace_count",
+          "counterparty_id"
+        ]
+      },
+      "EnquiryCreateResponse": {
+        "type": "object",
+        "properties": {
+          "activate_at": {
+            "type": "string"
+          },
+          "activation_date": {
+            "type": "string"
+          },
+          "actually_paid_at": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/float64"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "credited_at": {
+            "type": "string"
+          },
+          "deactivation_date": {
+            "type": "string"
+          },
+          "enquiry_payment_status": {
+            "$ref": "#/components/schemas/EnquiryPaymentStatus"
+          },
+          "enquiry_status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
+          },
+          "enquiry_type": {
+            "$ref": "#/components/schemas/EnquiryType"
+          },
+          "expiration_at": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          },
+          "fixation_paid_at": {
+            "type": "string"
+          },
+          "free_workplace_count": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "id": {
+            "type": "string"
+          },
+          "media_url": {
+            "type": "string"
+          },
+          "payment_type": {
+            "$ref": "#/components/schemas/PaymentType"
+          },
+          "period_days": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "personal_account_id": {
+            "type": "string"
+          },
+          "selectable_workplace_count": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "tariff_name": {
+            "type": "string"
+          },
+          "workplace_price": {
+            "$ref": "#/components/schemas/float64"
+          }
+        },
+        "required": [
+          "id",
+          "personal_account_id",
+          "selectable_workplace_count",
+          "amount",
+          "tariff_name",
+          "workplace_price",
+          "period_days",
+          "free_workplace_count",
+          "enquiry_type",
+          "enquiry_status",
+          "enquiry_payment_status",
+          "payment_type"
+        ]
+      },
+      "EnquiryGetListRequest": {
+        "type": "object",
+        "properties": {
+          "date_activate_to": {
+            "type": "string"
+          },
+          "date_create_from": {
+            "type": "string"
+          },
+          "date_create_to": {
+            "type": "string"
+          },
+          "date_deactivate_to": {
+            "type": "string"
+          },
+          "enquiry_payment_status": {
+            "$ref": "#/components/schemas/EnquiryPaymentStatus"
+          },
+          "enquiry_status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
+          },
+          "limit": {
+            "$ref": "#/components/schemas/uint32"
+          },
+          "offset": {
+            "$ref": "#/components/schemas/uint32"
+          }
+        }
+      },
+      "EnquiryGetListResponse": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Enquiry"
+            }
+          },
+          "offset": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "objects",
+          "count",
+          "limit",
+          "offset"
+        ]
+      },
+      "EnquiryPaymentStatus": {
+        "type": "string"
+      },
+      "EnquiryStatus": {
+        "type": "string"
+      },
+      "EnquiryType": {
+        "type": "string"
+      },
       "Err": {
         "type": "string"
       },
@@ -7008,6 +7261,33 @@
         ],
         "description": "Contact online status"
       },
+      "PaginatedBillingEnquiries": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Enquiry"
+            }
+          },
+          "offset": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "objects",
+          "count",
+          "limit",
+          "offset"
+        ],
+        "description": "Paginated billing enquirires"
+      },
       "PaginatedChats": {
         "type": "object",
         "properties": {
@@ -7321,239 +7601,8 @@
           "confirmation_url"
         ]
       },
-      "PaymentInvoice": {
-        "type": "object",
-        "properties": {
-          "activate_at": {
-            "type": "string"
-          },
-          "amount": {
-            "$ref": "#/components/schemas/float64"
-          },
-          "cost_workplace": {
-            "type": "string"
-          },
-          "counterparty_id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "free_workplace": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "paid_at": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "tariff_name": {
-            "type": "string"
-          },
-          "workplace": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "enquiry_id",
-          "counterparty_id",
-          "status",
-          "amount"
-        ]
-      },
-      "PaymentInvoiceCreateRequest": {
-        "type": "object",
-        "properties": {
-          "counterparty_id": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "paid_at": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "enquiry_id",
-          "counterparty_id",
-          "status"
-        ]
-      },
-      "PaymentInvoiceCreateResponse": {
-        "type": "object",
-        "properties": {
-          "activate_at": {
-            "type": "string"
-          },
-          "amount": {
-            "$ref": "#/components/schemas/float64"
-          },
-          "cost_workplace": {
-            "type": "string"
-          },
-          "counterparty_id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "free_workplace": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "paid_at": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "tariff_name": {
-            "type": "string"
-          },
-          "workplace": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "enquiry_id",
-          "counterparty_id",
-          "status",
-          "amount"
-        ]
-      },
-      "PaymentInvoiceGetListRequest": {
-        "type": "object",
-        "properties": {
-          "counterparty_id": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "limit": {
-            "$ref": "#/components/schemas/uint32"
-          },
-          "offset": {
-            "$ref": "#/components/schemas/uint32"
-          },
-          "status": {
-            "type": "string"
-          }
-        }
-      },
-      "PaymentInvoiceGetListResponse": {
-        "type": "object",
-        "properties": {
-          "payment_invoice_list": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PaymentInvoice"
-            }
-          }
-        },
-        "required": [
-          "payment_invoice_list"
-        ]
-      },
-      "PaymentInvoiceGetRequest": {
-        "type": "object",
-        "properties": {
-          "payment_invoice_ids": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "payment_invoice_ids"
-        ]
-      },
-      "PaymentInvoiceUpdateRequest": {
-        "type": "object",
-        "properties": {
-          "counterparty_id": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "paid_at": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "enquiry_id",
-          "counterparty_id",
-          "paid_at",
-          "status"
-        ]
-      },
-      "PaymentInvoiceUpdateResponse": {
-        "type": "object",
-        "properties": {
-          "activate_at": {
-            "type": "string"
-          },
-          "amount": {
-            "$ref": "#/components/schemas/float64"
-          },
-          "cost_workplace": {
-            "type": "string"
-          },
-          "counterparty_id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "enquiry_id": {
-            "type": "string"
-          },
-          "free_workplace": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "paid_at": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "tariff_name": {
-            "type": "string"
-          },
-          "workplace": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "enquiry_id",
-          "counterparty_id",
-          "status",
-          "amount"
-        ]
+      "PaymentType": {
+        "type": "string"
       },
       "PdfVersion": {
         "type": "object",
