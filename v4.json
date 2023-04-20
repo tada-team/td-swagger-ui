@@ -4099,6 +4099,9 @@
           "credited_at": {
             "type": "string"
           },
+          "deactivate_at": {
+            "type": "string"
+          },
           "deactivation_date": {
             "type": "string"
           },
@@ -4111,7 +4114,10 @@
           "enquiry_type": {
             "$ref": "#/components/schemas/EnquiryType"
           },
-          "expiration_at": {
+          "expiration_date": {
+            "type": "string"
+          },
+          "expired_at": {
             "type": "string"
           },
           "file_name": {
@@ -4203,6 +4209,9 @@
           "credited_at": {
             "type": "string"
           },
+          "deactivate_at": {
+            "type": "string"
+          },
           "deactivation_date": {
             "type": "string"
           },
@@ -4215,7 +4224,10 @@
           "enquiry_type": {
             "$ref": "#/components/schemas/EnquiryType"
           },
-          "expiration_at": {
+          "expiration_date": {
+            "type": "string"
+          },
+          "expired_at": {
             "type": "string"
           },
           "file_name": {
