@@ -4294,11 +4294,8 @@
           "date_deactivate_to": {
             "type": "string"
           },
-          "enquiry_payment_status": {
-            "$ref": "#/components/schemas/EnquiryPaymentStatus"
-          },
-          "enquiry_status": {
-            "$ref": "#/components/schemas/EnquiryStatus"
+          "enquiry_status_filter": {
+            "$ref": "#/components/schemas/EnquiryStatusFilter"
           },
           "limit": {
             "$ref": "#/components/schemas/uint32"
@@ -4338,6 +4335,9 @@
         "type": "string"
       },
       "EnquiryStatus": {
+        "type": "string"
+      },
+      "EnquiryStatusFilter": {
         "type": "string"
       },
       "EnquiryType": {
