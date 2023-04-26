@@ -4105,12 +4105,6 @@
           "deactivation_date": {
             "type": "string"
           },
-          "enquiry_payment_status": {
-            "$ref": "#/components/schemas/EnquiryPaymentStatus"
-          },
-          "enquiry_status": {
-            "$ref": "#/components/schemas/EnquiryStatus"
-          },
           "enquiry_type": {
             "$ref": "#/components/schemas/EnquiryType"
           },
@@ -4147,6 +4141,9 @@
           "selectable_workplace_count": {
             "$ref": "#/components/schemas/uint32"
           },
+          "status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
+          },
           "tariff_name": {
             "type": "string"
           },
@@ -4164,8 +4161,7 @@
           "period_days",
           "free_workplace_count",
           "enquiry_type",
-          "enquiry_status",
-          "enquiry_payment_status",
+          "status",
           "payment_type"
         ]
       },
@@ -4215,12 +4211,6 @@
           "deactivation_date": {
             "type": "string"
           },
-          "enquiry_payment_status": {
-            "$ref": "#/components/schemas/EnquiryPaymentStatus"
-          },
-          "enquiry_status": {
-            "$ref": "#/components/schemas/EnquiryStatus"
-          },
           "enquiry_type": {
             "$ref": "#/components/schemas/EnquiryType"
           },
@@ -4257,6 +4247,9 @@
           "selectable_workplace_count": {
             "$ref": "#/components/schemas/uint32"
           },
+          "status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
+          },
           "tariff_name": {
             "type": "string"
           },
@@ -4274,8 +4267,7 @@
           "period_days",
           "free_workplace_count",
           "enquiry_type",
-          "enquiry_status",
-          "enquiry_payment_status",
+          "status",
           "payment_type"
         ]
       },
@@ -4295,7 +4287,7 @@
             "type": "string"
           },
           "enquiry_status_filter": {
-            "$ref": "#/components/schemas/EnquiryStatusFilter"
+            "$ref": "#/components/schemas/EnquiryStatus"
           },
           "limit": {
             "$ref": "#/components/schemas/uint32"
@@ -4331,13 +4323,7 @@
           "offset"
         ]
       },
-      "EnquiryPaymentStatus": {
-        "type": "string"
-      },
       "EnquiryStatus": {
-        "type": "string"
-      },
-      "EnquiryStatusFilter": {
         "type": "string"
       },
       "EnquiryType": {
