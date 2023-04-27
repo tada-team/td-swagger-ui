@@ -3507,7 +3507,7 @@
             "description": "Owner of this personal account"
           },
           "owner_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "ID User who owns this personal account"
           },
           "owner_uuid": {
@@ -3519,7 +3519,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "status": {
@@ -4982,7 +4982,7 @@
             "description": "Owner of this personal account"
           },
           "owner_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "ID User who owns this personal account"
           },
           "owner_uuid": {
@@ -4994,7 +4994,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "status": {
@@ -7655,7 +7655,7 @@
             "description": "Owner of this personal account"
           },
           "owner_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "ID User who owns this personal account"
           },
           "owner_uuid": {
@@ -7667,7 +7667,7 @@
             "description": "Count of paid workplaces on personal account"
           },
           "personal_account_id": {
-            "$ref": "#/components/schemas/uint64",
+            "type": "string",
             "description": "PersonalAccountBilling ID"
           },
           "status": {
@@ -7934,15 +7934,11 @@
           "patronymic": {
             "type": "string"
           },
-          "personal_account_id": {
-            "type": "string"
-          },
           "phone": {
             "type": "string"
           }
         },
         "required": [
-          "personal_account_id",
           "first_name",
           "last_name",
           "phone",
