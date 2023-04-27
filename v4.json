@@ -4286,14 +4286,14 @@
           "date_deactivate_to": {
             "type": "string"
           },
-          "enquiry_status_filter": {
-            "$ref": "#/components/schemas/EnquiryStatus"
-          },
           "limit": {
             "$ref": "#/components/schemas/uint32"
           },
           "offset": {
             "$ref": "#/components/schemas/uint32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/EnquiryStatus"
           }
         }
       },
