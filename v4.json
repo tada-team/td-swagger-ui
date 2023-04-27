@@ -7882,13 +7882,16 @@
       "ResponsiblePerson": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
+          "display_name": {
             "type": "string"
           },
           "email": {
             "type": "string"
           },
           "first_name": {
+            "type": "string"
+          },
+          "held_post": {
             "type": "string"
           },
           "id": {
@@ -7906,7 +7909,7 @@
         },
         "required": [
           "id",
-          "counterparty_id",
+          "display_name",
           "first_name",
           "last_name",
           "phone",
@@ -7916,13 +7919,13 @@
       "ResponsiblePersonCreateRequest": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
-            "type": "string"
-          },
           "email": {
             "type": "string"
           },
           "first_name": {
+            "type": "string"
+          },
+          "held_post": {
             "type": "string"
           },
           "last_name": {
@@ -7931,12 +7934,15 @@
           "patronymic": {
             "type": "string"
           },
+          "personal_account_id": {
+            "type": "string"
+          },
           "phone": {
             "type": "string"
           }
         },
         "required": [
-          "counterparty_id",
+          "personal_account_id",
           "first_name",
           "last_name",
           "phone",
@@ -7946,13 +7952,16 @@
       "ResponsiblePersonCreateResponse": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
+          "display_name": {
             "type": "string"
           },
           "email": {
             "type": "string"
           },
           "first_name": {
+            "type": "string"
+          },
+          "held_post": {
             "type": "string"
           },
           "id": {
@@ -7970,7 +7979,7 @@
         },
         "required": [
           "id",
-          "counterparty_id",
+          "display_name",
           "first_name",
           "last_name",
           "phone",
@@ -7991,14 +8000,11 @@
       "ResponsiblePersonGetListRequest": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
-            "type": "string"
-          },
           "limit": {
             "$ref": "#/components/schemas/uint32"
           },
           "offset": {
-            "$ref": "#/components/schemas/uint32"
+            "$ref": "#/components/schemas/uint64"
           }
         }
       },
@@ -8030,13 +8036,16 @@
       "ResponsiblePersonUpdateRequest": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
+          "display_name": {
             "type": "string"
           },
           "email": {
             "type": "string"
           },
           "first_name": {
+            "type": "string"
+          },
+          "held_post": {
             "type": "string"
           },
           "id": {
@@ -8054,10 +8063,9 @@
         },
         "required": [
           "id",
-          "counterparty_id",
+          "display_name",
           "first_name",
           "last_name",
-          "patronymic",
           "phone",
           "email"
         ]
@@ -8065,13 +8073,16 @@
       "ResponsiblePersonUpdateResponse": {
         "type": "object",
         "properties": {
-          "counterparty_id": {
+          "display_name": {
             "type": "string"
           },
           "email": {
             "type": "string"
           },
           "first_name": {
+            "type": "string"
+          },
+          "held_post": {
             "type": "string"
           },
           "id": {
@@ -8089,7 +8100,7 @@
         },
         "required": [
           "id",
-          "counterparty_id",
+          "display_name",
           "first_name",
           "last_name",
           "phone",
