@@ -5177,7 +5177,7 @@
       "GetUsersInfoByUserUUIDArrayResponse": {
         "type": "object",
         "properties": {
-          "user_info": {
+          "user_list": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/UserInfo"
