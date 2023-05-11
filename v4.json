@@ -5088,6 +5088,14 @@
           "open_date"
         ]
       },
+      "GetTeamsFilter": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/TeamStatus"
+          }
+        }
+      },
       "GetTeamsOnPersonalAccountResponse": {
         "type": "object",
         "properties": {
