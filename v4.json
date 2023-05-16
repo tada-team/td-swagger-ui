@@ -8603,6 +8603,24 @@
         ],
         "description": "Login from other device"
       },
+      "ServerLogout": {
+        "type": "object",
+        "properties": {
+          "confirm_id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "params": {
+            "$ref": "#/components/schemas/serverLogoutParams"
+          }
+        },
+        "required": [
+          "params",
+          "event"
+        ]
+      },
       "ServerMeetingCellUpdated": {
         "type": "object",
         "properties": {
@@ -12053,6 +12071,19 @@
           "device_name"
         ],
         "description": "Params of the server.login event"
+      },
+      "serverLogoutParams": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Reason"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "description": "Params of the server.logout event"
       },
       "serverMeetingCellUpdatedParams": {
         "type": "object",
