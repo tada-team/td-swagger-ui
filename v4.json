@@ -1916,12 +1916,12 @@
           "draft_gentime": {
             "type": "integer",
             "format": "int64",
-            "description": "Last message draft version, if any"
+            "description": "Last message draft version, if any Deprecated: use DraftRevision instead"
           },
           "draft_num": {
             "type": "integer",
             "format": "int64",
-            "description": "Deprecated"
+            "description": "Deprecated: use DraftRevision instead"
           },
           "feed": {
             "type": "boolean",
@@ -2076,6 +2076,11 @@
           "readonly_for_members": {
             "type": "boolean",
             "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
+          },
+          "revision": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any, Unixtime(ms)"
           },
           "section": {
             "type": "string",
@@ -5888,12 +5893,12 @@
           "draft_gentime": {
             "type": "integer",
             "format": "int64",
-            "description": "Last message draft version, if any"
+            "description": "Last message draft version, if any Deprecated: use DraftRevision instead"
           },
           "draft_num": {
             "type": "integer",
             "format": "int64",
-            "description": "Deprecated"
+            "description": "Deprecated: use DraftRevision instead"
           },
           "duration": {
             "type": "integer",
@@ -6092,6 +6097,11 @@
           "readonly_for_members": {
             "type": "boolean",
             "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
+          },
+          "revision": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any, Unixtime(ms)"
           },
           "section": {
             "type": "string",
@@ -11503,7 +11513,7 @@
           },
           "draft": {
             "type": "string",
-            "description": "Message draft data"
+            "description": "Message draft data Deprecated"
           },
           "is_audio": {
             "type": "boolean",
@@ -11945,22 +11955,28 @@
           "draft_gentime": {
             "type": "integer",
             "format": "int64",
-            "description": "Draft version"
+            "description": "Draft version Deprecated: use Revision instead"
           },
           "draft_num": {
             "type": "integer",
             "format": "int64",
-            "description": "Deprecated"
+            "description": "Deprecated: use Revision instead"
           },
           "jid": {
             "$ref": "#/components/schemas/JID",
             "description": "Chat or contact id"
+          },
+          "revision": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Revision Unixtime(ms)"
           }
         },
         "required": [
           "jid",
           "draft",
           "draft_gentime",
+          "revision",
           "draft_num"
         ],
         "description": "Params of the server.chat.draft event"
