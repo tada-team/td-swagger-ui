@@ -1916,12 +1916,17 @@
           "draft_gentime": {
             "type": "integer",
             "format": "int64",
-            "description": "Last message draft version, if any Deprecated: use DraftRevision instead"
+            "description": "Deprecated: use DraftRevision instead. Last message draft version, if any"
           },
           "draft_num": {
             "type": "integer",
             "format": "int64",
             "description": "Deprecated: use DraftRevision instead"
+          },
+          "draft_revision": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any. unixtime(ms)"
           },
           "feed": {
             "type": "boolean",
@@ -2076,11 +2081,6 @@
           "readonly_for_members": {
             "type": "boolean",
             "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
-          },
-          "revision": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Last message draft version, if any, Unixtime(ms)"
           },
           "section": {
             "type": "string",
@@ -5893,12 +5893,17 @@
           "draft_gentime": {
             "type": "integer",
             "format": "int64",
-            "description": "Last message draft version, if any Deprecated: use DraftRevision instead"
+            "description": "Deprecated: use DraftRevision instead. Last message draft version, if any"
           },
           "draft_num": {
             "type": "integer",
             "format": "int64",
             "description": "Deprecated: use DraftRevision instead"
+          },
+          "draft_revision": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Last message draft version, if any. unixtime(ms)"
           },
           "duration": {
             "type": "integer",
@@ -6097,11 +6102,6 @@
           "readonly_for_members": {
             "type": "boolean",
             "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
-          },
-          "revision": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Last message draft version, if any, Unixtime(ms)"
           },
           "section": {
             "type": "string",
