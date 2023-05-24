@@ -4134,6 +4134,9 @@
           "media_url": {
             "type": "string"
           },
+          "payment_status": {
+            "$ref": "#/components/schemas/EnquiryPaymentStatus"
+          },
           "payment_type": {
             "$ref": "#/components/schemas/PaymentType"
           },
@@ -4167,6 +4170,7 @@
           "free_workplace_count",
           "enquiry_type",
           "status",
+          "payment_status",
           "payment_type"
         ]
       },
@@ -4240,6 +4244,9 @@
           "media_url": {
             "type": "string"
           },
+          "payment_status": {
+            "$ref": "#/components/schemas/EnquiryPaymentStatus"
+          },
           "payment_type": {
             "$ref": "#/components/schemas/PaymentType"
           },
@@ -4273,6 +4280,7 @@
           "free_workplace_count",
           "enquiry_type",
           "status",
+          "payment_status",
           "payment_type"
         ]
       },
@@ -4327,6 +4335,9 @@
           "limit",
           "offset"
         ]
+      },
+      "EnquiryPaymentStatus": {
+        "type": "string"
       },
       "EnquiryStatus": {
         "type": "string"
