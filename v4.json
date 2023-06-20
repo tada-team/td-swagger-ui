@@ -6805,6 +6805,14 @@
             "type": "boolean",
             "description": "Message has no pushes and did not affect any counters"
           },
+          "thread_jid": {
+            "$ref": "#/components/schemas/JID",
+            "description": "ThreadJID"
+          },
+          "thread_messages_count": {
+            "type": "integer",
+            "description": "Thread Messages Count"
+          },
           "to": {
             "$ref": "#/components/schemas/JID",
             "description": "Recipient id (group, task or contact)"
