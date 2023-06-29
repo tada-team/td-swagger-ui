@@ -2055,6 +2055,14 @@
             "$ref": "#/components/schemas/JID",
             "description": "Task creator"
           },
+          "parent_chat_id": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Parent chat uid for thread"
+          },
+          "parent_message_id": {
+            "type": "string",
+            "description": "Parent message uid for thread"
+          },
           "parents": {
             "type": "array",
             "items": {
@@ -6087,6 +6095,14 @@
           },
           "owner_user_uuid": {
             "type": "string"
+          },
+          "parent_chat_id": {
+            "$ref": "#/components/schemas/JID",
+            "description": "Parent chat uid for thread"
+          },
+          "parent_message_id": {
+            "type": "string",
+            "description": "Parent message uid for thread"
           },
           "parents": {
             "type": "array",
