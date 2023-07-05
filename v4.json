@@ -4766,6 +4766,10 @@
             "type": "string",
             "description": "Default UI theme"
           },
+          "threads_enabled": {
+            "type": "boolean",
+            "description": "Thread enabled flag"
+          },
           "userver": {
             "type": "string",
             "description": "Static files server address"
