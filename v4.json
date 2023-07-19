@@ -9385,6 +9385,10 @@
             "type": "string",
             "description": "Subscription activation time"
           },
+          "empty_workplace_count": {
+            "$ref": "#/components/schemas/uint32",
+            "description": "EmptyWorkplaceCount empty workplace count"
+          },
           "expires": {
             "type": "string",
             "description": "Subscription expiration time"
