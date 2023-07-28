@@ -2913,6 +2913,10 @@
             "type": "string",
             "description": "Patronymic, if any"
           },
+          "public_status": {
+            "$ref": "#/components/schemas/ContactPublicStatus",
+            "description": "Public Status"
+          },
           "quiet_time_finish": {
             "type": "string",
             "description": "Quiet time finish"
@@ -3046,6 +3050,24 @@
           "section"
         ],
         "description": "Contact preview"
+      },
+      "ContactPublicStatus": {
+        "type": "object",
+        "properties": {
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Expires at (iso datetime)"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PublicStatus",
+            "description": "Public Status"
+          }
+        },
+        "required": [
+          "status",
+          "expires_at"
+        ]
       },
       "ContactShort": {
         "type": "object",
@@ -7772,6 +7794,49 @@
       "PersonalAccountStatus": {
         "type": "string",
         "description": "PersonalAccountStatus account status"
+      },
+      "PublicStatus": {
+        "type": "object",
+        "properties": {
+          "duration_label": {
+            "type": "string",
+            "description": "Duration Label"
+          },
+          "duration_seconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Duration in seconds"
+          },
+          "emoji": {
+            "type": "string",
+            "description": "Display emoji"
+          },
+          "status_en": {
+            "type": "string",
+            "description": "Status Label English"
+          },
+          "status_ru": {
+            "type": "string",
+            "description": "Status Label Russian"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PublicStatusType",
+            "description": "Public Status Type"
+          }
+        },
+        "required": [
+          "type",
+          "emoji",
+          "status_ru",
+          "status_en",
+          "duration_seconds",
+          "duration_label"
+        ],
+        "description": "Public Status"
+      },
+      "PublicStatusType": {
+        "type": "string",
+        "description": "Public Status Types"
       },
       "PushDevice": {
         "type": "object",
