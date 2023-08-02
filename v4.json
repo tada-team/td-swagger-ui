@@ -2086,6 +2086,10 @@
             "type": "boolean",
             "description": "Can other team member see this task/group chat"
           },
+          "public_status": {
+            "$ref": "#/components/schemas/PublicStatus",
+            "description": "Public Status"
+          },
           "readonly_for_members": {
             "type": "boolean",
             "description": "Readonly for non-admins group chat (Like Channels in Telegram but switchable)"
@@ -6155,6 +6159,10 @@
           "public": {
             "type": "boolean",
             "description": "Can other team member see this task/group chat"
+          },
+          "public_status": {
+            "$ref": "#/components/schemas/PublicStatus",
+            "description": "Public Status"
           },
           "readonly_for_members": {
             "type": "boolean",
