@@ -11243,6 +11243,10 @@
             "nullable": true,
             "description": "Start silently time (no pushes, no sounds)"
           },
+          "team_account": {
+            "$ref": "#/components/schemas/PersonalAccountBilling",
+            "description": "Personal account from billing by opened team"
+          },
           "teams": {
             "type": "array",
             "items": {
